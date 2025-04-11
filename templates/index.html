@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search products or categories...">
+        </div>
+        <div class="mode-toggle">
+            <button id="manualMode" class="active">Manual Entry</button>
+            <button id="verificationMode">Bill Verification</button>
+        </div>
+        <div class="upload-container">
+            <label for="csvUpload" class="upload-btn">
+                Import CSV
+                <input type="file" id="csvUpload" accept=".csv" hidden>
+            </label>
+        </div>
+    </header>
+
+    <!-- Product Grid -->
+    <main class="product-grid" id="productGrid">
+        <!-- Products will be dynamically inserted here -->
+    </main>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading" hidden>
+        <div class="spinner"></div>
+        <p>Loading products...</p>
+    </div>
+
+    <!-- Modal for Manual Entry -->
+    <div class="modal" id="stockModal" hidden>
+        <div class="modal-content">
+            <h2>Update Stock</h2>
+            <div class="product-details">
+                <img src="" alt="" id="modalProductImage">
+                <h3 id="modalProductName"></h3>
+                <p id="modalProductCategory"></p>
+            </div>
+            <div class="stock-input">
+                <div class="stock-options">
+                    <button class="stock-option-btn" id="addStockBtn">Add Stock</button>
+                    <button class="stock-option-btn" id="reduceStockBtn">Reduce Stock</button>
+                </div>
+                <div class="stock-amount-input" hidden>
+                    <label for="stockAmount">Enter Amount:</label>
+                    <input type="number" id="stockAmount" value="0" min="0">
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                <button class="save-btn" id="saveBtn" hidden>Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" hidden></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <template id="product-card-template">
+        <article class="product-card">
+            <img src="" alt="" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name"></h3>
+                <p class="product-category"></p>
+                <div class="stock-badge"></div>
+                <p class="expiry-status"></p>
+            </div>
+            <div class="verification-checkbox" hidden>
+                <input type="checkbox">
+            </div>
+        </article>
+    </template>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
