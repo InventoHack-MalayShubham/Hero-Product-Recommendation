@@ -115,16 +115,14 @@ while len(records) < 2000:
     product['Stock'] -= 1
     transaction_id += 1
 
-# # Save to CSV
-# df = pd.DataFrame(records)
-# output_dir = "Datasets"
-# os.makedirs(output_dir, exist_ok=True)
-# file_path = os.path.join(output_dir, "rohit_electronics_sales.csv")
-# df.to_csv(file_path, index=False)
-# print(f"Dataset saved to {file_path}")
-
-# Save to CSV in current directory
+# Save to CSV at specified path
 df = pd.DataFrame(records)
-file_path = "rohit_electronics_sales.csv"
+file_path = r"D:\ML Folders\ml_env\GitHub\Hero-Product-Recommendation\Datasets\rohit_electronics_sales.csv"
 df.to_csv(file_path, index=False)
 print(f"Dataset saved to {file_path}")
+
+# # Save to CSV in current directory
+# df = pd.DataFrame(records)
+# file_path = "rohit_electronics_sales.csv"
+# df.to_csv(file_path, index=False)
+# print(f"Dataset saved to {file_path}")
