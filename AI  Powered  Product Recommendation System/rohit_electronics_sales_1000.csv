@@ -1,0 +1,1001 @@
+Transaction ID,Date,Product Category,Subcategory,Product Name,Brand Name,Unit Price,Discount (%),Discounted Price,Total Revenue,GST_Percentage,GST_Amount,Total_Revenue_Incl_GST,Current Stock,Stock_Status,Rating,Returns,Customer Type,Payment Method
+T0001,2025-03-25 11:53:44,Laptop Accessories,Bag,HP Bag 39,HP,3328,2,3261.44,3261.44,18,587.06,3848.5,54,OK,2.9,0,Wholesale,Cash
+T0002,2025-04-04 15:21:23,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,6,38566.32,38566.32,12,4627.96,43194.28,27,OK,4.3,0,New,Cash
+T0003,2025-03-20 18:42:28,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,10,132421.5,132421.5,18,23835.87,156257.37,41,OK,4.3,0,New,Cash
+T0004,2025-03-28 19:32:44,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,11,2922.76,2922.76,18,526.1,3448.86,59,OK,2.2,0,Returning,Cash
+T0005,2025-04-09 11:02:29,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,21,1490.73,1490.73,18,268.33,1759.06,56,OK,3.4,0,Returning,UPI
+T0006,2025-03-29 14:27:50,Laptops,Notebook,MSI Notebook 11,MSI,58421,6,54915.74,54915.74,18,9884.83,64800.57,15,OK,3.4,0,Returning,Credit Card
+T0007,2025-03-14 18:32:22,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,11,1466.72,1466.72,18,264.01,1730.73,58,OK,2.3,0,Regular,Net Banking
+T0008,2025-03-29 19:01:52,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,11,17670.06,17670.06,12,2120.41,19790.47,23,OK,4.6,0,Regular,Credit Card
+T0009,2025-03-17 20:15:23,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,19,45687.24,45687.24,12,5482.47,51169.71,59,OK,2.5,0,New,UPI
+T0010,2025-03-23 08:54:53,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,25,110351.25,110351.25,18,19863.22,130214.47,40,OK,2.3,0,New,Credit Card
+T0011,2025-03-15 08:01:24,Laptops,Notebook,Acer Notebook 2,Acer,37689,27,27512.97,27512.97,18,4952.33,32465.3,49,OK,2.0,0,Regular,UPI
+T0012,2025-04-10 13:38:34,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,11,698.65,698.65,18,125.76,824.41,17,OK,2.1,1,Regular,Credit Card
+T0013,2025-03-14 08:19:06,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,14,35284.08,35284.08,12,4234.09,39518.17,26,OK,4.6,0,Returning,Debit Card
+T0014,2025-03-24 07:30:22,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,4,1081.92,1081.92,18,194.75,1276.67,17,OK,4.7,0,Regular,UPI
+T0015,2025-04-01 06:32:16,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,2,69873.02,69873.02,12,8384.76,78257.78,41,OK,2.0,0,Regular,Net Banking
+T0016,2025-03-23 17:27:21,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,6,250.04,250.04,18,45.01,295.05,53,OK,1.9,1,New,Debit Card
+T0017,2025-03-24 06:17:29,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,10,11721.6,11721.6,12,1406.59,13128.19,43,OK,4.2,0,Regular,Credit Card
+T0018,2025-04-06 17:58:08,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,8,722.2,722.2,18,130.0,852.2,16,OK,2.6,0,Returning,Debit Card
+T0019,2025-03-18 08:38:35,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,13,93292.71,93292.71,18,16792.69,110085.4,41,OK,1.1,1,New,Cash
+T0020,2025-04-06 19:56:51,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,1,43725.33,43725.33,12,5247.04,48972.37,55,OK,1.6,0,New,Net Banking
+T0021,2025-03-20 13:32:29,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,5,3119.8,3119.8,18,561.56,3681.36,58,OK,4.4,1,New,Debit Card
+T0022,2025-04-04 10:14:32,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,26,2120.1,2120.1,18,381.62,2501.72,18,OK,3.7,0,Wholesale,Debit Card
+T0023,2025-03-26 12:44:46,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,23,1991.22,1991.22,18,358.42,2349.64,45,OK,2.4,0,New,Credit Card
+T0024,2025-03-24 02:01:03,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,23,121131.01,121131.01,18,21803.58,142934.59,22,OK,3.1,0,Regular,UPI
+T0025,2025-03-20 16:46:58,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,24,2367.4,2367.4,18,426.13,2793.53,16,OK,4.0,0,Returning,Credit Card
+T0026,2025-04-11 01:06:46,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,16,48455.4,48455.4,12,5814.65,54270.05,23,OK,1.8,0,Returning,Credit Card
+T0027,2025-03-30 06:23:57,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,8,30406.0,30406.0,12,3648.72,34054.72,31,OK,2.9,0,New,Credit Card
+T0028,2025-04-03 07:21:39,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,23,2528.68,2528.68,18,455.16,2983.84,57,OK,2.3,0,Regular,UPI
+T0029,2025-03-25 03:46:06,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,12,129478.8,129478.8,18,23306.18,152784.98,39,OK,2.0,1,Returning,Cash
+T0030,2025-03-16 15:30:59,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,24,15089.04,15089.04,12,1810.68,16899.72,22,OK,4.4,0,New,Credit Card
+T0031,2025-03-18 11:25:36,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,11,4199.02,4199.02,18,755.82,4954.84,14,OK,3.1,1,New,UPI
+T0032,2025-03-24 11:17:10,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,14,37983.62,37983.62,12,4558.03,42541.65,54,OK,3.9,0,Returning,Debit Card
+T0033,2025-04-02 06:30:36,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,19,57752.19,57752.19,12,6930.26,64682.45,40,OK,3.5,0,Regular,UPI
+T0034,2025-04-04 17:14:44,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,12,15964.08,15964.08,12,1915.69,17879.77,14,OK,1.8,1,Returning,UPI
+T0035,2025-03-29 21:01:40,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,7,38156.04,38156.04,12,4578.72,42734.76,25,OK,3.9,1,Regular,Credit Card
+T0036,2025-03-26 16:55:12,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,15,37541.95,37541.95,12,4505.03,42046.98,53,OK,4.5,0,Regular,UPI
+T0037,2025-03-17 04:18:04,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,1,119525.67,119525.67,18,21514.62,141040.29,22,OK,2.2,0,Regular,UPI
+T0038,2025-04-07 21:40:36,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,12,2275.68,2275.68,18,409.62,2685.3,44,OK,4.2,0,New,Cash
+T0039,2025-03-14 21:59:20,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,17,27431.5,27431.5,12,3291.78,30723.28,30,OK,2.4,0,Returning,Net Banking
+T0040,2025-03-27 11:52:51,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,20,57039.2,57039.2,12,6844.7,63883.9,39,OK,1.5,0,Regular,Cash
+T0041,2025-04-04 02:31:33,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,4,1629.12,1629.12,18,293.24,1922.36,44,OK,3.2,0,Regular,Debit Card
+T0042,2025-04-01 05:44:09,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,1,545.49,545.49,18,98.19,643.68,34,OK,2.4,0,Regular,UPI
+T0043,2025-03-25 22:31:18,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,27,69375.55,69375.55,18,12487.6,81863.15,48,OK,1.0,0,New,UPI
+T0044,2025-03-26 16:31:35,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,8,4292.72,4292.72,18,772.69,5065.41,20,OK,3.3,0,Wholesale,UPI
+T0045,2025-03-23 21:59:06,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,4,877.44,877.44,18,157.94,1035.38,16,OK,3.5,0,New,Cash
+T0046,2025-03-14 18:50:05,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,21,14331.39,14331.39,12,1719.77,16051.16,13,OK,3.8,0,New,Net Banking
+T0047,2025-03-28 14:15:40,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,1,43349.13,43349.13,12,5201.9,48551.03,41,OK,4.0,0,New,Cash
+T0048,2025-03-29 23:17:24,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,30,17710.0,17710.0,12,2125.2,19835.2,30,OK,4.1,0,New,Credit Card
+T0049,2025-04-01 07:48:10,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,5,67734.05,67734.05,12,8128.09,75862.14,38,OK,1.9,0,New,UPI
+T0050,2025-04-06 06:30:46,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,8,53070.2,53070.2,12,6368.42,59438.62,22,OK,4.7,0,New,Credit Card
+T0051,2025-03-23 12:25:23,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,16,2384.76,2384.76,18,429.26,2814.02,32,OK,4.7,0,New,Cash
+T0052,2025-03-30 08:31:36,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,28,83682.0,83682.0,18,15062.76,98744.76,37,OK,1.2,1,Regular,UPI
+T0053,2025-04-08 15:35:46,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,3,41917.58,41917.58,12,5030.11,46947.69,32,OK,3.0,0,Regular,UPI
+T0054,2025-04-08 19:37:36,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,17,89003.39,89003.39,18,16020.61,105024.0,40,OK,3.4,0,Returning,Debit Card
+T0055,2025-04-07 08:50:03,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,26,2305.1,2305.1,18,414.92,2720.02,15,OK,3.6,0,Returning,UPI
+T0056,2025-03-24 13:41:14,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,11,2772.35,2772.35,18,499.02,3271.37,14,OK,2.6,0,Regular,UPI
+T0057,2025-03-19 02:06:08,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,7,88382.55,88382.55,18,15908.86,104291.41,47,OK,3.8,0,New,UPI
+T0058,2025-03-19 04:11:34,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,13,2710.05,2710.05,18,487.81,3197.86,13,OK,1.3,0,Regular,Credit Card
+T0059,2025-03-26 20:02:20,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,6,859.16,859.16,18,154.65,1013.81,15,OK,1.0,0,Returning,UPI
+T0060,2025-03-21 04:44:42,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,10,2534.4,2534.4,18,456.19,2990.59,52,OK,5.0,0,Regular,UPI
+T0061,2025-03-25 22:09:15,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,24,88331.0,88331.0,18,15899.58,104230.58,36,OK,1.7,1,Wholesale,UPI
+T0062,2025-04-07 10:16:32,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,22,1536.6,1536.6,18,276.59,1813.19,46,OK,1.7,0,Regular,Cash
+T0063,2025-03-22 01:22:55,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,14,17074.44,17074.44,12,2048.93,19123.37,21,OK,4.7,0,New,Debit Card
+T0064,2025-04-08 08:26:50,Laptop Accessories,Bag,HP Bag 39,HP,3328,6,3128.32,3128.32,18,563.1,3691.42,53,OK,4.5,0,Regular,UPI
+T0065,2025-04-10 13:57:17,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,16,1425.48,1425.48,18,256.59,1682.07,43,OK,1.2,1,Regular,Cash
+T0066,2025-04-02 08:26:46,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,16,2172.24,2172.24,18,391.0,2563.24,43,OK,2.8,0,New,Credit Card
+T0067,2025-04-04 16:45:53,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,12,83630.8,83630.8,18,15053.54,98684.34,46,OK,1.1,0,Regular,UPI
+T0068,2025-04-04 06:47:38,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,12,102278.0,102278.0,18,18410.04,120688.04,35,OK,3.7,0,Regular,Debit Card
+T0069,2025-04-10 07:02:35,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,6,18662.76,18662.76,12,2239.53,20902.29,20,OK,2.6,0,Regular,UPI
+T0070,2025-03-17 14:20:07,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,29,31088.77,31088.77,12,3730.65,34819.42,40,OK,3.8,0,New,UPI
+T0071,2025-03-24 02:41:24,Laptops,Notebook,Acer Notebook 29,Acer,26371,11,23470.19,23470.19,18,4224.63,27694.82,29,OK,2.9,0,New,Cash
+T0072,2025-03-22 11:40:26,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,24,72226.6,72226.6,18,13000.79,85227.39,45,OK,4.9,0,Regular,Debit Card
+T0073,2025-04-05 14:25:20,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,16,3963.12,3963.12,18,713.36,4676.48,13,OK,1.9,1,Regular,UPI
+T0074,2025-03-25 02:35:12,Laptops,Notebook,MSI Notebook 11,MSI,58421,19,47321.01,47321.01,18,8517.78,55838.79,14,OK,2.3,0,Returning,Cash
+T0075,2025-04-10 11:04:02,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,1,1950.3,1950.3,18,351.05,2301.35,45,OK,2.1,1,Wholesale,Credit Card
+T0076,2025-03-31 15:03:35,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,7,247.38,247.38,18,44.53,291.91,52,OK,1.0,1,Wholesale,Cash
+T0077,2025-04-09 04:31:04,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,6,2668.66,2668.66,18,480.36,3149.02,31,OK,2.9,0,New,Debit Card
+T0078,2025-03-23 21:08:08,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,9,11851.84,11851.84,12,1422.22,13274.06,42,OK,2.0,0,New,Credit Card
+T0079,2025-04-12 12:02:28,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,0,3115.0,3115.0,18,560.7,3675.7,12,OK,1.8,1,Wholesale,Debit Card
+T0080,2025-03-20 19:43:16,Laptops,Notebook,MSI Notebook 11,MSI,58421,22,45568.38,45568.38,18,8202.31,53770.69,13,OK,4.6,0,New,Credit Card
+T0081,2025-03-24 09:46:18,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,29,800.17,800.17,18,144.03,944.2,16,OK,4.0,0,Regular,Cash
+T0082,2025-03-30 10:20:46,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,6,1549.12,1549.12,18,278.84,1827.96,57,OK,2.9,0,Regular,Debit Card
+T0083,2025-03-16 19:13:15,Laptop Accessories,Bag,HP Bag 39,HP,3328,24,2529.28,2529.28,18,455.27,2984.55,52,OK,3.7,0,Regular,Debit Card
+T0084,2025-04-07 11:07:07,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,23,31591.56,31591.56,12,3790.99,35382.55,24,OK,3.5,0,Returning,Credit Card
+T0085,2025-03-15 18:38:09,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,2,69873.02,69873.02,12,8384.76,78257.78,37,OK,5.0,0,New,Cash
+T0086,2025-03-28 05:01:13,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,10,2327.4,2327.4,18,418.93,2746.33,42,OK,4.4,0,Returning,UPI
+T0087,2025-03-22 20:20:37,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,4,753.6,753.6,18,135.65,889.25,15,OK,3.1,0,Returning,Cash
+T0088,2025-03-19 05:19:41,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,6,1889.4,1889.4,18,340.09,2229.49,43,OK,1.2,0,New,Debit Card
+T0089,2025-03-25 11:29:14,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,26,1219.52,1219.52,18,219.51,1439.03,56,OK,3.2,0,Regular,UPI
+T0090,2025-04-04 16:43:56,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,6,113489.02,113489.02,18,20428.02,133917.04,21,OK,1.7,0,Returning,UPI
+T0091,2025-03-14 17:41:29,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,22,207.48,207.48,18,37.35,244.83,51,OK,3.4,0,Returning,Credit Card
+T0092,2025-04-04 00:10:48,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,1,1115.73,1115.73,18,200.83,1316.56,15,OK,4.7,0,Wholesale,UPI
+T0093,2025-03-23 22:28:11,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,26,70325.9,70325.9,18,12658.66,82984.56,44,OK,3.8,0,Regular,UPI
+T0094,2025-03-23 23:33:04,Laptop Accessories,Charger,HP Charger 28,HP,2218,3,2151.46,2151.46,18,387.26,2538.72,33,OK,3.3,0,Regular,Credit Card
+T0095,2025-03-23 06:41:41,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,24,3546.16,3546.16,18,638.31,4184.47,19,OK,4.2,0,Regular,UPI
+T0096,2025-04-12 20:28:32,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,2,142565.5,142565.5,18,25661.79,168227.29,31,OK,3.1,1,Returning,UPI
+T0097,2025-04-10 19:48:40,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,29,40046.84,40046.84,12,4805.62,44852.46,58,OK,1.1,0,Regular,UPI
+T0098,2025-04-04 21:17:32,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,3,41917.58,41917.58,12,5030.11,46947.69,31,OK,3.5,0,Regular,Cash
+T0099,2025-04-04 16:35:57,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,23,121131.01,121131.01,18,21803.58,142934.59,21,OK,3.0,0,New,Cash
+T0100,2025-04-03 19:12:07,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,27,1557.82,1557.82,18,280.41,1838.23,55,OK,3.3,0,Regular,UPI
+T0101,2025-04-08 17:05:00,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,7,30736.5,30736.5,12,3688.38,34424.88,29,OK,4.1,0,New,UPI
+T0102,2025-03-19 19:42:19,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,22,3746.34,3746.34,18,674.34,4420.68,26,OK,3.4,0,Returning,UPI
+T0103,2025-03-17 10:16:15,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,8,30406.0,30406.0,12,3648.72,34054.72,28,OK,1.8,1,Returning,UPI
+T0104,2025-03-14 18:24:18,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,1,1680.03,1680.03,18,302.41,1982.44,42,OK,1.4,1,Regular,Cash
+T0105,2025-04-11 06:03:03,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,24,2454.04,2454.04,18,441.73,2895.77,27,OK,1.5,0,Regular,UPI
+T0106,2025-04-10 05:18:05,Laptop Accessories,Charger,HP Charger 28,HP,2218,22,1730.04,1730.04,18,311.41,2041.45,32,OK,2.7,0,Returning,Credit Card
+T0107,2025-03-26 17:29:32,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,6,23782.0,23782.0,12,2853.84,26635.84,29,OK,2.4,0,Wholesale,UPI
+T0108,2025-03-20 01:08:49,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,26,2120.1,2120.1,18,381.62,2501.72,17,OK,1.3,0,Returning,Debit Card
+T0109,2025-04-12 12:03:04,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,30,75063.1,75063.1,18,13511.36,88574.46,39,OK,3.0,0,Regular,Cash
+T0110,2025-03-29 09:12:32,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,5,1871.5,1871.5,18,336.87,2208.37,44,OK,3.5,0,Returning,Credit Card
+T0111,2025-04-12 10:05:29,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,10,4322.7,4322.7,18,778.09,5100.79,25,OK,1.2,1,New,UPI
+T0112,2025-03-19 23:35:17,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,8,37745.76,37745.76,12,4529.49,42275.25,23,OK,1.4,1,New,Net Banking
+T0113,2025-03-20 09:42:28,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,0,116225.0,116225.0,18,20920.5,137145.5,34,OK,3.3,0,Returning,Debit Card
+T0114,2025-04-03 15:51:05,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,20,125850.4,125850.4,18,22653.07,148503.47,20,OK,2.3,0,Regular,Cash
+T0115,2025-04-04 08:15:00,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,21,1685.86,1685.86,18,303.45,1989.31,54,OK,4.8,0,Wholesale,Credit Card
+T0116,2025-03-30 23:40:34,Laptops,Notebook,Acer Notebook 29,Acer,26371,15,22415.35,22415.35,18,4034.76,26450.11,28,OK,4.9,0,Returning,Credit Card
+T0117,2025-04-01 12:35:36,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,20,125850.4,125850.4,18,22653.07,148503.47,19,OK,1.8,1,Wholesale,Credit Card
+T0118,2025-04-06 03:12:08,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,11,813.46,813.46,18,146.42,959.88,14,OK,4.6,0,Returning,Debit Card
+T0119,2025-04-12 14:59:16,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,12,2275.68,2275.68,18,409.62,2685.3,41,OK,1.9,0,New,Debit Card
+T0120,2025-03-15 23:54:38,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,3,32058.5,32058.5,12,3847.02,35905.52,27,OK,3.8,0,New,UPI
+T0121,2025-04-03 19:56:42,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,7,108089.25,108089.25,18,19456.06,127545.31,33,OK,2.7,0,New,Credit Card
+T0122,2025-04-08 23:48:39,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,3,39797.16,39797.16,12,4775.66,44572.82,22,OK,3.9,0,New,Debit Card
+T0123,2025-03-19 13:49:42,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,5,22047.6,22047.6,12,2645.71,24693.31,35,OK,4.5,0,New,UPI
+T0124,2025-04-02 10:21:18,Laptops,Notebook,Dell Notebook 48,Dell,141050,20,112840.0,112840.0,18,20311.2,133151.2,24,OK,2.5,0,Wholesale,UPI
+T0125,2025-04-04 22:11:50,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,30,39482.8,39482.8,12,4737.94,44220.74,57,OK,3.1,0,Regular,UPI
+T0126,2025-04-05 15:30:19,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,7,41075.31,41075.31,12,4929.04,46004.35,52,OK,3.4,0,New,Net Banking
+T0127,2025-03-25 00:03:50,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,21,2224.64,2224.64,18,400.44,2625.08,51,OK,3.1,0,Regular,Credit Card
+T0128,2025-03-14 23:05:38,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,8,37745.76,37745.76,12,4529.49,42275.25,21,OK,1.1,0,Returning,Cash
+T0129,2025-04-04 01:30:31,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,19,2094.66,2094.66,18,377.04,2471.7,40,OK,2.9,0,Regular,Debit Card
+T0130,2025-03-31 16:13:21,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,12,20423.04,20423.04,12,2450.76,22873.8,34,OK,1.3,0,Returning,UPI
+T0131,2025-04-02 23:58:46,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,19,10549.44,10549.44,12,1265.93,11815.37,41,OK,2.5,1,Wholesale,UPI
+T0132,2025-03-18 10:25:33,Laptops,Notebook,Acer Notebook 2,Acer,37689,0,37689.0,37689.0,18,6784.02,44473.02,48,OK,1.2,0,New,Cash
+T0133,2025-04-02 23:55:57,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,15,2791.4,2791.4,18,502.45,3293.85,56,OK,2.5,0,Regular,Credit Card
+T0134,2025-03-15 19:13:07,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,3,12633.28,12633.28,12,1515.99,14149.27,40,OK,2.6,0,New,UPI
+T0135,2025-03-20 08:51:30,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,8,21351.36,21351.36,12,2562.16,23913.52,33,OK,3.3,0,Wholesale,Debit Card
+T0136,2025-04-08 02:58:16,Laptop Accessories,Charger,HP Charger 28,HP,2218,4,2129.28,2129.28,18,383.27,2512.55,31,OK,1.4,0,Wholesale,UPI
+T0137,2025-03-19 15:39:41,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,0,19854.0,19854.0,12,2382.48,22236.48,19,OK,5.0,0,New,UPI
+T0138,2025-03-26 00:08:17,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,20,901.6,901.6,18,162.29,1063.89,14,OK,4.7,0,New,UPI
+T0139,2025-03-16 20:09:10,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,27,2273.95,2273.95,18,409.31,2683.26,11,OK,1.3,0,Regular,UPI
+T0140,2025-03-28 05:18:46,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,5,1070.65,1070.65,18,192.72,1263.37,13,OK,3.2,0,Returning,UPI
+T0141,2025-03-20 20:05:10,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,15,47943.4,47943.4,12,5753.21,53696.61,56,OK,4.6,0,Returning,Debit Card
+T0142,2025-03-14 06:13:27,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,25,14890.5,14890.5,12,1786.86,16677.36,18,OK,3.3,0,Regular,UPI
+T0143,2025-03-26 08:19:12,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,29,391.21,391.21,18,70.42,461.63,33,OK,4.8,0,Returning,UPI
+T0144,2025-03-21 16:09:34,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,15,2791.4,2791.4,18,502.45,3293.85,55,OK,3.3,0,Regular,UPI
+T0145,2025-03-19 12:36:40,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,2,43283.66,43283.66,12,5194.04,48477.7,51,OK,3.7,0,Regular,Debit Card
+T0146,2025-03-21 16:23:37,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,11,1753.3,1753.3,18,315.59,2068.89,43,OK,2.0,1,Regular,UPI
+T0147,2025-04-08 07:39:42,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,3,3682.12,3682.12,18,662.78,4344.9,53,OK,4.3,0,Returning,Credit Card
+T0148,2025-04-10 06:21:26,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,22,1323.66,1323.66,18,238.26,1561.92,41,OK,2.5,0,Regular,UPI
+T0149,2025-03-25 08:19:49,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,25,2112.0,2112.0,18,380.16,2492.16,50,OK,1.6,1,Regular,Net Banking
+T0150,2025-03-15 20:28:42,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,9,86481.85,86481.85,18,15566.73,102048.58,43,OK,4.9,0,New,UPI
+T0151,2025-03-24 17:18:42,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,12,3340.48,3340.48,18,601.29,3941.77,52,OK,4.5,0,Regular,Credit Card
+T0152,2025-03-15 07:57:56,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,30,75063.1,75063.1,18,13511.36,88574.46,38,OK,3.0,1,New,UPI
+T0153,2025-03-17 08:43:35,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,5,24035.0,24035.0,12,2884.2,26919.2,28,OK,4.7,0,Regular,UPI
+T0154,2025-03-21 21:57:56,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,10,822.6,822.6,18,148.07,970.67,13,OK,3.2,0,Regular,UPI
+T0155,2025-03-21 13:21:27,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,24,17638.08,17638.08,12,2116.57,19754.65,32,OK,4.6,0,Regular,UPI
+T0156,2025-03-24 02:57:02,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,6,3035.26,3035.26,18,546.35,3581.61,26,OK,1.6,0,New,Credit Card
+T0157,2025-03-22 05:57:35,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,3,42841.99,42841.99,12,5141.04,47983.03,50,OK,1.9,1,Wholesale,UPI
+T0158,2025-04-11 08:51:15,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,18,1615.4,1615.4,18,290.77,1906.17,42,OK,4.1,0,Regular,Debit Card
+T0159,2025-04-07 06:46:31,Laptops,Notebook,Dell Notebook 48,Dell,141050,30,98735.0,98735.0,18,17772.3,116507.3,23,OK,4.3,0,Regular,UPI
+T0160,2025-04-01 11:57:08,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,6,250.04,250.04,18,45.01,295.05,50,OK,1.7,1,Regular,UPI
+T0161,2025-04-01 10:33:56,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,13,2449.92,2449.92,18,440.99,2890.91,49,OK,4.7,0,Returning,UPI
+T0162,2025-03-15 02:46:54,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,26,107651.5,107651.5,18,19377.27,127028.77,30,OK,3.9,1,Returning,Credit Card
+T0163,2025-03-28 08:16:27,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,25,3602.25,3602.25,18,648.4,4250.65,24,OK,2.1,0,Returning,Debit Card
+T0164,2025-04-09 06:10:23,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,12,65137.6,65137.6,12,7816.51,72954.11,20,OK,3.0,0,Regular,Debit Card
+T0165,2025-04-01 18:47:38,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,8,39756.88,39756.88,12,4770.83,44527.71,30,OK,4.2,0,New,Debit Card
+T0166,2025-03-22 07:52:47,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,29,111692.23,111692.23,18,20104.6,131796.83,18,OK,3.1,0,Regular,UPI
+T0167,2025-03-31 10:07:23,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,17,2725.72,2725.72,18,490.63,3216.35,54,OK,3.0,0,Regular,Credit Card
+T0168,2025-04-05 15:04:19,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,24,1497.2,1497.2,18,269.5,1766.7,41,OK,2.5,0,New,Credit Card
+T0169,2025-04-06 09:33:08,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,15,8579.9,8579.9,12,1029.59,9609.49,16,OK,1.2,1,Regular,UPI
+T0170,2025-03-22 09:01:16,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,11,20655.12,20655.12,12,2478.61,23133.73,31,OK,2.8,0,New,Credit Card
+T0171,2025-03-19 21:27:45,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,7,146301.09,146301.09,18,26334.2,172635.29,17,OK,3.9,0,Regular,UPI
+T0172,2025-04-10 02:50:03,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,11,36514.92,36514.92,12,4381.79,40896.71,20,OK,1.9,0,New,UPI
+T0173,2025-04-03 02:34:25,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,21,722.06,722.06,18,129.97,852.03,12,OK,2.7,0,New,UPI
+T0174,2025-03-20 16:35:22,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,25,13605.75,13605.75,12,1632.69,15238.44,12,OK,2.2,0,Wholesale,UPI
+T0175,2025-03-26 12:14:34,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,5,149447.35,149447.35,18,26900.52,176347.87,16,OK,4.4,0,Regular,Cash
+T0176,2025-04-12 18:38:25,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,28,77207.76,77207.76,18,13897.4,91105.16,37,OK,2.7,0,Regular,UPI
+T0177,2025-03-14 13:39:36,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,28,1358.64,1358.64,18,244.56,1603.2,55,OK,2.0,1,Returning,Credit Card
+T0178,2025-03-20 23:27:32,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,20,1608.0,1608.0,18,289.44,1897.44,42,OK,4.5,0,Regular,Cash
+T0179,2025-04-07 16:16:30,Laptop Accessories,Charger,HP Charger 28,HP,2218,4,2129.28,2129.28,18,383.27,2512.55,30,OK,1.7,0,New,UPI
+T0180,2025-04-07 02:38:30,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,21,722.06,722.06,18,129.97,852.03,11,OK,5.0,0,Returning,Credit Card
+T0181,2025-04-03 03:15:07,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,2,105088.34,105088.34,18,18915.9,124004.24,36,OK,3.6,0,Regular,UPI
+T0182,2025-04-01 09:15:40,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,29,1204.87,1204.87,18,216.88,1421.75,40,OK,1.5,1,Wholesale,Cash
+T0183,2025-04-03 09:44:41,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,18,27101.0,27101.0,12,3252.12,30353.12,26,OK,3.2,0,Wholesale,Debit Card
+T0184,2025-03-19 05:36:39,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,29,14096.34,14096.34,12,1691.56,15787.9,17,OK,4.2,0,New,UPI
+T0185,2025-04-11 14:21:40,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,25,685.5,685.5,18,123.39,808.89,10,Low Stock,1.7,1,Wholesale,Debit Card
+T0186,2025-04-04 05:20:40,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,28,7267.68,7267.68,12,872.12,8139.8,15,OK,4.7,0,New,Credit Card
+T0187,2025-03-28 21:40:38,Laptops,Notebook,MSI Notebook 11,MSI,58421,29,41478.91,41478.91,18,7466.2,48945.11,12,OK,3.6,0,Returning,Cash
+T0188,2025-03-18 02:42:09,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,25,1477.5,1477.5,18,265.95,1743.45,40,OK,4.6,0,Regular,UPI
+T0189,2025-04-02 17:22:20,Laptop Accessories,Bag,HP Bag 39,HP,3328,30,2329.6,2329.6,18,419.33,2748.93,51,OK,2.8,0,Regular,Debit Card
+T0190,2025-03-15 18:19:28,Laptops,Notebook,MSI Notebook 11,MSI,58421,15,49657.85,49657.85,18,8938.41,58596.26,11,OK,1.9,1,New,UPI
+T0191,2025-03-19 10:31:05,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,20,57039.2,57039.2,12,6844.7,63883.9,36,OK,4.2,0,Wholesale,UPI
+T0192,2025-04-10 15:31:35,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,4,1081.92,1081.92,18,194.75,1276.67,12,OK,2.9,0,New,Cash
+T0193,2025-03-23 03:27:08,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,7,41075.31,41075.31,12,4929.04,46004.35,49,OK,4.4,0,Regular,Debit Card
+T0194,2025-04-02 00:22:59,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,22,1567.8,1567.8,18,282.2,1850.0,41,OK,1.8,0,Regular,Cash
+T0195,2025-03-17 07:29:25,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,20,2292.0,2292.0,18,412.56,2704.56,16,OK,3.3,0,New,Debit Card
+T0196,2025-03-27 04:42:56,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,3,1646.09,1646.09,18,296.3,1942.39,39,OK,4.3,0,Returning,Debit Card
+T0197,2025-03-27 08:03:25,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,25,55515.0,55515.0,12,6661.8,62176.8,19,OK,1.4,0,New,Debit Card
+T0198,2025-03-21 21:06:38,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,2,118318.34,118318.34,18,21297.3,139615.64,20,OK,2.6,0,Regular,Debit Card
+T0199,2025-03-28 12:34:55,Laptops,Notebook,MSI Notebook 11,MSI,58421,24,44399.96,44399.96,18,7991.99,52391.95,10,Low Stock,1.3,0,Regular,UPI
+T0200,2025-04-07 10:30:11,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,2,1930.6,1930.6,18,347.51,2278.11,39,OK,3.0,0,Returning,UPI
+T0201,2025-04-10 03:18:53,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,5,138201.25,138201.25,18,24876.22,163077.47,29,OK,2.5,0,Returning,UPI
+T0202,2025-04-07 09:48:46,Laptops,Notebook,Acer Notebook 2,Acer,37689,26,27889.86,27889.86,18,5020.17,32910.03,47,OK,2.1,0,New,Credit Card
+T0203,2025-03-25 03:35:31,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,25,32840.25,32840.25,12,3940.83,36781.08,39,OK,4.1,0,New,UPI
+T0204,2025-04-12 07:43:46,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,0,147135.0,147135.0,18,26484.3,173619.3,38,OK,3.4,0,Regular,Debit Card
+T0205,2025-03-21 04:12:06,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,0,3796.0,3796.0,18,683.28,4479.28,51,OK,1.2,1,New,UPI
+T0206,2025-04-09 20:11:23,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,3,55954.45,55954.45,12,6714.53,62668.98,21,OK,3.6,0,Regular,UPI
+T0207,2025-04-06 05:39:48,Laptop Accessories,Bag,HP Bag 39,HP,3328,15,2828.8,2828.8,18,509.18,3337.98,50,OK,4.1,0,New,Credit Card
+T0208,2025-04-06 12:32:22,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,2,3218.32,3218.32,18,579.3,3797.62,53,OK,2.1,0,Regular,Debit Card
+T0209,2025-03-25 00:06:12,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,25,2847.0,2847.0,18,512.46,3359.46,50,OK,2.3,0,New,Net Banking
+T0210,2025-04-02 22:58:10,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,8,2590.72,2590.72,18,466.33,3057.05,48,OK,4.8,0,Regular,UPI
+T0211,2025-03-14 07:53:27,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,10,4322.7,4322.7,18,778.09,5100.79,23,OK,1.6,0,Returning,Credit Card
+T0212,2025-03-19 20:56:59,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,18,1749.88,1749.88,18,314.98,2064.86,53,OK,1.9,0,Regular,UPI
+T0213,2025-04-02 12:03:25,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,26,1487.4,1487.4,18,267.73,1755.13,40,OK,3.1,0,Regular,UPI
+T0214,2025-03-18 23:20:15,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,13,38094.69,38094.69,12,4571.36,42666.05,38,OK,1.8,0,Returning,Credit Card
+T0215,2025-04-04 17:47:24,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,11,107452.37,107452.37,18,19341.43,126793.8,19,OK,2.7,0,Regular,UPI
+T0216,2025-03-21 23:11:42,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,26,89342.42,89342.42,18,16081.64,105424.06,18,OK,2.8,0,New,Credit Card
+T0217,2025-04-09 17:29:50,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,27,31546.22,31546.22,12,3785.55,35331.77,29,OK,3.6,0,New,Cash
+T0218,2025-03-25 17:34:06,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,5,54800.75,54800.75,12,6576.09,61376.84,20,OK,3.4,0,Wholesale,UPI
+T0219,2025-03-25 22:28:54,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,26,7469.56,7469.56,12,896.35,8365.91,14,OK,3.1,0,Regular,Debit Card
+T0220,2025-03-20 17:57:42,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,22,612.3,612.3,18,110.21,722.51,14,OK,2.1,0,Returning,Credit Card
+T0221,2025-04-12 20:20:50,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,11,39308.63,39308.63,12,4717.04,44025.67,48,OK,1.0,0,Returning,UPI
+T0222,2025-03-18 04:00:21,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,9,51327.64,51327.64,12,6159.32,57486.96,55,OK,2.9,0,Returning,UPI
+T0223,2025-03-26 08:35:56,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,27,1238.81,1238.81,18,222.99,1461.8,38,OK,2.9,0,Wholesale,UPI
+T0224,2025-04-06 07:59:11,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,15,16875.9,16875.9,12,2025.11,18901.01,16,OK,4.7,0,Wholesale,Debit Card
+T0225,2025-03-30 09:21:05,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,23,703.78,703.78,18,126.68,830.46,9,Low Stock,3.2,0,New,Cash
+T0226,2025-03-31 07:02:23,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,9,1499.68,1499.68,18,269.94,1769.62,55,OK,4.9,0,New,Debit Card
+T0227,2025-03-25 02:51:39,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,3,152593.61,152593.61,18,27466.85,180060.46,15,OK,3.8,0,Regular,UPI
+T0228,2025-03-19 02:30:03,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,27,24126.5,24126.5,12,2895.18,27021.68,25,OK,3.0,0,Regular,Debit Card
+T0229,2025-04-06 07:46:11,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,20,45123.2,45123.2,12,5414.78,50537.98,54,OK,1.8,1,Returning,Cash
+T0230,2025-04-03 19:28:20,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,24,3546.16,3546.16,18,638.31,4184.47,18,OK,4.9,0,Wholesale,Debit Card
+T0231,2025-04-07 19:46:22,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,25,117984.75,117984.75,18,21237.26,139222.01,14,OK,3.2,0,Regular,Credit Card
+T0232,2025-03-26 07:44:16,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,26,30360.72,30360.72,12,3643.29,34004.01,19,OK,2.8,0,Returning,Debit Card
+T0233,2025-04-11 14:35:42,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,26,52761.26,52761.26,12,6331.35,59092.61,35,OK,3.9,1,Returning,UPI
+T0234,2025-03-29 01:53:58,Laptops,Notebook,Dell Notebook 48,Dell,141050,4,135408.0,135408.0,18,24373.44,159781.44,22,OK,3.7,0,New,Credit Card
+T0235,2025-03-25 01:14:52,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,21,1685.86,1685.86,18,303.45,1989.31,52,OK,1.9,1,Wholesale,UPI
+T0236,2025-03-29 03:34:53,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,9,30075.5,30075.5,12,3609.06,33684.56,24,OK,3.8,0,New,UPI
+T0237,2025-04-10 22:41:58,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,5,1612.15,1612.15,18,290.19,1902.34,37,OK,2.9,0,Regular,Debit Card
+T0238,2025-03-29 05:17:14,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,17,3150.68,3150.68,18,567.12,3717.8,49,OK,1.7,0,Wholesale,Debit Card
+T0239,2025-04-07 04:50:47,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,11,129472.75,129472.75,18,23305.1,152777.85,28,OK,3.5,1,Wholesale,Debit Card
+T0240,2025-03-14 22:50:06,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,30,51814.0,51814.0,12,6217.68,58031.68,18,OK,1.1,0,Returning,Credit Card
+T0241,2025-04-11 02:18:37,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,20,1357.6,1357.6,18,244.37,1601.97,36,OK,2.5,0,Regular,Cash
+T0242,2025-03-14 04:28:39,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,27,7368.62,7368.62,12,884.23,8252.85,13,OK,4.5,0,Returning,UPI
+T0243,2025-04-03 13:40:14,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,17,2146.38,2146.38,18,386.35,2532.73,39,OK,2.3,0,Wholesale,Net Banking
+T0244,2025-03-22 03:05:47,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,30,28719.6,28719.6,12,3446.35,32165.95,18,OK,4.5,0,Returning,Net Banking
+T0245,2025-03-22 16:05:49,Laptop Accessories,Charger,HP Charger 28,HP,2218,19,1796.58,1796.58,18,323.38,2119.96,29,OK,3.9,0,New,Credit Card
+T0246,2025-04-01 03:59:47,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,6,38566.32,38566.32,12,4627.96,43194.28,17,OK,4.4,0,Regular,UPI
+T0247,2025-04-01 14:37:01,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,16,2758.56,2758.56,18,496.54,3255.1,52,OK,4.8,0,New,Cash
+T0248,2025-03-21 10:50:06,Laptops,Notebook,Acer Notebook 29,Acer,26371,5,25052.45,25052.45,18,4509.44,29561.89,27,OK,1.3,0,New,UPI
+T0249,2025-04-03 00:55:56,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,26,32683.58,32683.58,12,3922.03,36605.61,47,OK,3.3,0,Returning,Cash
+T0250,2025-03-15 15:01:29,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,3,54711.88,54711.88,12,6565.43,61277.31,53,OK,4.1,0,Regular,Credit Card
+T0251,2025-04-02 04:33:49,Laptops,Notebook,Dell Notebook 48,Dell,141050,1,139639.5,139639.5,18,25135.11,164774.61,21,OK,4.2,0,Regular,UPI
+T0252,2025-04-08 03:07:53,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,19,215.46,215.46,18,38.78,254.24,49,OK,1.6,1,Wholesale,Credit Card
+T0253,2025-04-01 19:06:52,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,23,2922.92,2922.92,18,526.13,3449.05,48,OK,4.1,0,Returning,Debit Card
+T0254,2025-03-30 14:34:47,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,26,1913.64,1913.64,18,344.46,2258.1,38,OK,3.1,0,New,UPI
+T0255,2025-03-14 09:16:37,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,5,22047.6,22047.6,12,2645.71,24693.31,30,OK,4.2,0,Regular,Credit Card
+T0256,2025-04-02 01:20:29,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,19,45687.24,45687.24,12,5482.47,51169.71,52,OK,4.9,0,Regular,UPI
+T0257,2025-04-02 01:23:31,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,5,41597.65,41597.65,12,4991.72,46589.37,37,OK,2.2,0,New,Credit Card
+T0258,2025-03-20 00:13:48,Laptops,Notebook,Acer Notebook 29,Acer,26371,29,18723.41,18723.41,18,3370.21,22093.62,26,OK,2.4,0,Regular,UPI
+T0259,2025-03-22 07:47:05,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,2,3052.7,3052.7,18,549.49,3602.19,10,Low Stock,4.6,0,Regular,UPI
+T0260,2025-03-29 00:45:47,Laptop Accessories,Bag,HP Bag 39,HP,3328,10,2995.2,2995.2,18,539.14,3534.34,49,OK,1.0,0,New,UPI
+T0261,2025-03-29 23:07:15,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,27,88135.09,88135.09,18,15864.32,103999.41,17,OK,2.6,0,Regular,Debit Card
+T0262,2025-03-19 22:06:57,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,20,35029.6,35029.6,12,4203.55,39233.15,36,OK,1.3,0,Regular,Credit Card
+T0263,2025-03-28 10:14:04,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,5,2721.75,2721.75,18,489.92,3211.67,15,OK,4.9,0,Returning,UPI
+T0264,2025-03-26 01:51:16,Laptop Accessories,Charger,HP Charger 28,HP,2218,29,1574.78,1574.78,18,283.46,1858.24,28,OK,2.6,0,Regular,UPI
+T0265,2025-04-02 09:51:34,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,29,1339.77,1339.77,18,241.16,1580.93,54,OK,3.5,0,Returning,Debit Card
+T0266,2025-03-21 23:26:06,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,16,34463.52,34463.52,12,4135.62,38599.14,16,OK,3.7,0,Regular,Credit Card
+T0267,2025-03-16 19:21:17,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,28,3458.16,3458.16,18,622.47,4080.63,22,OK,1.2,0,Wholesale,Debit Card
+T0268,2025-03-23 20:38:05,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,12,38028.32,38028.32,12,4563.4,42591.72,28,OK,4.5,0,Regular,Credit Card
+T0269,2025-03-22 06:33:33,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,14,99953.5,99953.5,18,17991.63,117945.13,32,OK,2.5,0,Returning,UPI
+T0270,2025-03-21 09:33:34,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,2,12763.52,12763.52,12,1531.62,14295.14,39,OK,1.6,0,Returning,Cash
+T0271,2025-04-09 02:19:17,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,11,1510.33,1510.33,18,271.86,1782.19,35,OK,2.2,0,Returning,Net Banking
+T0272,2025-03-20 17:33:10,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,18,3868.76,3868.76,18,696.38,4565.14,12,OK,2.0,0,Regular,Credit Card
+T0273,2025-03-16 06:19:20,Laptops,Notebook,Dell Notebook 48,Dell,141050,27,102966.5,102966.5,18,18533.97,121500.47,20,OK,1.3,1,Regular,Credit Card
+T0274,2025-03-30 12:16:02,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,23,56995.4,56995.4,12,6839.45,63834.85,17,OK,3.9,0,New,Debit Card
+T0275,2025-04-06 17:19:47,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,5,3606.2,3606.2,18,649.12,4255.32,47,OK,2.8,1,Returning,Net Banking
+T0276,2025-03-18 04:13:45,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,5,149447.35,149447.35,18,26900.52,176347.87,13,OK,4.4,1,Returning,UPI
+T0277,2025-04-07 00:45:32,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,7,2664.45,2664.45,18,479.6,3144.05,14,OK,1.3,0,New,UPI
+T0278,2025-03-18 12:22:37,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,10,132421.5,132421.5,18,23835.87,156257.37,37,OK,1.8,1,Wholesale,Cash
+T0279,2025-03-17 01:22:57,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,9,2988.44,2988.44,18,537.92,3526.36,51,OK,2.3,0,Regular,Credit Card
+T0280,2025-03-27 17:59:47,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,24,2157.64,2157.64,18,388.38,2546.02,30,OK,1.4,0,New,UPI
+T0281,2025-03-19 18:09:25,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,28,7267.68,7267.68,12,872.12,8139.8,12,OK,2.9,0,New,UPI
+T0282,2025-04-03 06:16:38,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,6,2668.66,2668.66,18,480.36,3149.02,29,OK,1.5,0,Returning,UPI
+T0283,2025-03-30 09:33:33,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,23,1643.18,1643.18,18,295.77,1938.95,51,OK,2.4,0,Returning,Cash
+T0284,2025-03-21 06:51:20,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,13,1713.9,1713.9,18,308.5,2022.4,38,OK,3.7,0,Returning,Debit Card
+T0285,2025-04-07 15:12:11,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,29,85720.43,85720.43,18,15429.68,101150.11,16,OK,1.2,1,Regular,Debit Card
+T0286,2025-03-25 04:46:06,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,25,32840.25,32840.25,12,3940.83,36781.08,35,OK,4.4,0,Regular,Cash
+T0287,2025-03-31 03:19:25,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,17,36658.61,36658.61,12,4399.03,41057.64,46,OK,3.0,0,New,Net Banking
+T0288,2025-03-29 00:35:41,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,4,4610.88,4610.88,18,829.96,5440.84,21,OK,3.2,0,Regular,UPI
+T0289,2025-03-31 14:53:40,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,16,36299.76,36299.76,12,4355.97,40655.73,27,OK,1.5,0,Regular,Credit Card
+T0290,2025-04-01 16:01:11,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,8,2590.72,2590.72,18,466.33,3057.05,47,OK,3.8,0,New,Credit Card
+T0291,2025-03-30 11:30:39,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,22,3746.34,3746.34,18,674.34,4420.68,20,OK,3.8,0,New,Net Banking
+T0292,2025-03-17 17:20:04,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,13,49071.48,49071.48,12,5888.58,54960.06,51,OK,4.5,0,Returning,Credit Card
+T0293,2025-03-14 07:55:09,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,7,135291.75,135291.75,18,24352.51,159644.26,27,OK,4.9,0,Returning,Cash
+T0294,2025-04-03 09:34:17,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,27,13242.93,13242.93,12,1589.15,14832.08,11,OK,3.4,0,Regular,Cash
+T0295,2025-03-18 00:45:16,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,5,149447.35,149447.35,18,26900.52,176347.87,12,OK,3.6,0,Regular,Credit Card
+T0296,2025-03-24 08:36:01,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,23,2528.68,2528.68,18,455.16,2983.84,50,OK,1.2,1,New,Cash
+T0297,2025-03-27 20:32:06,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,26,52761.26,52761.26,12,6331.35,59092.61,34,OK,1.0,0,Returning,UPI
+T0298,2025-03-29 05:18:27,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,30,30916.9,30916.9,12,3710.03,34626.93,45,OK,4.9,0,New,Credit Card
+T0299,2025-04-05 02:57:45,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,1,19655.46,19655.46,12,2358.66,22014.12,15,OK,2.5,1,Regular,UPI
+T0300,2025-04-02 22:31:27,Laptops,Notebook,Dell Notebook 48,Dell,141050,8,129766.0,129766.0,18,23357.88,153123.88,19,OK,3.7,0,New,UPI
+T0301,2025-03-23 00:53:55,Laptops,Notebook,MSI Notebook 11,MSI,58421,2,57252.58,57252.58,18,10305.46,67558.04,9,Low Stock,3.7,0,Wholesale,Debit Card
+T0302,2025-03-17 13:15:56,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,4,528.96,528.96,18,95.21,624.17,32,OK,1.4,0,New,Debit Card
+T0303,2025-04-01 23:20:52,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,20,96586.4,96586.4,18,17385.55,113971.95,15,OK,3.6,0,Returning,Debit Card
+T0304,2025-03-14 08:14:55,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,5,1792.65,1792.65,18,322.68,2115.33,53,OK,1.1,0,Regular,Credit Card
+T0305,2025-04-05 16:49:46,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,26,2083.84,2083.84,18,375.09,2458.93,46,OK,3.5,0,New,UPI
+T0306,2025-03-15 15:42:36,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,23,73176.95,73176.95,18,13171.85,86348.8,42,OK,3.7,1,New,Cash
+T0307,2025-04-10 02:13:50,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,28,1221.84,1221.84,18,219.93,1441.77,34,OK,1.1,0,Regular,Cash
+T0308,2025-04-06 14:06:02,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,16,79829.4,79829.4,18,14369.29,94198.69,41,OK,1.7,0,Regular,UPI
+T0309,2025-04-10 06:35:12,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,30,23135.0,23135.0,12,2776.2,25911.2,23,OK,1.7,0,Returning,Cash
+T0310,2025-04-10 09:19:24,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,15,8579.9,8579.9,12,1029.59,9609.49,11,OK,1.6,0,Regular,Credit Card
+T0311,2025-03-22 07:43:39,Laptops,Notebook,Acer Notebook 2,Acer,37689,28,27136.08,27136.08,18,4884.49,32020.57,46,OK,1.5,1,Wholesale,Cash
+T0312,2025-03-27 17:51:51,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,17,122122.05,122122.05,18,21981.97,144104.02,36,OK,4.3,0,New,UPI
+T0313,2025-04-12 09:04:50,Laptop Accessories,Bag,HP Bag 39,HP,3328,10,2995.2,2995.2,18,539.14,3534.34,48,OK,4.6,0,Returning,UPI
+T0314,2025-03-22 06:31:47,Laptop Accessories,Bag,HP Bag 39,HP,3328,12,2928.64,2928.64,18,527.16,3455.8,47,OK,1.6,1,New,Cash
+T0315,2025-03-28 17:33:22,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,11,103440.25,103440.25,18,18619.24,122059.49,31,OK,1.6,0,Returning,UPI
+T0316,2025-04-07 19:46:20,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,19,912.87,912.87,18,164.32,1077.19,11,OK,2.8,0,Regular,UPI
+T0317,2025-04-07 06:55:52,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,0,19854.0,19854.0,12,2382.48,22236.48,14,OK,4.4,0,New,UPI
+T0318,2025-04-01 17:33:44,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,3,55954.45,55954.45,12,6714.53,62668.98,19,OK,4.9,0,Returning,UPI
+T0319,2025-03-16 05:03:23,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,28,2044.08,2044.08,18,367.93,2412.01,28,OK,1.6,1,Regular,Debit Card
+T0320,2025-04-10 17:00:54,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,12,1877.92,1877.92,18,338.03,2215.95,50,OK,1.1,0,Regular,UPI
+T0321,2025-04-07 18:35:27,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,16,946.68,946.68,18,170.4,1117.08,10,Low Stock,3.3,0,New,Debit Card
+T0322,2025-03-24 20:46:43,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,25,2463.0,2463.0,18,443.34,2906.34,49,OK,5.0,0,Regular,UPI
+T0323,2025-04-10 05:14:30,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,29,1999.36,1999.36,18,359.88,2359.24,45,OK,1.6,0,New,Net Banking
+T0324,2025-03-17 17:47:10,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,30,639.8,639.8,18,115.16,754.96,8,Low Stock,4.1,0,New,UPI
+T0325,2025-03-17 13:54:14,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,7,2404.98,2404.98,18,432.9,2837.88,37,OK,4.9,0,Regular,Debit Card
+T0326,2025-04-02 13:01:27,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,26,2100.86,2100.86,18,378.15,2479.01,27,OK,1.7,1,New,UPI
+T0327,2025-04-01 18:04:25,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,10,706.5,706.5,18,127.17,833.67,13,OK,3.6,0,Returning,Cash
+T0328,2025-04-02 19:18:41,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,16,2758.56,2758.56,18,496.54,3255.1,48,OK,4.6,0,Regular,Debit Card
+T0329,2025-04-09 15:42:05,Laptops,Notebook,MSI Notebook 11,MSI,58421,4,56084.16,56084.16,18,10095.15,66179.31,8,Low Stock,1.7,0,Returning,Credit Card
+T0330,2025-03-21 02:31:56,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,13,38094.69,38094.69,12,4571.36,42666.05,34,OK,2.5,0,Returning,Credit Card
+T0331,2025-04-07 16:15:52,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,21,26109.5,26109.5,12,3133.14,29242.64,22,OK,3.9,0,New,UPI
+T0332,2025-03-21 13:03:48,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,16,1688.4,1688.4,18,303.91,1992.31,39,OK,2.7,0,New,Credit Card
+T0333,2025-03-22 02:17:58,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,1,22975.92,22975.92,12,2757.11,25733.03,29,OK,4.3,0,Regular,UPI
+T0334,2025-03-20 18:10:10,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,14,21758.0,21758.0,12,2610.96,24368.96,27,OK,1.6,1,Regular,Net Banking
+T0335,2025-03-23 20:23:53,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,18,1351.36,1351.36,18,243.24,1594.6,54,OK,2.3,0,Regular,UPI
+T0336,2025-03-14 20:48:58,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,1,4670.82,4670.82,18,840.75,5511.57,11,OK,3.0,0,Returning,Credit Card
+T0337,2025-03-29 00:53:30,Laptops,Notebook,Acer Notebook 2,Acer,37689,13,32789.43,32789.43,18,5902.1,38691.53,45,OK,1.9,0,New,Debit Card
+T0338,2025-04-07 19:23:01,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,19,635.85,635.85,18,114.45,750.3,12,OK,4.3,0,Wholesale,UPI
+T0339,2025-03-15 15:07:32,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,6,41159.78,41159.78,12,4939.17,46098.95,33,OK,1.2,1,New,Debit Card
+T0340,2025-04-10 09:09:46,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,26,116411.62,116411.62,18,20954.09,137365.71,11,OK,1.1,0,New,UPI
+T0341,2025-04-06 11:09:15,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,14,675.1,675.1,18,121.52,796.62,11,OK,1.8,0,New,UPI
+T0342,2025-03-21 13:54:54,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,28,2733.12,2733.12,18,491.96,3225.08,46,OK,2.6,0,Regular,UPI
+T0343,2025-03-27 03:56:42,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,24,88331.0,88331.0,18,15899.58,104230.58,30,OK,5.0,0,Returning,UPI
+T0344,2025-03-22 13:39:21,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,20,96586.4,96586.4,18,17385.55,113971.95,14,OK,2.4,0,Wholesale,Credit Card
+T0345,2025-03-22 19:42:07,Laptops,Notebook,Dell Notebook 48,Dell,141050,30,98735.0,98735.0,18,17772.3,116507.3,18,OK,4.3,0,New,Credit Card
+T0346,2025-03-27 16:39:04,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,28,1186.56,1186.56,18,213.58,1400.14,53,OK,2.8,0,New,UPI
+T0347,2025-03-22 04:14:13,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,26,7469.56,7469.56,12,896.35,8365.91,10,Low Stock,3.6,1,Regular,Credit Card
+T0348,2025-04-06 08:13:53,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,30,66524.5,66524.5,18,11974.41,78498.91,40,OK,4.4,0,Returning,UPI
+T0349,2025-03-15 06:45:55,Laptops,Notebook,Acer Notebook 29,Acer,26371,6,24788.74,24788.74,18,4461.97,29250.71,25,OK,4.9,0,Wholesale,Debit Card
+T0350,2025-04-11 23:32:29,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,0,74020.0,74020.0,12,8882.4,82902.4,16,OK,3.1,0,New,Debit Card
+T0351,2025-03-17 18:20:40,Laptops,Notebook,MSI Notebook 11,MSI,58421,19,47321.01,47321.01,18,8517.78,55838.79,7,Low Stock,1.5,0,Regular,Credit Card
+T0352,2025-04-06 11:58:55,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,7,40721.91,40721.91,12,4886.63,45608.54,32,OK,3.5,0,Regular,Credit Card
+T0353,2025-03-31 07:08:55,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,15,49032.25,49032.25,12,5883.87,54916.12,18,OK,2.8,0,Returning,UPI
+T0354,2025-04-06 03:22:44,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,1,4619.34,4619.34,18,831.48,5450.82,17,OK,1.1,1,Regular,UPI
+T0355,2025-04-04 02:51:43,Laptop Accessories,Bag,HP Bag 39,HP,3328,17,2762.24,2762.24,18,497.2,3259.44,46,OK,4.9,0,Regular,UPI
+T0356,2025-03-28 11:13:49,Laptops,Notebook,MSI Notebook 11,MSI,58421,24,44399.96,44399.96,18,7991.99,52391.95,6,Low Stock,1.0,0,New,Net Banking
+T0357,2025-04-05 20:44:57,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,6,147874.22,147874.22,18,26617.36,174491.58,10,Low Stock,3.5,0,Regular,Net Banking
+T0358,2025-04-07 21:47:45,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,12,2741.2,2741.2,18,493.42,3234.62,9,Low Stock,3.2,0,New,UPI
+T0359,2025-03-30 20:17:17,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,29,23465.5,23465.5,12,2815.86,26281.36,21,OK,2.0,0,Returning,Debit Card
+T0360,2025-04-06 15:19:35,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,10,2555.1,2555.1,18,459.92,3015.02,26,OK,4.2,0,Regular,UPI
+T0361,2025-03-23 03:28:50,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,16,48455.4,48455.4,12,5814.65,54270.05,17,OK,3.3,0,Returning,UPI
+T0362,2025-04-11 04:34:14,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,23,73176.95,73176.95,18,13171.85,86348.8,39,OK,2.7,0,New,UPI
+T0363,2025-03-24 23:15:27,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,13,1856.58,1856.58,18,334.18,2190.76,49,OK,3.8,0,Regular,Credit Card
+T0364,2025-04-05 09:58:52,Laptops,Notebook,Acer Notebook 2,Acer,37689,11,33543.21,33543.21,18,6037.78,39580.99,44,OK,3.3,0,Regular,UPI
+T0365,2025-03-31 04:13:58,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,14,17074.44,17074.44,12,2048.93,19123.37,13,OK,1.5,1,Regular,Debit Card
+T0366,2025-03-26 16:02:18,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,24,1289.72,1289.72,18,232.15,1521.87,33,OK,1.7,0,New,Credit Card
+T0367,2025-03-25 04:58:00,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,29,3312.86,3312.86,18,596.31,3909.17,16,OK,1.7,0,Regular,UPI
+T0368,2025-03-19 19:26:17,Laptops,Notebook,MSI Notebook 11,MSI,58421,0,58421.0,58421.0,18,10515.78,68936.78,5,Low Stock,4.9,1,Regular,UPI
+T0369,2025-03-21 11:24:38,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,25,7570.5,7570.5,12,908.46,8478.96,9,Low Stock,2.1,0,Returning,UPI
+T0370,2025-04-07 10:28:40,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,11,17670.06,17670.06,12,2120.41,19790.47,12,OK,2.9,0,Wholesale,UPI
+T0371,2025-03-31 09:11:10,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,12,3340.48,3340.48,18,601.29,3941.77,45,OK,3.3,0,New,Debit Card
+T0372,2025-04-06 12:50:52,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,24,1621.84,1621.84,18,291.93,1913.77,48,OK,1.8,0,Returning,Debit Card
+T0373,2025-03-19 13:34:43,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,30,639.8,639.8,18,115.16,754.96,7,Low Stock,2.6,0,Regular,UPI
+T0374,2025-04-04 17:01:58,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,5,18861.3,18861.3,12,2263.36,21124.66,11,OK,1.5,1,Regular,Cash
+T0375,2025-03-20 14:16:22,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,10,4322.7,4322.7,18,778.09,5100.79,19,OK,2.9,0,Regular,Cash
+T0376,2025-04-02 22:37:17,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,19,8176.14,8176.14,12,981.14,9157.28,8,Low Stock,2.4,0,New,Net Banking
+T0377,2025-04-06 09:23:37,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,10,706.5,706.5,18,127.17,833.67,10,Low Stock,4.0,0,Returning,Cash
+T0378,2025-03-15 04:52:01,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,25,17406.0,17406.0,12,2088.72,19494.72,28,OK,2.1,0,New,Debit Card
+T0379,2025-03-15 21:40:06,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,4,1582.08,1582.08,18,284.77,1866.85,52,OK,1.9,0,Regular,UPI
+T0380,2025-03-15 17:24:38,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,19,2660.04,2660.04,18,478.81,3138.85,47,OK,4.7,0,Regular,UPI
+T0381,2025-03-30 15:49:28,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,22,2234.7,2234.7,18,402.25,2636.95,13,OK,4.1,0,New,UPI
+T0382,2025-04-12 04:01:26,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,29,16477.68,16477.68,12,1977.32,18455.0,27,OK,4.2,0,Regular,Credit Card
+T0383,2025-03-16 09:49:26,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,29,1398.7,1398.7,18,251.77,1650.47,37,OK,3.8,0,Regular,Debit Card
+T0384,2025-03-14 10:37:27,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,19,18798.48,18798.48,12,2255.82,21054.3,26,OK,3.2,0,Regular,Net Banking
+T0385,2025-03-21 13:09:33,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,6,4386.04,4386.04,18,789.49,5175.53,15,OK,2.4,0,New,UPI
+T0386,2025-03-26 00:39:45,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,0,107233.0,107233.0,18,19301.94,126534.94,35,OK,2.5,0,New,UPI
+T0387,2025-03-26 23:12:02,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,7,247.38,247.38,18,44.53,291.91,48,OK,4.6,0,Regular,UPI
+T0388,2025-03-25 01:31:03,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,13,4059.42,4059.42,18,730.7,4790.12,14,OK,2.4,0,Returning,UPI
+T0389,2025-04-11 17:53:46,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,3,24541.0,24541.0,12,2944.92,27485.92,26,OK,4.2,0,Wholesale,Debit Card
+T0390,2025-04-07 02:17:07,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,15,47943.4,47943.4,12,5753.21,53696.61,50,OK,3.4,0,Wholesale,Cash
+T0391,2025-04-12 18:06:48,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,3,112738.25,112738.25,18,20292.88,133031.13,29,OK,2.4,0,Returning,Debit Card
+T0392,2025-04-06 12:08:36,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,9,39846.17,39846.17,12,4781.54,44627.71,31,OK,1.7,1,Regular,UPI
+T0393,2025-03-30 22:55:02,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,28,2044.08,2044.08,18,367.93,2412.01,25,OK,2.4,0,Returning,Cash
+T0394,2025-04-08 14:21:05,Laptop Accessories,Charger,HP Charger 28,HP,2218,7,2062.74,2062.74,18,371.29,2434.03,27,OK,4.2,0,Regular,Credit Card
+T0395,2025-04-06 07:54:13,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,23,703.78,703.78,18,126.68,830.46,6,Low Stock,3.1,0,Regular,UPI
+T0396,2025-03-31 15:44:16,Laptops,Notebook,Acer Notebook 29,Acer,26371,4,25316.16,25316.16,18,4556.91,29873.07,24,OK,2.8,0,Regular,Cash
+T0397,2025-04-11 18:38:26,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,27,31964.51,31964.51,12,3835.74,35800.25,30,OK,4.5,0,Regular,Credit Card
+T0398,2025-03-27 04:39:14,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,24,2884.96,2884.96,18,519.29,3404.25,44,OK,3.0,0,Returning,Debit Card
+T0399,2025-04-12 13:52:28,Laptop Accessories,Charger,HP Charger 28,HP,2218,4,2129.28,2129.28,18,383.27,2512.55,26,OK,3.5,0,New,Debit Card
+T0400,2025-04-02 10:09:58,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,28,1358.64,1358.64,18,244.56,1603.2,52,OK,2.9,0,Wholesale,UPI
+T0401,2025-04-07 00:45:48,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,14,125108.5,125108.5,18,22519.53,147628.03,26,OK,1.9,0,Regular,Cash
+T0402,2025-04-12 01:23:12,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,11,84581.15,84581.15,18,15224.61,99805.76,38,OK,3.9,0,New,Debit Card
+T0403,2025-03-30 20:01:53,Laptops,Notebook,Acer Notebook 29,Acer,26371,22,20569.38,20569.38,18,3702.49,24271.87,23,OK,4.2,0,Regular,UPI
+T0404,2025-04-05 22:21:58,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,18,3826.12,3826.12,18,688.7,4514.82,13,OK,4.7,0,Regular,Debit Card
+T0405,2025-04-06 19:52:59,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,30,2298.8,2298.8,18,413.78,2712.58,46,OK,4.9,0,Regular,UPI
+T0406,2025-03-15 10:21:51,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,20,1318.4,1318.4,18,237.31,1555.71,51,OK,1.8,1,Regular,UPI
+T0407,2025-03-29 18:52:22,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,15,2744.65,2744.65,18,494.04,3238.69,25,OK,2.7,0,Returning,Debit Card
+T0408,2025-04-09 21:31:19,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,27,88135.09,88135.09,18,15864.32,103999.41,13,OK,2.6,0,New,Cash
+T0409,2025-04-03 06:55:55,Laptops,Notebook,Acer Notebook 29,Acer,26371,23,20305.67,20305.67,18,3655.02,23960.69,22,OK,1.3,0,Returning,Debit Card
+T0410,2025-03-17 19:38:17,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,4,115903.68,115903.68,18,20862.66,136766.34,12,OK,3.0,0,Regular,UPI
+T0411,2025-04-12 14:46:02,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,26,32402.38,32402.38,12,3888.29,36290.67,29,OK,4.7,0,Regular,Debit Card
+T0412,2025-04-04 19:59:27,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,1,25047.0,25047.0,12,3005.64,28052.64,25,OK,3.8,0,New,Debit Card
+T0413,2025-04-08 02:30:33,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,23,3632.86,3632.86,18,653.91,4286.77,10,Low Stock,4.2,0,Regular,UPI
+T0414,2025-03-18 19:18:03,Laptop Accessories,Bag,HP Bag 39,HP,3328,15,2828.8,2828.8,18,509.18,3337.98,45,OK,1.1,0,New,Credit Card
+T0415,2025-03-27 19:19:44,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,13,1748.7,1748.7,18,314.77,2063.47,38,OK,2.4,0,Wholesale,Cash
+T0416,2025-03-25 13:40:32,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,6,53019.76,53019.76,12,6362.37,59382.13,49,OK,2.1,0,Returning,Net Banking
+T0417,2025-03-25 09:12:30,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,13,1641.69,1641.69,18,295.5,1937.19,51,OK,2.5,0,Returning,Debit Card
+T0418,2025-04-08 16:04:40,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,20,45123.2,45123.2,12,5414.78,50537.98,48,OK,2.9,0,New,Credit Card
+T0419,2025-03-21 12:14:41,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,20,212.8,212.8,18,38.3,251.1,47,OK,4.3,0,Returning,Debit Card
+T0420,2025-03-16 03:11:22,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,22,14149.98,14149.98,12,1698.0,15847.98,10,Low Stock,4.4,0,New,Cash
+T0421,2025-03-21 05:22:29,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,17,2377.95,2377.95,18,428.03,2805.98,12,OK,3.6,0,Returning,UPI
+T0422,2025-04-12 15:33:26,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,18,16280.28,16280.28,12,1953.63,18233.91,10,Low Stock,1.5,0,Regular,Cash
+T0423,2025-03-29 16:33:20,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,6,67021.06,67021.06,12,8042.53,75063.59,33,OK,2.7,0,Regular,Net Banking
+T0424,2025-04-06 19:53:38,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,30,1153.6,1153.6,18,207.65,1361.25,50,OK,3.8,0,Returning,Credit Card
+T0425,2025-04-03 09:29:33,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,30,2298.8,2298.8,18,413.78,2712.58,45,OK,1.1,1,Returning,Cash
+T0426,2025-04-06 21:52:34,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,16,122199.0,122199.0,18,21995.82,144194.82,25,OK,4.3,0,New,UPI
+T0427,2025-04-02 04:22:12,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,22,25779.0,25779.0,12,3093.48,28872.48,20,OK,2.7,0,Regular,UPI
+T0428,2025-03-30 22:21:29,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,7,2896.95,2896.95,18,521.45,3418.4,8,Low Stock,2.0,0,New,UPI
+T0429,2025-04-01 22:53:53,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,13,1713.9,1713.9,18,308.5,2022.4,36,OK,1.2,1,Returning,Credit Card
+T0430,2025-03-23 04:01:15,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,19,2615.49,2615.49,18,470.79,3086.28,24,OK,2.5,0,Returning,Cash
+T0431,2025-03-26 11:48:00,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,7,512.43,512.43,18,92.24,604.67,31,OK,4.0,0,Regular,Credit Card
+T0432,2025-03-18 00:31:16,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,1,42781.86,42781.86,12,5133.82,47915.68,26,OK,4.6,0,Returning,Credit Card
+T0433,2025-04-05 08:56:39,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,10,22770.0,22770.0,12,2732.4,25502.4,24,OK,1.4,1,Returning,Debit Card
+T0434,2025-03-14 14:57:05,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,18,2692.88,2692.88,18,484.72,3177.6,44,OK,2.4,1,Returning,UPI
+T0435,2025-03-25 23:24:17,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,19,94142.25,94142.25,18,16945.6,111087.85,28,OK,1.9,1,Returning,Debit Card
+T0436,2025-03-30 00:38:56,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,14,2678.9,2678.9,18,482.2,3161.1,7,Low Stock,4.3,0,Returning,Credit Card
+T0437,2025-03-27 10:45:24,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,26,2305.1,2305.1,18,414.92,2720.02,6,Low Stock,3.6,0,Returning,Net Banking
+T0438,2025-04-12 10:04:16,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,30,49909.3,49909.3,12,5989.12,55898.42,32,OK,3.6,0,Regular,Credit Card
+T0439,2025-04-09 14:21:16,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,5,4482.1,4482.1,18,806.78,5288.88,9,Low Stock,1.2,1,New,UPI
+T0440,2025-03-26 13:08:03,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,26,2389.46,2389.46,18,430.1,2819.56,23,OK,2.0,0,New,Debit Card
+T0441,2025-03-23 03:25:35,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,0,1648.0,1648.0,18,296.64,1944.64,49,OK,2.6,1,Returning,Credit Card
+T0442,2025-04-11 04:41:48,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,1,22975.92,22975.92,12,2757.11,25733.03,25,OK,1.3,1,Regular,UPI
+T0443,2025-03-25 17:19:34,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,5,3067.55,3067.55,18,552.16,3619.71,22,OK,3.5,0,New,Cash
+T0444,2025-03-30 22:33:10,Laptops,Notebook,Dell Notebook 48,Dell,141050,6,132587.0,132587.0,18,23865.66,156452.66,17,OK,4.3,0,Wholesale,Credit Card
+T0445,2025-03-25 06:19:05,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,15,47943.4,47943.4,12,5753.21,53696.61,47,OK,4.9,0,Regular,Credit Card
+T0446,2025-04-12 04:57:33,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,22,113470.5,113470.5,18,20424.69,133895.19,24,OK,3.4,0,Returning,UPI
+T0447,2025-03-15 19:13:17,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,9,133892.85,133892.85,18,24100.71,157993.56,35,OK,1.1,0,Regular,Credit Card
+T0448,2025-04-08 20:35:27,Laptop Accessories,Bag,HP Bag 39,HP,3328,25,2496.0,2496.0,18,449.28,2945.28,44,OK,1.7,0,Regular,UPI
+T0449,2025-03-24 12:53:51,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,0,785.0,785.0,18,141.3,926.3,9,Low Stock,3.5,1,Returning,Debit Card
+T0450,2025-03-26 11:33:59,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,8,37745.76,37745.76,12,4529.49,42275.25,15,OK,2.9,0,Returning,Credit Card
+T0451,2025-03-24 17:32:08,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,23,1547.7,1547.7,18,278.59,1826.29,37,OK,3.3,0,Returning,UPI
+T0452,2025-04-08 03:03:24,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,11,2772.35,2772.35,18,499.02,3271.37,5,Low Stock,1.1,1,New,UPI
+T0453,2025-03-29 02:41:04,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,19,446.31,446.31,18,80.34,526.65,30,OK,2.1,0,Regular,UPI
+T0454,2025-03-24 19:31:33,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,22,55613.22,55613.22,12,6673.59,62286.81,31,OK,2.6,0,Returning,UPI
+T0455,2025-03-27 07:35:34,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,13,22011.0,22011.0,12,2641.32,24652.32,23,OK,2.0,0,Regular,Cash
+T0456,2025-03-18 22:59:13,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,20,2271.2,2271.2,18,408.82,2680.02,24,OK,2.2,0,Returning,Credit Card
+T0457,2025-03-26 04:25:33,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,9,1829.1,1829.1,18,329.24,2158.34,36,OK,4.3,0,Returning,UPI
+T0458,2025-04-02 12:49:40,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,3,152593.61,152593.61,18,27466.85,180060.46,9,Low Stock,3.2,0,Returning,Debit Card
+T0459,2025-03-27 23:14:21,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,1,70586.01,70586.01,12,8470.32,79056.33,30,OK,3.5,0,Regular,Cash
+T0460,2025-03-31 23:55:16,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,7,1578.21,1578.21,18,284.08,1862.29,32,OK,3.0,0,Wholesale,Credit Card
+T0461,2025-03-18 13:41:19,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,20,15883.2,15883.2,12,1905.98,17789.18,9,Low Stock,3.7,0,Returning,Debit Card
+T0462,2025-04-06 22:04:59,Laptops,Notebook,Acer Notebook 29,Acer,26371,29,18723.41,18723.41,18,3370.21,22093.62,21,OK,2.3,0,Regular,Cash
+T0463,2025-03-24 01:33:52,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,24,88331.0,88331.0,18,15899.58,104230.58,27,OK,2.4,0,Wholesale,UPI
+T0464,2025-04-07 12:44:24,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,15,28092.5,28092.5,12,3371.1,31463.6,19,OK,2.7,0,Returning,Cash
+T0465,2025-04-10 22:57:13,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,22,3746.34,3746.34,18,674.34,4420.68,18,OK,2.0,0,Returning,UPI
+T0466,2025-03-29 13:16:23,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,4,4610.88,4610.88,18,829.96,5440.84,17,OK,4.3,0,Regular,UPI
+T0467,2025-03-29 14:11:45,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,17,8378.02,8378.02,12,1005.36,9383.38,7,Low Stock,2.5,1,Returning,Debit Card
+T0468,2025-04-01 22:53:26,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,30,17710.0,17710.0,12,2125.2,19835.2,22,OK,4.3,0,Returning,Debit Card
+T0469,2025-03-23 18:04:24,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,14,21758.0,21758.0,12,2610.96,24368.96,21,OK,4.8,0,Regular,UPI
+T0470,2025-04-11 01:27:11,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,9,51327.64,51327.64,12,6159.32,57486.96,46,OK,3.0,0,Returning,UPI
+T0471,2025-04-03 11:27:28,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,10,22770.0,22770.0,12,2732.4,25502.4,20,OK,4.0,0,Regular,UPI
+T0472,2025-04-03 00:00:14,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,7,3054.12,3054.12,18,549.74,3603.86,43,OK,3.1,0,Returning,UPI
+T0473,2025-03-22 00:33:45,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,28,86927.76,86927.76,18,15647.0,102574.76,11,OK,3.4,0,Regular,UPI
+T0474,2025-03-17 04:33:38,Laptop Accessories,Charger,HP Charger 28,HP,2218,14,1907.48,1907.48,18,343.35,2250.83,25,OK,1.5,0,Wholesale,UPI
+T0475,2025-04-08 15:37:06,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,0,43214.0,43214.0,12,5185.68,48399.68,25,OK,4.9,0,Regular,UPI
+T0476,2025-03-16 16:50:45,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,28,2324.88,2324.88,18,418.48,2743.36,21,OK,1.0,0,Regular,Debit Card
+T0477,2025-03-29 20:18:18,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,8,3492.32,3492.32,18,628.62,4120.94,43,OK,3.8,0,Regular,Credit Card
+T0478,2025-04-08 19:58:26,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,4,1891.2,1891.2,18,340.42,2231.62,35,OK,3.7,0,New,UPI
+T0479,2025-03-15 06:08:10,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,10,9084.6,9084.6,12,1090.15,10174.75,6,Low Stock,3.9,0,Regular,Credit Card
+T0480,2025-03-19 18:54:42,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,20,96586.4,96586.4,18,17385.55,113971.95,10,Low Stock,2.0,1,Regular,UPI
+T0481,2025-04-03 17:59:05,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,0,116225.0,116225.0,18,20920.5,137145.5,26,OK,3.1,0,New,UPI
+T0482,2025-04-11 08:25:21,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,8,65595.08,65595.08,12,7871.41,73466.49,29,OK,3.6,0,New,Credit Card
+T0483,2025-03-31 22:10:27,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,25,845.25,845.25,18,152.15,997.4,9,Low Stock,2.1,0,New,UPI
+T0484,2025-04-07 16:31:24,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,29,12880.11,12880.11,12,1545.61,14425.72,9,Low Stock,1.1,0,Regular,Cash
+T0485,2025-04-06 05:33:51,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,0,2134.0,2134.0,18,384.12,2518.12,47,OK,3.1,0,Wholesale,Cash
+T0486,2025-04-06 08:18:34,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,24,1965.36,1965.36,18,353.76,2319.12,36,OK,3.8,0,New,Debit Card
+T0487,2025-04-10 07:25:31,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,18,218.12,218.12,18,39.26,257.38,46,OK,2.0,0,New,Debit Card
+T0488,2025-04-04 22:38:34,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,25,1600.5,1600.5,18,288.09,1888.59,46,OK,4.8,0,New,UPI
+T0489,2025-03-16 12:06:45,Laptop Accessories,Bag,HP Bag 39,HP,3328,22,2595.84,2595.84,18,467.25,3063.09,43,OK,3.3,0,Regular,UPI
+T0490,2025-03-26 16:45:27,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,1,3251.16,3251.16,18,585.21,3836.37,42,OK,4.6,0,Regular,Credit Card
+T0491,2025-04-08 09:28:17,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,15,37218.95,37218.95,12,4466.27,41685.22,28,OK,3.1,0,Returning,Debit Card
+T0492,2025-03-24 10:15:26,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,0,157313.0,157313.0,18,28316.34,185629.34,8,Low Stock,3.8,0,Returning,Cash
+T0493,2025-03-31 19:13:36,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,8,2865.8,2865.8,18,515.84,3381.64,4,Low Stock,3.4,0,Regular,UPI
+T0494,2025-03-21 17:43:27,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,4,2990.4,2990.4,18,538.27,3528.67,3,Low Stock,1.4,0,New,Debit Card
+T0495,2025-03-18 11:53:25,Laptops,Notebook,Acer Notebook 2,Acer,37689,27,27512.97,27512.97,18,4952.33,32465.3,43,OK,2.5,0,Regular,Debit Card
+T0496,2025-04-08 21:27:47,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,21,26109.5,26109.5,12,3133.14,29242.64,18,OK,2.1,0,Regular,Credit Card
+T0497,2025-04-01 11:35:41,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,5,868.3,868.3,18,156.29,1024.59,5,Low Stock,1.9,0,Returning,Cash
+T0498,2025-04-09 01:29:27,Laptop Accessories,Charger,HP Charger 28,HP,2218,18,1818.76,1818.76,18,327.38,2146.14,24,OK,1.9,1,New,Debit Card
+T0499,2025-04-11 22:20:03,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,5,745.75,745.75,18,134.24,879.99,8,Low Stock,3.2,0,Returning,Credit Card
+T0500,2025-03-15 21:13:48,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,25,845.25,845.25,18,152.15,997.4,8,Low Stock,2.9,0,New,Credit Card
+T0501,2025-04-09 15:35:17,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,29,12880.11,12880.11,12,1545.61,14425.72,8,Low Stock,4.4,0,New,UPI
+T0502,2025-04-03 14:12:59,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,0,95035.0,95035.0,18,17106.3,112141.3,37,OK,1.6,0,Regular,UPI
+T0503,2025-03-21 01:43:34,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,24,56255.2,56255.2,12,6750.62,63005.82,15,OK,3.2,0,Wholesale,Net Banking
+T0504,2025-03-17 16:57:04,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,6,859.16,859.16,18,154.65,1013.81,4,Low Stock,3.2,0,Wholesale,UPI
+T0505,2025-03-15 08:25:43,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,19,46724.85,46724.85,12,5606.98,52331.83,16,OK,1.4,0,New,UPI
+T0506,2025-04-09 22:10:55,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,10,132421.5,132421.5,18,23835.87,156257.37,34,OK,3.0,0,Regular,Debit Card
+T0507,2025-03-18 22:06:26,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,21,2224.64,2224.64,18,400.44,2625.08,44,OK,3.0,0,New,Debit Card
+T0508,2025-04-01 11:18:19,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,19,119179.35,119179.35,18,21452.28,140631.63,33,OK,4.7,0,New,Cash
+T0509,2025-03-29 15:35:29,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,17,2146.38,2146.38,18,386.35,2532.73,35,OK,4.0,0,Regular,Credit Card
+T0510,2025-04-02 12:39:03,Laptop Accessories,Charger,HP Charger 28,HP,2218,10,1996.2,1996.2,18,359.32,2355.52,23,OK,2.3,0,Regular,Debit Card
+T0511,2025-03-26 14:48:33,Laptops,Notebook,Dell Notebook 48,Dell,141050,12,124124.0,124124.0,18,22342.32,146466.32,16,OK,4.1,0,Regular,Credit Card
+T0512,2025-03-20 18:29:11,Laptops,Notebook,Acer Notebook 29,Acer,26371,30,18459.7,18459.7,18,3322.75,21782.45,20,OK,1.3,0,Regular,UPI
+T0513,2025-03-15 02:33:41,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,3,39797.16,39797.16,12,4775.66,44572.82,14,OK,3.1,0,Returning,UPI
+T0514,2025-03-18 11:33:29,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,10,108659.7,108659.7,18,19558.75,128218.45,9,Low Stock,2.0,0,New,Debit Card
+T0515,2025-03-28 02:58:18,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,24,1527.6,1527.6,18,274.97,1802.57,35,OK,3.7,0,Returning,UPI
+T0516,2025-03-30 21:28:29,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,30,3362.1,3362.1,18,605.18,3967.28,16,OK,3.1,0,New,Net Banking
+T0517,2025-03-25 07:02:07,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,11,50199.56,50199.56,12,6023.95,56223.51,45,OK,1.4,0,Wholesale,Credit Card
+T0518,2025-04-10 09:38:53,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,0,2010.0,2010.0,18,361.8,2371.8,34,OK,4.4,0,Regular,Credit Card
+T0519,2025-04-06 23:06:54,Laptops,Notebook,MSI Notebook 11,MSI,58421,29,41478.91,41478.91,18,7466.2,48945.11,4,Low Stock,3.2,0,New,Debit Card
+T0520,2025-04-05 05:33:28,Laptops,Notebook,MSI Notebook 11,MSI,58421,9,53163.11,53163.11,18,9569.36,62732.47,3,Low Stock,3.8,0,Returning,Credit Card
+T0521,2025-04-11 06:10:41,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,23,3592.82,3592.82,18,646.71,4239.53,12,OK,4.1,0,Regular,Credit Card
+T0522,2025-04-13 01:13:37,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,12,38028.32,38028.32,12,4563.4,42591.72,24,OK,1.7,1,Regular,UPI
+T0523,2025-04-11 01:24:32,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,7,730.05,730.05,18,131.41,861.46,7,Low Stock,3.0,0,New,Debit Card
+T0524,2025-04-05 14:58:05,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,13,2469.93,2469.93,18,444.59,2914.52,23,OK,2.7,0,Regular,Credit Card
+T0525,2025-03-16 12:46:45,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,27,822.71,822.71,18,148.09,970.8,7,Low Stock,4.4,0,New,Debit Card
+T0526,2025-03-24 21:33:35,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,1,43349.13,43349.13,12,5201.9,48551.03,27,OK,1.6,0,New,UPI
+T0527,2025-03-15 20:12:53,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,25,87168.75,87168.75,18,15690.38,102859.13,25,OK,4.5,0,Regular,UPI
+T0528,2025-03-15 16:22:01,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,22,7873.32,7873.32,12,944.8,8818.12,5,Low Stock,4.6,0,New,Credit Card
+T0529,2025-04-07 11:05:30,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,4,753.6,753.6,18,135.65,889.25,6,Low Stock,4.2,0,Wholesale,Debit Card
+T0530,2025-03-22 04:58:59,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,12,128018.0,128018.0,18,23043.24,151061.24,23,OK,4.8,0,Regular,UPI
+T0531,2025-03-25 01:33:08,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,26,2083.84,2083.84,18,375.09,2458.93,43,OK,2.8,0,Regular,Net Banking
+T0532,2025-04-04 18:45:30,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,26,89342.42,89342.42,18,16081.64,105424.06,8,Low Stock,3.4,0,Wholesale,UPI
+T0533,2025-03-25 14:15:53,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,0,56404.0,56404.0,12,6768.48,63172.48,44,OK,3.8,0,Returning,UPI
+T0534,2025-04-10 09:39:13,Laptops,Notebook,Acer Notebook 2,Acer,37689,23,29020.53,29020.53,18,5223.7,34244.23,42,OK,2.6,0,New,UPI
+T0535,2025-03-23 03:07:46,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,14,21758.0,21758.0,12,2610.96,24368.96,19,OK,1.9,0,Wholesale,Cash
+T0536,2025-03-30 20:55:02,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,28,3359.52,3359.52,18,604.71,3964.23,11,OK,4.6,0,Wholesale,UPI
+T0537,2025-03-16 23:48:42,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,17,122122.05,122122.05,18,21981.97,144104.02,32,OK,3.0,0,Regular,Debit Card
+T0538,2025-03-19 20:05:12,Laptop Accessories,Bag,HP Bag 39,HP,3328,30,2329.6,2329.6,18,419.33,2748.93,42,OK,3.3,0,Regular,UPI
+T0539,2025-04-12 05:35:58,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,6,1549.12,1549.12,18,278.84,1827.96,48,OK,2.4,0,Regular,Credit Card
+T0540,2025-04-01 14:29:20,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,21,14331.39,14331.39,12,1719.77,16051.16,7,Low Stock,3.2,0,Regular,Debit Card
+T0541,2025-04-05 15:33:04,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,28,105937.2,105937.2,18,19068.7,125005.9,31,OK,2.3,0,Regular,Credit Card
+T0542,2025-03-21 13:57:21,Laptop Accessories,Charger,HP Charger 28,HP,2218,28,1596.96,1596.96,18,287.45,1884.41,22,OK,2.0,1,New,Net Banking
+T0543,2025-04-07 00:14:13,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,25,685.5,685.5,18,123.39,808.89,3,Low Stock,3.7,0,Returning,UPI
+T0544,2025-03-21 14:16:49,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,1,263.34,263.34,18,47.4,310.74,45,OK,3.6,0,New,Debit Card
+T0545,2025-04-09 15:36:10,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,8,133837.0,133837.0,18,24090.66,157927.66,22,OK,3.9,0,Regular,Net Banking
+T0546,2025-03-28 15:01:12,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,29,391.21,391.21,18,70.42,461.63,29,OK,4.1,0,Regular,UPI
+T0547,2025-04-11 15:54:05,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,7,1984.62,1984.62,18,357.23,2341.85,45,OK,2.0,1,New,Debit Card
+T0548,2025-03-18 18:17:01,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,18,3826.12,3826.12,18,688.7,4514.82,10,Low Stock,1.5,0,Regular,Debit Card
+T0549,2025-04-05 06:34:37,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,1,1680.03,1680.03,18,302.41,1982.44,31,OK,2.1,0,Regular,UPI
+T0550,2025-03-15 02:50:07,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,23,2528.68,2528.68,18,455.16,2983.84,41,OK,4.3,0,New,UPI
+T0551,2025-04-01 04:26:29,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,19,35775.27,35775.27,12,4293.03,40068.3,44,OK,1.4,0,Returning,UPI
+T0552,2025-04-11 05:32:30,Laptops,Notebook,Acer Notebook 29,Acer,26371,25,19778.25,19778.25,18,3560.09,23338.34,19,OK,2.5,0,Returning,UPI
+T0553,2025-04-03 11:13:09,Laptops,Notebook,Acer Notebook 29,Acer,26371,15,22415.35,22415.35,18,4034.76,26450.11,18,OK,1.5,0,Returning,Cash
+T0554,2025-04-04 07:40:04,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,8,3492.32,3492.32,18,628.62,4120.94,42,OK,1.2,1,Returning,UPI
+T0555,2025-03-26 06:14:48,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,28,51335.28,51335.28,12,6160.23,57495.51,28,OK,1.4,0,New,Credit Card
+T0556,2025-03-16 07:21:54,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,8,51891.68,51891.68,12,6227.0,58118.68,43,OK,2.2,0,Regular,Debit Card
+T0557,2025-04-01 01:33:59,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,21,14331.39,14331.39,12,1719.77,16051.16,6,Low Stock,4.2,0,Returning,Debit Card
+T0558,2025-03-21 16:40:15,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,0,2865.0,2865.0,18,515.7,3380.7,11,OK,1.7,1,New,UPI
+T0559,2025-03-25 16:38:11,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,8,3492.32,3492.32,18,628.62,4120.94,41,OK,2.7,0,Regular,UPI
+T0560,2025-03-15 08:33:31,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,2,105088.34,105088.34,18,18915.9,124004.24,34,OK,3.3,0,New,Net Banking
+T0561,2025-04-11 21:01:15,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,30,385.7,385.7,18,69.43,455.13,28,OK,3.9,0,Regular,Credit Card
+T0562,2025-03-20 20:41:52,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,16,97629.0,97629.0,18,17573.22,115202.22,24,OK,4.4,0,Regular,UPI
+T0563,2025-04-03 17:14:55,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,13,2249.82,2249.82,18,404.97,2654.79,34,OK,3.2,0,New,Credit Card
+T0564,2025-03-30 05:51:41,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,30,17710.0,17710.0,12,2125.2,19835.2,18,OK,2.7,0,Regular,Cash
+T0565,2025-03-14 02:05:20,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,1,40617.72,40617.72,12,4874.13,45491.85,13,OK,1.2,0,Regular,Cash
+T0566,2025-04-01 09:31:50,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,15,62917.0,62917.0,12,7550.04,70467.04,14,OK,4.2,0,Regular,Net Banking
+T0567,2025-04-10 20:39:22,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,28,40610.88,40610.88,12,4873.31,45484.19,42,OK,1.1,0,Regular,UPI
+T0568,2025-03-31 19:28:20,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,15,80779.75,80779.75,18,14540.35,95320.1,36,OK,4.0,0,Returning,UPI
+T0569,2025-04-09 13:05:14,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,7,136835.55,136835.55,18,24630.4,161465.95,30,OK,3.5,0,New,Debit Card
+T0570,2025-03-29 15:26:26,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,30,28719.6,28719.6,12,3446.35,32165.95,12,OK,3.8,0,New,Cash
+T0571,2025-03-30 17:33:03,Laptops,Notebook,Acer Notebook 29,Acer,26371,13,22942.77,22942.77,18,4129.7,27072.47,17,OK,2.8,0,Returning,Debit Card
+T0572,2025-04-02 09:08:38,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,1,1115.73,1115.73,18,200.83,1316.56,6,Low Stock,4.4,0,Regular,Cash
+T0573,2025-03-31 20:05:55,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,1,115062.75,115062.75,18,20711.29,135774.04,23,OK,3.4,0,New,UPI
+T0574,2025-03-20 21:59:39,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,25,32840.25,32840.25,12,3940.83,36781.08,26,OK,4.8,0,Regular,Credit Card
+T0575,2025-03-28 06:11:35,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,3,32058.5,32058.5,12,3847.02,35905.52,17,OK,4.8,0,Returning,UPI
+T0576,2025-04-09 14:08:42,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,14,11200.64,11200.64,12,1344.08,12544.72,38,OK,2.3,0,Regular,UPI
+T0577,2025-03-28 09:57:38,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,8,2865.8,2865.8,18,515.84,3381.64,2,Low Stock,2.1,0,Regular,Net Banking
+T0578,2025-04-08 02:31:58,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,24,3546.16,3546.16,18,638.31,4184.47,9,Low Stock,4.6,0,Wholesale,Credit Card
+T0579,2025-04-03 13:18:31,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,6,737.9,737.9,18,132.82,870.72,5,Low Stock,4.2,0,Wholesale,UPI
+T0580,2025-04-01 16:26:33,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,12,65137.6,65137.6,12,7816.51,72954.11,13,OK,1.2,1,Regular,Debit Card
+T0581,2025-03-26 06:26:48,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,9,39324.74,39324.74,12,4718.97,44043.71,23,OK,2.7,0,New,Debit Card
+T0582,2025-03-14 10:55:48,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,14,473.86,473.86,18,85.29,559.15,27,OK,4.6,0,Regular,Debit Card
+T0583,2025-03-14 17:07:43,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,3,141110.75,141110.75,18,25399.94,166510.69,21,OK,1.5,1,Returning,UPI
+T0584,2025-04-01 18:07:39,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,14,92220.38,92220.38,18,16599.67,108820.05,33,OK,3.1,0,Returning,Credit Card
+T0585,2025-03-15 22:37:52,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,18,749.48,749.48,18,134.91,884.39,2,Low Stock,4.9,0,New,Credit Card
+T0586,2025-04-03 14:06:43,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,4,91233.6,91233.6,18,16422.05,107655.65,35,OK,1.2,0,Regular,UPI
+T0587,2025-04-11 01:26:42,Laptops,Notebook,MSI Notebook 11,MSI,58421,3,56668.37,56668.37,18,10200.31,66868.68,2,Low Stock,3.4,1,Returning,Net Banking
+T0588,2025-03-24 12:33:14,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,17,35867.62,35867.62,12,4304.11,40171.73,22,OK,1.2,0,Regular,UPI
+T0589,2025-04-10 05:06:45,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,23,867.79,867.79,18,156.2,1023.99,5,Low Stock,2.8,0,Regular,Cash
+T0590,2025-03-18 20:07:34,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,17,19262.64,19262.64,12,2311.52,21574.16,24,OK,2.4,0,New,UPI
+T0591,2025-03-21 22:04:11,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,1,1115.73,1115.73,18,200.83,1316.56,4,Low Stock,4.6,0,Regular,Debit Card
+T0592,2025-03-18 16:59:01,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,7,4387.74,4387.74,18,789.79,5177.53,8,Low Stock,2.2,0,Regular,UPI
+T0593,2025-03-29 09:51:43,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,4,3152.64,3152.64,18,567.48,3720.12,40,OK,1.2,1,Regular,Debit Card
+T0594,2025-03-28 21:20:36,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,21,45571.15,45571.15,12,5468.54,51039.69,15,OK,3.0,0,Wholesale,Cash
+T0595,2025-03-29 01:55:52,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,16,3919.44,3919.44,18,705.5,4624.94,8,Low Stock,5.0,0,Regular,Debit Card
+T0596,2025-04-11 00:41:10,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,27,2072.47,2072.47,18,373.04,2445.51,22,OK,4.8,0,Returning,Debit Card
+T0597,2025-03-20 08:09:23,Laptops,Notebook,Dell Notebook 48,Dell,141050,8,129766.0,129766.0,18,23357.88,153123.88,15,OK,4.9,0,Returning,UPI
+T0598,2025-04-01 19:03:44,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,30,186.2,186.2,18,33.52,219.72,44,OK,2.2,1,New,Cash
+T0599,2025-04-08 08:32:23,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,30,40379.5,40379.5,12,4845.54,45225.04,14,OK,4.9,0,Wholesale,UPI
+T0600,2025-03-15 01:56:58,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,3,534.47,534.47,18,96.2,630.67,26,OK,4.7,0,Regular,UPI
+T0601,2025-04-12 20:54:02,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,17,46815.32,46815.32,12,5617.84,52433.16,41,OK,2.5,0,Regular,Debit Card
+T0602,2025-04-06 11:20:46,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,5,22047.6,22047.6,12,2645.71,24693.31,23,OK,1.7,0,Regular,Credit Card
+T0603,2025-03-27 07:22:51,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,12,804.32,804.32,18,144.78,949.1,1,Low Stock,1.5,1,Returning,Debit Card
+T0604,2025-03-31 10:52:38,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,27,114838.49,114838.49,18,20670.93,135509.42,7,Low Stock,3.3,0,Regular,Credit Card
+T0605,2025-03-15 05:23:31,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,22,32001.84,32001.84,12,3840.22,35842.06,11,OK,2.5,0,Returning,Cash
+T0606,2025-03-22 01:46:15,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,3,2069.98,2069.98,18,372.6,2442.58,44,OK,1.6,0,Returning,Debit Card
+T0607,2025-04-07 21:17:50,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,28,68425.2,68425.2,18,12316.54,80741.74,34,OK,1.8,0,Returning,Credit Card
+T0608,2025-03-15 18:48:26,Laptops,Notebook,Acer Notebook 2,Acer,37689,7,35050.77,35050.77,18,6309.14,41359.91,41,OK,4.4,0,Regular,UPI
+T0609,2025-03-26 02:55:51,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,23,1991.22,1991.22,18,358.42,2349.64,33,OK,3.5,0,New,Credit Card
+T0610,2025-04-09 13:29:05,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,11,4199.02,4199.02,18,755.82,4954.84,7,Low Stock,4.2,0,Wholesale,UPI
+T0611,2025-04-05 15:18:31,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,9,1544.27,1544.27,18,277.97,1822.24,30,OK,1.3,0,Returning,Debit Card
+T0612,2025-03-15 11:17:37,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,26,1579.16,1579.16,18,284.25,1863.41,43,OK,4.0,0,Returning,Credit Card
+T0613,2025-04-08 07:55:57,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,1,73279.8,73279.8,12,8793.58,82073.38,12,OK,4.2,0,Returning,Debit Card
+T0614,2025-03-14 20:27:24,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,9,64882.09,64882.09,12,7785.85,72667.94,27,OK,4.9,0,New,UPI
+T0615,2025-04-09 19:22:24,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,29,31088.77,31088.77,12,3730.65,34819.42,25,OK,2.4,0,Regular,Net Banking
+T0616,2025-03-16 12:07:57,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,9,97582.03,97582.03,18,17564.77,115146.8,32,OK,4.8,0,New,UPI
+T0617,2025-04-07 18:40:17,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,20,3036.8,3036.8,18,546.62,3583.42,40,OK,4.3,0,New,Credit Card
+T0618,2025-03-14 15:18:58,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,1,1631.52,1631.52,18,293.67,1925.19,47,OK,5.0,1,Regular,Cash
+T0619,2025-04-05 05:39:20,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,9,242.06,242.06,18,43.57,285.63,43,OK,3.4,0,Returning,Credit Card
+T0620,2025-04-09 19:18:44,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,11,1466.72,1466.72,18,264.01,1730.73,46,OK,4.9,0,Returning,Debit Card
+T0621,2025-04-04 22:58:33,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,18,60696.4,60696.4,12,7283.57,67979.97,11,OK,1.6,0,Wholesale,Net Banking
+T0622,2025-03-14 18:31:22,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,13,1713.9,1713.9,18,308.5,2022.4,34,OK,4.1,0,Returning,Credit Card
+T0623,2025-03-31 23:29:35,Laptop Accessories,Keyboard,HP Keyboard 20,HP,914,7,850.02,850.02,18,153.0,1003.02,0,Out of Stock,1.6,1,New,Credit Card
+T0624,2025-04-03 17:40:05,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,8,2865.8,2865.8,18,515.84,3381.64,1,Low Stock,4.0,0,New,Debit Card
+T0625,2025-03-25 19:17:09,Laptop Accessories,Bag,HP Bag 39,HP,3328,14,2862.08,2862.08,18,515.17,3377.25,41,OK,2.3,0,Regular,Cash
+T0626,2025-03-23 04:31:41,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,28,31526.64,31526.64,12,3783.2,35309.84,24,OK,1.6,0,Wholesale,Credit Card
+T0627,2025-03-26 07:30:16,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,30,2298.8,2298.8,18,413.78,2712.58,39,OK,4.3,0,Regular,UPI
+T0628,2025-03-19 13:03:43,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,25,32410.5,32410.5,12,3889.26,36299.76,21,OK,4.0,0,New,UPI
+T0629,2025-03-31 07:09:39,Laptops,Notebook,MSI Notebook 11,MSI,58421,23,44984.17,44984.17,18,8097.15,53081.32,1,Low Stock,2.0,1,Regular,Credit Card
+T0630,2025-03-24 18:07:52,Mobile Accessories,Earbuds,Realme Earbuds 7,Realme,3115,10,2803.5,2803.5,18,504.63,3308.13,0,Out of Stock,4.0,0,Returning,UPI
+T0631,2025-03-18 10:21:14,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,17,1367.84,1367.84,18,246.21,1614.05,45,OK,1.4,1,Regular,Debit Card
+T0632,2025-04-05 13:31:39,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,14,1694.2,1694.2,18,304.96,1999.16,33,OK,3.7,0,Returning,UPI
+T0633,2025-03-28 19:49:00,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,19,35467.47,35467.47,12,4256.1,39723.57,23,OK,3.1,0,Regular,Debit Card
+T0634,2025-03-21 16:43:34,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,13,93292.71,93292.71,18,16792.69,110085.4,31,OK,4.4,0,Regular,Cash
+T0635,2025-03-16 03:32:13,Laptops,Notebook,MSI Notebook 11,MSI,58421,12,51410.48,51410.48,18,9253.89,60664.37,0,Out of Stock,3.9,0,Wholesale,UPI
+T0636,2025-04-09 12:59:41,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,23,17870.16,17870.16,12,2144.42,20014.58,22,OK,2.7,0,Regular,Credit Card
+T0637,2025-04-02 04:18:29,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,16,1792.56,1792.56,18,322.66,2115.22,42,OK,4.0,0,New,Credit Card
+T0638,2025-04-01 22:07:40,Laptops,Notebook,Acer Notebook 2,Acer,37689,17,31281.87,31281.87,18,5630.74,36912.61,40,OK,3.6,0,Regular,Debit Card
+T0639,2025-04-07 19:57:22,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,21,116236.65,116236.65,18,20922.6,137159.25,29,OK,3.8,0,Regular,Credit Card
+T0640,2025-03-29 08:35:59,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,5,9589.3,9589.3,12,1150.72,10740.02,4,Low Stock,1.8,0,Regular,Cash
+T0641,2025-04-06 08:42:56,Laptops,Notebook,Acer Notebook 29,Acer,26371,9,23997.61,23997.61,18,4319.57,28317.18,16,OK,3.4,0,Regular,Credit Card
+T0642,2025-04-01 23:43:40,Laptops,Notebook,Dell Notebook 48,Dell,141050,21,111429.5,111429.5,18,20057.31,131486.81,14,OK,3.0,0,Regular,Debit Card
+T0643,2025-04-08 12:14:15,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,1,119525.67,119525.67,18,21514.62,141040.29,7,Low Stock,1.3,0,Regular,UPI
+T0644,2025-04-05 13:25:35,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,21,18334.32,18334.32,12,2200.12,20534.44,21,OK,3.9,0,Regular,Debit Card
+T0645,2025-04-10 02:04:24,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,28,31526.64,31526.64,12,3783.2,35309.84,22,OK,4.8,0,Regular,Credit Card
+T0646,2025-03-23 02:09:10,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,19,127423.53,127423.53,18,22936.24,150359.77,6,Low Stock,2.4,0,New,Cash
+T0647,2025-03-30 17:49:41,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,6,3035.26,3035.26,18,546.35,3581.61,20,OK,1.5,1,Returning,Credit Card
+T0648,2025-03-31 22:04:57,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,22,2214.42,2214.42,18,398.6,2613.02,21,OK,3.9,0,New,Debit Card
+T0649,2025-04-04 07:31:28,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,19,14694.21,14694.21,12,1763.31,16457.52,5,Low Stock,1.6,0,New,Credit Card
+T0650,2025-03-26 22:39:51,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,1,42781.86,42781.86,12,5133.82,47915.68,20,OK,4.8,0,New,UPI
+T0651,2025-04-08 12:20:30,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,9,2562.56,2562.56,18,461.26,3023.82,42,OK,2.5,0,Regular,Credit Card
+T0652,2025-03-30 13:19:58,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,18,1615.4,1615.4,18,290.77,1906.17,32,OK,3.5,0,New,Net Banking
+T0653,2025-04-05 10:58:40,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,14,35284.08,35284.08,12,4234.09,39518.17,10,Low Stock,4.6,0,New,UPI
+T0654,2025-03-22 16:39:54,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,21,19987.0,19987.0,12,2398.44,22385.44,17,OK,2.2,0,New,Cash
+T0655,2025-04-10 18:40:25,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,14,92220.38,92220.38,18,16599.67,108820.05,30,OK,1.1,1,Regular,UPI
+T0656,2025-04-09 11:45:13,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,8,87432.2,87432.2,18,15737.8,103170.0,33,OK,2.1,0,Returning,Credit Card
+T0657,2025-03-26 07:07:30,Laptop Accessories,Bag,HP Bag 39,HP,3328,21,2629.12,2629.12,18,473.24,3102.36,40,OK,2.2,0,Returning,Cash
+T0658,2025-04-09 22:19:06,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,0,116225.0,116225.0,18,20920.5,137145.5,22,OK,1.6,1,New,Net Banking
+T0659,2025-04-12 20:34:25,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,7,2404.98,2404.98,18,432.9,2837.88,32,OK,1.8,0,Regular,Cash
+T0660,2025-03-26 13:28:27,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,26,17173.92,17173.92,12,2060.87,19234.79,20,OK,2.3,0,Regular,Credit Card
+T0661,2025-03-15 18:53:19,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,12,20423.04,20423.04,12,2450.76,22873.8,19,OK,4.7,0,Wholesale,Net Banking
+T0662,2025-03-21 07:54:47,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,4,3152.64,3152.64,18,567.48,3720.12,38,OK,2.3,0,Regular,Net Banking
+T0663,2025-03-22 16:32:20,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,1,1680.03,1680.03,18,302.41,1982.44,29,OK,1.3,0,Wholesale,Cash
+T0664,2025-03-17 23:27:28,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,18,1615.4,1615.4,18,290.77,1906.17,31,OK,2.1,0,Wholesale,Cash
+T0665,2025-03-28 18:51:11,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,2,2091.32,2091.32,18,376.44,2467.76,41,OK,3.3,0,New,Credit Card
+T0666,2025-04-06 12:37:39,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,16,37100.28,37100.28,12,4452.03,41552.31,43,OK,3.7,0,Wholesale,Net Banking
+T0667,2025-04-07 18:20:06,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,5,67734.05,67734.05,12,8128.09,75862.14,26,OK,3.3,0,Regular,UPI
+T0668,2025-03-24 00:20:49,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,25,1600.5,1600.5,18,288.09,1888.59,40,OK,1.2,0,Wholesale,UPI
+T0669,2025-03-16 17:52:11,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,27,3506.19,3506.19,18,631.11,4137.3,15,OK,4.1,0,Regular,UPI
+T0670,2025-04-12 10:20:24,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,8,1516.16,1516.16,18,272.91,1789.07,44,OK,1.0,0,New,Cash
+T0671,2025-03-18 04:58:31,Laptops,Notebook,Acer Notebook 29,Acer,26371,29,18723.41,18723.41,18,3370.21,22093.62,15,OK,3.5,0,Returning,UPI
+T0672,2025-04-11 03:01:37,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,19,3074.76,3074.76,18,553.46,3628.22,39,OK,3.1,0,New,Net Banking
+T0673,2025-04-02 10:58:48,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,9,132382.25,132382.25,18,23828.81,156211.06,20,OK,1.9,0,New,UPI
+T0674,2025-04-12 16:54:38,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,19,2299.59,2299.59,18,413.93,2713.52,20,OK,2.4,0,Wholesale,UPI
+T0675,2025-04-03 05:11:21,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,12,2498.32,2498.32,18,449.7,2948.02,19,OK,1.2,0,New,Credit Card
+T0676,2025-04-08 15:24:26,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,24,42867.04,42867.04,12,5144.04,48011.08,40,OK,3.7,0,Regular,Debit Card
+T0677,2025-04-07 14:15:45,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,8,1849.2,1849.2,18,332.86,2182.06,33,OK,1.4,0,New,Credit Card
+T0678,2025-04-06 00:33:57,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,28,77207.76,77207.76,18,13897.4,91105.16,29,OK,4.8,0,Regular,Credit Card
+T0679,2025-03-22 16:15:31,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,5,54800.75,54800.75,12,6576.09,61376.84,13,OK,2.9,0,New,UPI
+T0680,2025-04-11 20:36:10,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,23,82569.41,82569.41,18,14862.49,97431.9,28,OK,4.3,0,Returning,Debit Card
+T0681,2025-03-22 09:17:51,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,21,14331.39,14331.39,12,1719.77,16051.16,4,Low Stock,2.9,0,New,Debit Card
+T0682,2025-03-16 13:09:56,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,1,1680.03,1680.03,18,302.41,1982.44,28,OK,2.4,0,New,UPI
+T0683,2025-04-02 09:39:32,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,30,1810.2,1810.2,18,325.84,2136.04,31,OK,2.3,0,Regular,Credit Card
+T0684,2025-04-08 04:49:55,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,5,149447.35,149447.35,18,26900.52,176347.87,5,Low Stock,4.4,0,Regular,Credit Card
+T0685,2025-03-31 16:00:07,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,19,35003.34,35003.34,12,4200.4,39203.74,19,OK,4.9,0,Returning,UPI
+T0686,2025-03-27 17:31:52,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,14,61317.14,61317.14,12,7358.06,68675.2,25,OK,1.9,1,Regular,UPI
+T0687,2025-03-27 03:50:42,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,15,8579.9,8579.9,12,1029.59,9609.49,3,Low Stock,3.7,0,New,UPI
+T0688,2025-03-15 20:39:49,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,25,413.25,413.25,18,74.39,487.64,25,OK,3.3,0,Returning,Cash
+T0689,2025-04-04 22:58:45,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,24,3650.28,3650.28,18,657.05,4307.33,14,OK,4.8,0,Regular,UPI
+T0690,2025-03-16 03:11:41,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,14,21758.0,21758.0,12,2610.96,24368.96,16,OK,1.5,0,Regular,UPI
+T0691,2025-04-02 23:48:00,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,12,38532.56,38532.56,12,4623.91,43156.47,21,OK,3.8,1,New,UPI
+T0692,2025-04-04 05:43:57,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,12,102278.0,102278.0,18,18410.04,120688.04,21,OK,2.6,0,Regular,Credit Card
+T0693,2025-04-01 21:36:45,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,3,39797.16,39797.16,12,4775.66,44572.82,9,Low Stock,1.8,0,New,Credit Card
+T0694,2025-03-15 17:01:17,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,8,30406.0,30406.0,12,3648.72,34054.72,16,OK,4.9,0,Regular,Debit Card
+T0695,2025-04-06 00:45:33,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,3,142720.95,142720.95,18,25689.77,168410.72,28,OK,3.9,1,Regular,Credit Card
+T0696,2025-04-04 00:44:47,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,20,57039.2,57039.2,12,6844.7,63883.9,24,OK,1.4,0,Returning,UPI
+T0697,2025-03-29 11:51:32,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,8,18265.68,18265.68,12,2191.88,20457.56,8,Low Stock,2.8,1,Returning,UPI
+T0698,2025-04-10 15:55:09,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,12,15964.08,15964.08,12,1915.69,17879.77,3,Low Stock,2.2,1,Regular,Debit Card
+T0699,2025-04-12 02:27:27,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,3,1910.9,1910.9,18,343.96,2254.86,30,OK,3.4,0,Regular,UPI
+T0700,2025-03-17 23:29:15,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,10,1773.0,1773.0,18,319.14,2092.14,29,OK,1.7,1,Regular,UPI
+T0701,2025-03-21 20:34:19,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,13,2492.55,2492.55,18,448.66,2941.21,10,Low Stock,1.3,0,Regular,UPI
+T0702,2025-04-13 00:56:51,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,22,122704.14,122704.14,18,22086.75,144790.89,4,Low Stock,1.8,0,New,Cash
+T0703,2025-03-28 09:20:20,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,3,54711.88,54711.88,12,6565.43,61277.31,39,OK,3.9,0,New,Debit Card
+T0704,2025-03-25 14:47:31,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,26,2100.86,2100.86,18,378.15,2479.01,18,OK,3.0,1,Regular,UPI
+T0705,2025-03-19 16:08:19,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,11,38460.46,38460.46,12,4615.26,43075.72,18,OK,1.1,0,Regular,Debit Card
+T0706,2025-03-24 07:41:21,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,13,4104.66,4104.66,18,738.84,4843.5,6,Low Stock,1.5,0,New,Debit Card
+T0707,2025-04-10 01:59:27,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,14,4012.76,4012.76,18,722.3,4735.06,7,Low Stock,3.1,0,Regular,UPI
+T0708,2025-03-22 04:35:08,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,14,37656.82,37656.82,12,4518.82,42175.64,20,OK,4.2,0,New,Debit Card
+T0709,2025-03-17 05:05:32,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,28,3359.52,3359.52,18,604.71,3964.23,6,Low Stock,4.2,0,New,UPI
+T0710,2025-04-11 04:28:16,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,13,1713.9,1713.9,18,308.5,2022.4,28,OK,2.7,0,Regular,Cash
+T0711,2025-04-01 19:51:19,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,1,4670.82,4670.82,18,840.75,5511.57,5,Low Stock,2.7,0,New,Credit Card
+T0712,2025-03-15 08:44:00,Laptop Accessories,Charger,HP Charger 28,HP,2218,9,2018.38,2018.38,18,363.31,2381.69,21,OK,1.9,1,Returning,Credit Card
+T0713,2025-03-29 03:24:29,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,13,20190.96,20190.96,12,2422.92,22613.88,18,OK,4.8,0,Regular,UPI
+T0714,2025-04-02 03:34:53,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,3,24541.0,24541.0,12,2944.92,27485.92,15,OK,3.5,0,Regular,Credit Card
+T0715,2025-03-28 05:27:41,Laptop Accessories,Charger,HP Charger 28,HP,2218,10,1996.2,1996.2,18,359.32,2355.52,20,OK,3.5,0,Returning,UPI
+T0716,2025-03-18 12:37:16,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,4,528.96,528.96,18,95.21,624.17,24,OK,2.8,0,Regular,UPI
+T0717,2025-03-20 01:36:21,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,15,123653.75,123653.75,18,22257.67,145911.42,19,OK,2.7,0,New,UPI
+T0718,2025-04-09 02:17:15,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,19,10549.44,10549.44,12,1265.93,11815.37,37,OK,2.4,0,New,UPI
+T0719,2025-04-08 09:16:52,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,12,29084.0,29084.0,12,3490.08,32574.08,15,OK,4.7,1,Wholesale,Credit Card
+T0720,2025-03-25 14:09:37,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,26,2100.86,2100.86,18,378.15,2479.01,17,OK,4.1,0,New,Cash
+T0721,2025-03-27 13:30:30,Laptops,Notebook,Acer Notebook 2,Acer,37689,22,29397.42,29397.42,18,5291.54,34688.96,39,OK,4.6,0,New,Debit Card
+T0722,2025-03-24 21:26:58,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,1,119525.67,119525.67,18,21514.62,141040.29,6,Low Stock,4.1,0,New,Debit Card
+T0723,2025-03-25 04:48:31,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,12,2841.52,2841.52,18,511.47,3352.99,19,OK,1.5,1,Regular,Credit Card
+T0724,2025-04-03 16:56:21,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,20,46148.0,46148.0,12,5537.76,51685.76,12,OK,1.4,0,Returning,UPI
+T0725,2025-03-16 19:05:55,Laptops,Notebook,Acer Notebook 2,Acer,37689,4,36181.44,36181.44,18,6512.66,42694.1,38,OK,1.7,1,Regular,Cash
+T0726,2025-04-02 18:14:45,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,26,2430.16,2430.16,18,437.43,2867.59,37,OK,1.1,0,Returning,UPI
+T0727,2025-04-06 14:42:53,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,8,87432.2,87432.2,18,15737.8,103170.0,32,OK,3.3,1,New,UPI
+T0728,2025-04-01 08:49:03,Laptops,Notebook,Acer Notebook 2,Acer,37689,11,33543.21,33543.21,18,6037.78,39580.99,37,OK,4.2,0,Regular,UPI
+T0729,2025-03-25 07:16:53,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,0,2134.0,2134.0,18,384.12,2518.12,39,OK,2.5,0,Regular,Debit Card
+T0730,2025-04-01 11:03:12,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,8,98654.36,98654.36,18,17757.78,116412.14,27,OK,4.2,0,Regular,UPI
+T0731,2025-03-23 23:06:53,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,29,1204.87,1204.87,18,216.88,1421.75,27,OK,3.0,0,Regular,Credit Card
+T0732,2025-04-12 10:16:17,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,18,19030.56,19030.56,12,2283.67,21314.23,17,OK,4.0,0,New,UPI
+T0733,2025-04-06 11:16:01,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,10,1483.2,1483.2,18,266.98,1750.18,43,OK,2.4,0,Wholesale,UPI
+T0734,2025-03-29 12:08:31,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,5,1871.5,1871.5,18,336.87,2208.37,27,OK,4.8,0,Wholesale,UPI
+T0735,2025-04-02 07:48:30,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,7,3530.28,3530.28,18,635.45,4165.73,38,OK,4.0,0,New,Debit Card
+T0736,2025-03-27 02:55:19,Laptops,Notebook,Acer Notebook 2,Acer,37689,29,26759.19,26759.19,18,4816.65,31575.84,36,OK,1.6,1,Wholesale,Cash
+T0737,2025-04-10 16:52:55,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,17,2356.37,2356.37,18,424.15,2780.52,16,OK,2.4,0,Regular,Cash
+T0738,2025-03-14 21:46:39,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,11,84581.15,84581.15,18,15224.61,99805.76,31,OK,2.0,1,Regular,UPI
+T0739,2025-03-20 23:16:20,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,28,31526.64,31526.64,12,3783.2,35309.84,19,OK,4.7,0,Regular,UPI
+T0740,2025-04-03 01:28:12,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,13,4059.42,4059.42,18,730.7,4790.12,5,Low Stock,4.7,1,New,UPI
+T0741,2025-03-28 09:49:10,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,23,2206.05,2206.05,18,397.09,2603.14,9,Low Stock,1.8,0,New,Debit Card
+T0742,2025-04-02 06:58:47,Mobile Accessories,Charger,Boat Charger 49,Boat,3796,10,3416.4,3416.4,18,614.95,4031.35,37,OK,2.8,0,New,UPI
+T0743,2025-03-31 19:41:00,Laptops,Notebook,Dell Notebook 48,Dell,141050,16,118482.0,118482.0,18,21326.76,139808.76,13,OK,3.9,0,Returning,Cash
+T0744,2025-03-30 18:44:26,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,8,30406.0,30406.0,12,3648.72,34054.72,14,OK,2.6,0,Regular,UPI
+T0745,2025-04-04 21:02:47,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,11,1679.43,1679.43,18,302.3,1981.73,50,OK,1.0,1,New,UPI
+T0746,2025-04-09 17:16:45,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,23,73176.95,73176.95,18,13171.85,86348.8,30,OK,4.5,0,New,Debit Card
+T0747,2025-03-27 19:13:19,Laptops,Notebook,Acer Notebook 2,Acer,37689,16,31658.76,31658.76,18,5698.58,37357.34,35,OK,4.0,0,Returning,Cash
+T0748,2025-03-25 08:03:56,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,9,18067.14,18067.14,12,2168.06,20235.2,7,Low Stock,2.2,0,New,Debit Card
+T0749,2025-04-13 00:13:18,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,10,20887.2,20887.2,12,2506.46,23393.66,16,OK,1.4,1,Regular,Credit Card
+T0750,2025-03-22 10:30:16,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,14,19958.88,19958.88,12,2395.07,22353.95,15,OK,2.8,0,Regular,UPI
+T0751,2025-04-10 21:39:26,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,23,2206.05,2206.05,18,397.09,2603.14,8,Low Stock,3.9,1,New,Debit Card
+T0752,2025-03-29 16:28:29,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,5,252.7,252.7,18,45.49,298.19,42,OK,1.7,1,Regular,Debit Card
+T0753,2025-04-05 21:19:44,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,29,557.35,557.35,18,100.32,657.67,4,Low Stock,1.3,1,New,UPI
+T0754,2025-03-20 21:17:43,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,2,1615.04,1615.04,18,290.71,1905.75,42,OK,1.8,0,Wholesale,Credit Card
+T0755,2025-04-10 21:44:47,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,29,16477.68,16477.68,12,1977.32,18455.0,14,OK,2.6,0,Wholesale,UPI
+T0756,2025-03-20 04:34:37,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,3,42473.39,42473.39,12,5096.81,47570.2,18,OK,4.8,0,Returning,UPI
+T0757,2025-03-28 20:51:00,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,24,418.76,418.76,18,75.38,494.14,23,OK,3.3,0,Returning,Credit Card
+T0758,2025-03-15 09:01:21,Laptops,Notebook,Dell Notebook 48,Dell,141050,13,122713.5,122713.5,18,22088.43,144801.93,12,OK,2.2,0,Returning,UPI
+T0759,2025-04-03 01:26:48,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,12,1450.24,1450.24,18,261.04,1711.28,41,OK,2.5,0,Returning,UPI
+T0760,2025-04-12 16:05:14,Laptop Accessories,Charger,HP Charger 28,HP,2218,11,1974.02,1974.02,18,355.32,2329.34,19,OK,3.6,0,Regular,Debit Card
+T0761,2025-04-10 07:00:01,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,4,17415.36,17415.36,12,2089.84,19505.2,2,Low Stock,2.9,0,Returning,UPI
+T0762,2025-03-22 13:40:22,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,7,1984.62,1984.62,18,357.23,2341.85,38,OK,1.7,1,Regular,Credit Card
+T0763,2025-03-23 04:11:40,Laptop Accessories,Bag,HP Bag 39,HP,3328,0,3328.0,3328.0,18,599.04,3927.04,39,OK,1.8,0,New,UPI
+T0764,2025-03-19 08:25:55,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,11,2301.54,2301.54,18,414.28,2715.82,30,OK,4.6,0,Returning,Cash
+T0765,2025-04-12 02:03:27,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,14,1694.2,1694.2,18,304.96,1999.16,26,OK,3.3,0,New,UPI
+T0766,2025-04-11 17:13:40,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,5,1070.65,1070.65,18,192.72,1263.37,3,Low Stock,4.6,0,New,Debit Card
+T0767,2025-03-29 08:42:36,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,13,1856.58,1856.58,18,334.18,2190.76,37,OK,2.0,0,New,UPI
+T0768,2025-04-08 15:11:00,Laptop Accessories,Bag,HP Bag 39,HP,3328,27,2429.44,2429.44,18,437.3,2866.74,38,OK,3.8,1,Regular,UPI
+T0769,2025-04-07 02:04:11,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,19,215.46,215.46,18,38.78,254.24,41,OK,3.9,0,New,Debit Card
+T0770,2025-04-03 16:33:03,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,18,8277.08,8277.08,12,993.25,9270.33,2,Low Stock,3.3,0,New,Debit Card
+T0771,2025-04-08 14:44:41,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,21,58475.8,58475.8,12,7017.1,65492.9,10,Low Stock,5.0,0,Returning,Credit Card
+T0772,2025-04-08 23:15:09,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,14,4012.76,4012.76,18,722.3,4735.06,4,Low Stock,4.2,0,New,Debit Card
+T0773,2025-03-30 03:52:17,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,24,1527.6,1527.6,18,274.97,1802.57,32,OK,3.3,0,Regular,Debit Card
+T0774,2025-03-31 01:14:16,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,14,2776.94,2776.94,18,499.85,3276.79,18,OK,2.6,0,New,Credit Card
+T0775,2025-04-09 02:45:45,Laptop Accessories,Bag,HP Bag 39,HP,3328,12,2928.64,2928.64,18,527.16,3455.8,37,OK,3.2,0,Regular,UPI
+T0776,2025-04-06 11:58:58,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,30,51814.0,51814.0,12,6217.68,58031.68,9,Low Stock,2.0,0,New,Credit Card
+T0777,2025-04-01 05:46:51,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,15,47943.4,47943.4,12,5753.21,53696.61,38,OK,2.9,0,Regular,UPI
+T0778,2025-04-11 05:30:09,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,5,745.75,745.75,18,134.24,879.99,3,Low Stock,3.3,1,New,Credit Card
+T0779,2025-03-22 19:17:31,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,9,21119.28,21119.28,12,2534.31,23653.59,13,OK,3.8,0,New,UPI
+T0780,2025-03-19 21:11:42,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,20,1707.2,1707.2,18,307.3,2014.5,36,OK,5.0,0,Regular,Cash
+T0781,2025-04-03 20:20:59,Laptops,Notebook,Acer Notebook 2,Acer,37689,11,33543.21,33543.21,18,6037.78,39580.99,34,OK,1.3,1,Returning,Credit Card
+T0782,2025-03-19 07:36:30,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,3,258.02,258.02,18,46.44,304.46,40,OK,3.4,0,Returning,UPI
+T0783,2025-03-25 08:36:57,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,5,1909.5,1909.5,18,343.71,2253.21,31,OK,3.7,0,Regular,Debit Card
+T0784,2025-03-25 22:35:24,Laptops,Notebook,Acer Notebook 29,Acer,26371,19,21360.51,21360.51,18,3844.89,25205.4,14,OK,2.2,0,Regular,Cash
+T0785,2025-03-24 08:00:11,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,18,3868.76,3868.76,18,696.38,4565.14,4,Low Stock,1.1,0,Regular,Cash
+T0786,2025-03-24 19:04:28,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,26,1219.52,1219.52,18,219.51,1439.03,40,OK,1.4,0,New,Credit Card
+T0787,2025-03-19 19:25:45,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,21,3794.37,3794.37,18,682.99,4477.36,13,OK,3.1,0,Regular,Cash
+T0788,2025-03-22 20:47:26,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,29,3312.86,3312.86,18,596.31,3909.17,3,Low Stock,1.1,1,Regular,Cash
+T0789,2025-04-06 23:41:01,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,12,83630.8,83630.8,18,15053.54,98684.34,29,OK,4.9,0,Regular,Cash
+T0790,2025-03-16 12:16:37,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,10,22770.0,22770.0,12,2732.4,25502.4,14,OK,4.0,0,New,Debit Card
+T0791,2025-03-30 03:10:55,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,23,89493.25,89493.25,18,16108.78,105602.03,20,OK,1.2,1,Returning,Debit Card
+T0792,2025-03-29 10:12:28,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,19,2280.96,2280.96,18,410.57,2691.53,41,OK,3.4,0,New,Credit Card
+T0793,2025-03-18 13:21:05,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,17,2146.38,2146.38,18,386.35,2532.73,29,OK,2.3,0,New,Cash
+T0794,2025-03-21 04:35:21,Laptops,Notebook,Acer Notebook 2,Acer,37689,3,36558.33,36558.33,18,6580.5,43138.83,33,OK,3.9,0,New,UPI
+T0795,2025-04-11 21:27:44,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,12,15964.08,15964.08,12,1915.69,17879.77,1,Low Stock,2.0,0,Regular,Debit Card
+T0796,2025-04-11 21:12:46,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,26,18722.0,18722.0,12,2246.64,20968.64,13,OK,4.7,0,Wholesale,Cash
+T0797,2025-04-10 22:45:57,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,3,55954.45,55954.45,12,6714.53,62668.98,11,OK,1.2,1,Regular,UPI
+T0798,2025-04-05 19:21:00,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,23,7772.38,7772.38,12,932.69,8705.07,1,Low Stock,3.4,0,New,Debit Card
+T0799,2025-04-07 21:59:39,Laptops,Notebook,Acer Notebook 2,Acer,37689,0,37689.0,37689.0,18,6784.02,44473.02,32,OK,3.7,0,New,Cash
+T0800,2025-04-12 01:06:54,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,22,1664.52,1664.52,18,299.61,1964.13,35,OK,1.8,0,Wholesale,UPI
+T0801,2025-03-18 16:22:34,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,16,59891.16,59891.16,12,7186.94,67078.1,23,OK,2.4,0,Regular,UPI
+T0802,2025-04-10 07:42:57,Laptop Accessories,Charger,HP Charger 28,HP,2218,20,1774.4,1774.4,18,319.39,2093.79,18,OK,4.9,0,Regular,Credit Card
+T0803,2025-04-06 16:32:09,Mobiles,Smartphone,Jio Smartphone 34,Jio,10094,23,7772.38,7772.38,12,932.69,8705.07,0,Out of Stock,3.4,0,New,Net Banking
+T0804,2025-03-25 07:32:40,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,0,785.0,785.0,18,141.3,926.3,2,Low Stock,1.8,1,New,UPI
+T0805,2025-04-02 09:45:08,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,18,2647.78,2647.78,18,476.6,3124.38,17,OK,1.9,1,New,Cash
+T0806,2025-03-26 22:32:27,Laptops,Notebook,Acer Notebook 2,Acer,37689,0,37689.0,37689.0,18,6784.02,44473.02,31,OK,2.6,0,New,Debit Card
+T0807,2025-04-10 19:03:38,Laptop Accessories,Bag,HP Bag 39,HP,3328,16,2795.52,2795.52,18,503.19,3298.71,36,OK,2.9,0,Regular,UPI
+T0808,2025-04-01 03:29:24,Laptops,Notebook,Acer Notebook 29,Acer,26371,21,20833.09,20833.09,18,3749.96,24583.05,13,OK,1.9,1,Regular,UPI
+T0809,2025-03-17 06:30:44,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,23,56995.4,56995.4,12,6839.45,63834.85,8,Low Stock,1.3,0,Regular,UPI
+T0810,2025-03-31 11:31:34,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,1,106160.67,106160.67,18,19108.92,125269.59,26,OK,4.0,0,Wholesale,Credit Card
+T0811,2025-03-16 23:06:08,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,0,2839.0,2839.0,18,511.02,3350.02,15,OK,4.6,0,Regular,Credit Card
+T0812,2025-04-12 15:04:12,Laptops,Notebook,Dell Notebook 48,Dell,141050,25,105787.5,105787.5,18,19041.75,124829.25,11,OK,1.5,0,Regular,UPI
+T0813,2025-03-22 08:07:51,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,6,4386.04,4386.04,18,789.49,5175.53,2,Low Stock,1.9,0,Wholesale,UPI
+T0814,2025-03-20 15:11:28,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,22,879.06,879.06,18,158.23,1037.29,2,Low Stock,1.5,1,Regular,UPI
+T0815,2025-04-07 01:00:07,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,30,84513.1,84513.1,18,15212.36,99725.46,5,Low Stock,3.7,0,Returning,UPI
+T0816,2025-03-14 07:21:15,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,18,46251.28,46251.28,12,5550.15,51801.43,37,OK,1.0,0,Regular,Debit Card
+T0817,2025-04-05 22:49:39,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,26,580.9,580.9,18,104.56,685.46,1,Low Stock,4.8,0,New,Cash
+T0818,2025-03-16 18:52:53,Laptops,Notebook,Acer Notebook 29,Acer,26371,3,25579.87,25579.87,18,4604.38,30184.25,12,OK,4.0,0,Returning,Debit Card
+T0819,2025-03-23 12:38:03,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,27,18469.0,18469.0,12,2216.28,20685.28,12,OK,4.7,0,Returning,Net Banking
+T0820,2025-03-17 07:45:26,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,23,33274.78,33274.78,12,3992.97,37267.75,17,OK,1.7,1,Returning,Cash
+T0821,2025-03-20 16:42:12,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,14,37656.82,37656.82,12,4518.82,42175.64,17,OK,2.1,0,Returning,UPI
+T0822,2025-03-17 08:18:36,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,16,132142.92,132142.92,18,23785.73,155928.65,3,Low Stock,4.4,0,New,UPI
+T0823,2025-03-28 08:38:36,Laptop Accessories,Charger,HP Charger 28,HP,2218,0,2218.0,2218.0,18,399.24,2617.24,17,OK,2.6,0,Regular,Net Banking
+T0824,2025-03-29 06:12:34,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,11,1003.03,1003.03,18,180.55,1183.58,1,Low Stock,1.1,1,New,Cash
+T0825,2025-03-24 00:14:31,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,27,402.23,402.23,18,72.4,474.63,22,OK,1.5,1,Returning,Debit Card
+T0826,2025-03-19 18:35:07,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,4,111576.0,111576.0,18,20083.68,131659.68,19,OK,1.1,1,Regular,Debit Card
+T0827,2025-04-07 05:55:19,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,4,22279.68,22279.68,12,2673.56,24953.24,12,OK,3.0,0,Regular,UPI
+T0828,2025-04-04 14:39:42,Laptops,Notebook,Acer Notebook 29,Acer,26371,4,25316.16,25316.16,18,4556.91,29873.07,11,OK,1.4,0,Returning,Debit Card
+T0829,2025-03-24 04:07:24,Laptops,Notebook,Acer Notebook 29,Acer,26371,15,22415.35,22415.35,18,4034.76,26450.11,10,Low Stock,1.6,1,Regular,UPI
+T0830,2025-03-29 22:46:06,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,8,18265.68,18265.68,12,2191.88,20457.56,6,Low Stock,4.5,0,Regular,UPI
+T0831,2025-03-14 05:55:06,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,1,22975.92,22975.92,12,2757.11,25733.03,11,OK,1.2,0,Regular,Cash
+T0832,2025-04-09 06:48:34,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,1,115062.75,115062.75,18,20711.29,135774.04,18,OK,2.3,0,New,UPI
+T0833,2025-03-25 05:15:17,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,12,1493.36,1493.36,18,268.8,1762.16,26,OK,3.1,0,Wholesale,Debit Card
+T0834,2025-04-04 22:50:45,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,2,1663.06,1663.06,18,299.35,1962.41,25,OK,2.3,0,Regular,UPI
+T0835,2025-03-18 13:08:24,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,26,116411.62,116411.62,18,20954.09,137365.71,2,Low Stock,3.5,0,Regular,Credit Card
+T0836,2025-03-16 21:55:13,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,4,4610.88,4610.88,18,829.96,5440.84,12,OK,2.4,0,Regular,UPI
+T0837,2025-04-07 11:56:46,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,30,13897.8,13897.8,12,1667.74,15565.54,5,Low Stock,3.5,0,Wholesale,UPI
+T0838,2025-03-20 18:29:10,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,6,12242.56,12242.56,12,1469.11,13711.67,36,OK,1.2,1,Returning,Cash
+T0839,2025-03-15 23:24:36,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,11,17670.06,17670.06,12,2120.41,19790.47,4,Low Stock,2.3,0,Returning,UPI
+T0840,2025-03-15 23:50:03,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,21,1587.9,1587.9,18,285.82,1873.72,30,OK,4.0,1,New,Debit Card
+T0841,2025-03-23 06:49:19,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,0,107233.0,107233.0,18,19301.94,126534.94,25,OK,1.8,1,Returning,UPI
+T0842,2025-04-01 20:27:51,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,14,2824.24,2824.24,18,508.36,3332.6,36,OK,4.2,0,Regular,UPI
+T0843,2025-03-30 19:35:56,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,2,56531.3,56531.3,12,6783.76,63315.06,10,Low Stock,4.6,0,Wholesale,Credit Card
+T0844,2025-04-10 22:36:28,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,7,146301.09,146301.09,18,26334.2,172635.29,1,Low Stock,2.9,0,Regular,Debit Card
+T0845,2025-03-16 23:10:47,Laptop Accessories,Keyboard,HP Keyboard 17,HP,785,26,580.9,580.9,18,104.56,685.46,0,Out of Stock,1.4,0,New,Net Banking
+T0846,2025-04-03 13:14:32,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,22,74127.3,74127.3,18,13342.91,87470.21,28,OK,1.2,1,Returning,UPI
+T0847,2025-04-04 07:27:20,Laptop Accessories,Charger,Dell Charger 26,Dell,1127,11,1003.03,1003.03,18,180.55,1183.58,0,Out of Stock,2.5,1,New,Net Banking
+T0848,2025-04-08 10:32:48,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,21,26109.5,26109.5,12,3133.14,29242.64,13,OK,3.2,0,New,UPI
+T0849,2025-03-14 02:31:00,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,8,87432.2,87432.2,18,15737.8,103170.0,27,OK,3.0,0,New,Cash
+T0850,2025-03-20 17:24:35,Laptop Accessories,Bag,HP Bag 39,HP,3328,11,2961.92,2961.92,18,533.15,3495.07,35,OK,4.9,0,Returning,Credit Card
+T0851,2025-04-06 04:45:45,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,5,523.45,523.45,18,94.22,617.67,21,OK,1.4,1,Wholesale,Credit Card
+T0852,2025-04-10 17:23:46,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,8,11982.08,11982.08,12,1437.85,13419.93,35,OK,3.2,0,New,UPI
+T0853,2025-03-14 21:49:24,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,29,2034.15,2034.15,18,366.15,2400.3,7,Low Stock,3.8,0,Regular,Debit Card
+T0854,2025-03-19 16:17:29,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,6,41516.98,41516.98,12,4982.04,46499.02,42,OK,2.6,0,Regular,Cash
+T0855,2025-04-02 10:34:02,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,4,111576.0,111576.0,18,20083.68,131659.68,17,OK,1.5,0,Returning,UPI
+T0856,2025-03-19 10:49:04,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,2,19456.92,19456.92,12,2334.83,21791.75,3,Low Stock,1.3,0,Wholesale,Debit Card
+T0857,2025-04-02 10:41:38,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,29,40956.35,40956.35,12,4914.76,45871.11,9,Low Stock,4.3,0,New,UPI
+T0858,2025-03-29 14:43:09,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,14,2441.54,2441.54,18,439.48,2881.02,14,OK,2.2,0,New,UPI
+T0859,2025-03-16 05:59:04,Laptops,Notebook,Acer Notebook 2,Acer,37689,21,29774.31,29774.31,18,5359.38,35133.69,30,OK,4.0,0,Returning,UPI
+T0860,2025-03-15 23:00:29,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,4,2048.64,2048.64,18,368.76,2417.4,34,OK,1.6,0,Returning,Credit Card
+T0861,2025-03-15 12:46:01,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,10,130927.5,130927.5,18,23566.95,154494.45,18,OK,1.4,0,Wholesale,UPI
+T0862,2025-03-21 06:28:03,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,25,110351.25,110351.25,18,19863.22,130214.47,27,OK,2.4,0,Regular,Cash
+T0863,2025-03-30 15:57:27,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,0,4803.0,4803.0,18,864.54,5667.54,11,OK,4.6,0,Regular,Debit Card
+T0864,2025-04-09 12:50:39,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,20,35029.6,35029.6,12,4203.55,39233.15,16,OK,2.4,0,Regular,Debit Card
+T0865,2025-04-12 12:28:08,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,30,3266.2,3266.2,18,587.92,3854.12,1,Low Stock,4.0,0,New,UPI
+T0866,2025-03-29 18:06:23,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,13,128007.45,128007.45,18,23041.34,151048.79,26,OK,2.9,0,Wholesale,Debit Card
+T0867,2025-04-08 00:41:49,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,20,10419.2,10419.2,12,1250.3,11669.5,34,OK,4.4,0,New,Cash
+T0868,2025-03-19 01:57:21,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,25,2421.75,2421.75,18,435.92,2857.67,16,OK,4.3,0,Regular,UPI
+T0869,2025-03-28 00:58:01,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,28,1861.92,1861.92,18,335.15,2197.07,28,OK,1.9,1,Returning,Credit Card
+T0870,2025-04-02 21:04:45,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,12,2889.92,2889.92,18,520.19,3410.11,35,OK,4.0,0,New,Credit Card
+T0871,2025-04-01 23:45:46,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,20,2292.0,2292.0,18,412.56,2704.56,6,Low Stock,1.3,1,Returning,Credit Card
+T0872,2025-04-13 00:31:16,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,24,9898.24,9898.24,12,1187.79,11086.03,33,OK,4.4,0,Returning,Debit Card
+T0873,2025-03-18 01:27:03,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,21,26109.5,26109.5,12,3133.14,29242.64,12,OK,2.8,0,New,UPI
+T0874,2025-04-11 02:19:59,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,11,129472.75,129472.75,18,23305.1,152777.85,17,OK,3.3,0,New,Cash
+T0875,2025-04-03 20:36:43,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,23,1643.18,1643.18,18,295.77,1938.95,33,OK,4.0,0,New,Debit Card
+T0876,2025-04-02 05:36:40,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,0,145475.0,145475.0,18,26185.5,171660.5,16,OK,2.6,0,Regular,UPI
+T0877,2025-04-08 02:27:36,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,9,11851.84,11851.84,12,1422.22,13274.06,32,OK,1.4,0,Wholesale,UPI
+T0878,2025-03-21 23:54:36,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,5,41958.65,41958.65,12,5035.04,46993.69,41,OK,4.2,0,Returning,Net Banking
+T0879,2025-03-29 13:08:22,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,14,63657.2,63657.2,12,7638.86,71296.06,7,Low Stock,4.9,0,Wholesale,Credit Card
+T0880,2025-03-25 07:26:49,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,10,17868.6,17868.6,12,2144.23,20012.83,2,Low Stock,4.6,0,Returning,Net Banking
+T0881,2025-03-17 14:46:06,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,13,101115.75,101115.75,18,18200.83,119316.58,16,OK,2.7,0,Returning,UPI
+T0882,2025-03-27 15:39:41,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,28,41533.2,41533.2,12,4983.98,46517.18,8,Low Stock,2.6,0,Returning,UPI
+T0883,2025-03-15 20:28:27,Laptop Accessories,Bag,HP Bag 39,HP,3328,13,2895.36,2895.36,18,521.16,3416.52,34,OK,4.8,0,Returning,Cash
+T0884,2025-03-14 08:40:59,Laptops,Notebook,Acer Notebook 29,Acer,26371,26,19514.54,19514.54,18,3512.62,23027.16,9,Low Stock,4.7,1,Wholesale,UPI
+T0885,2025-04-02 03:50:48,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,29,50622.29,50622.29,12,6074.67,56696.96,22,OK,1.5,0,Regular,Credit Card
+T0886,2025-03-14 05:59:35,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,26,1487.4,1487.4,18,267.73,1755.13,29,OK,2.4,0,Regular,UPI
+T0887,2025-03-31 06:57:01,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,3,19258.38,19258.38,12,2311.01,21569.39,1,Low Stock,2.5,0,New,Credit Card
+T0888,2025-03-17 09:48:51,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,10,36925.2,36925.2,12,4431.02,41356.22,8,Low Stock,2.1,0,Regular,Debit Card
+T0889,2025-04-05 21:41:48,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,15,2435.25,2435.25,18,438.35,2873.6,5,Low Stock,4.7,1,Returning,Cash
+T0890,2025-03-30 23:46:10,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,11,29414.5,29414.5,12,3529.74,32944.24,11,OK,2.1,0,Returning,Debit Card
+T0891,2025-03-24 09:04:01,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,30,51814.0,51814.0,12,6217.68,58031.68,6,Low Stock,2.2,0,New,Credit Card
+T0892,2025-03-25 06:52:45,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,12,1733.6,1733.6,18,312.05,2045.65,25,OK,4.9,0,Regular,Debit Card
+T0893,2025-03-17 00:20:14,Mobiles,Smartphone,Apple Smartphone 50,Apple,19854,10,17868.6,17868.6,12,2144.23,20012.83,0,Out of Stock,1.2,0,Wholesale,Debit Card
+T0894,2025-03-19 15:56:56,Laptop Accessories,Bag,Zebronics Bag 5,Zebronics,4666,15,3966.1,3966.1,18,713.9,4680.0,0,Out of Stock,3.0,0,Regular,Credit Card
+T0895,2025-04-10 14:22:46,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,9,1544.27,1544.27,18,277.97,1822.24,24,OK,1.0,1,Returning,Credit Card
+T0896,2025-04-12 11:37:55,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,19,2094.66,2094.66,18,377.04,2471.7,27,OK,3.7,0,Returning,Net Banking
+T0897,2025-04-04 20:12:51,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,8,4418.76,4418.76,18,795.38,5214.14,10,Low Stock,2.6,0,Returning,Cash
+T0898,2025-03-28 00:55:08,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,8,1516.16,1516.16,18,272.91,1789.07,39,OK,1.2,1,Returning,UPI
+T0899,2025-03-16 00:55:09,Laptop Accessories,Charger,Logitech Charger 21,Logitech,2839,15,2413.15,2413.15,18,434.37,2847.52,13,OK,1.2,0,Regular,Debit Card
+T0900,2025-04-12 12:11:52,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,5,41958.65,41958.65,12,5035.04,46993.69,40,OK,1.8,0,Wholesale,Debit Card
+T0901,2025-04-02 07:16:58,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,16,122199.0,122199.0,18,21995.82,144194.82,15,OK,3.8,0,Regular,UPI
+T0902,2025-03-26 19:26:59,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,8,2379.12,2379.12,18,428.24,2807.36,26,OK,2.9,0,Wholesale,Net Banking
+T0903,2025-04-09 07:35:36,Laptop Accessories,Keyboard,HP Keyboard 43,HP,1887,5,1792.65,1792.65,18,322.68,2115.33,49,OK,3.3,0,Regular,UPI
+T0904,2025-04-12 17:00:36,Mobile Accessories,Cable,Zebronics Cable 36,Zebronics,551,7,512.43,512.43,18,92.24,604.67,20,OK,3.9,0,Regular,UPI
+T0905,2025-03-28 00:06:49,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,13,82680.45,82680.45,18,14882.48,97562.93,26,OK,3.3,0,New,Cash
+T0906,2025-03-14 21:07:57,Laptops,Notebook,Acer Notebook 2,Acer,37689,13,32789.43,32789.43,18,5902.1,38691.53,29,OK,4.2,0,Regular,UPI
+T0907,2025-03-28 12:03:10,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,12,102278.0,102278.0,18,18410.04,120688.04,15,OK,4.4,0,Wholesale,Credit Card
+T0908,2025-03-17 04:52:03,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,0,43214.0,43214.0,12,5185.68,48399.68,16,OK,1.2,1,Returning,Net Banking
+T0909,2025-04-04 08:49:18,Laptops,Gaming Laptop,HP Gaming Laptop 46,HP,157313,12,138435.44,138435.44,18,24918.38,163353.82,0,Out of Stock,4.5,1,New,UPI
+T0910,2025-04-08 05:21:20,Mobile Accessories,Cable,Logitech Cable 45,Logitech,266,13,231.42,231.42,18,41.66,273.08,39,OK,4.3,0,New,Cash
+T0911,2025-04-02 04:27:47,Laptop Accessories,Mouse,HP Mouse 24,HP,3284,26,2430.16,2430.16,18,437.43,2867.59,34,OK,2.0,0,Returning,Debit Card
+T0912,2025-04-08 12:12:45,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,22,94171.74,94171.74,18,16950.91,111122.65,4,Low Stock,4.9,0,New,Credit Card
+T0913,2025-04-02 20:35:23,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,16,90075.72,90075.72,18,16213.63,106289.35,24,OK,1.6,1,Returning,UPI
+T0914,2025-04-07 13:18:32,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,25,9768.0,9768.0,12,1172.16,10940.16,31,OK,1.6,0,New,UPI
+T0915,2025-04-06 06:38:14,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,29,23465.5,23465.5,12,2815.86,26281.36,10,Low Stock,3.7,0,Returning,Debit Card
+T0916,2025-04-08 19:38:00,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,28,1221.84,1221.84,18,219.93,1441.77,23,OK,4.4,0,Returning,Credit Card
+T0917,2025-03-19 00:21:43,Laptop Accessories,Bag,HP Bag 39,HP,3328,2,3261.44,3261.44,18,587.06,3848.5,33,OK,1.7,0,Regular,Cash
+T0918,2025-04-04 05:41:24,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,14,28423.0,28423.0,12,3410.76,31833.76,9,Low Stock,3.7,0,Returning,Credit Card
+T0919,2025-03-25 18:00:35,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,27,31546.22,31546.22,12,3785.55,35331.77,15,OK,2.7,0,Regular,UPI
+T0920,2025-03-21 07:56:59,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,28,1447.2,1447.2,18,260.5,1707.7,28,OK,1.6,0,Regular,Cash
+T0921,2025-04-03 04:12:03,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,15,11070.4,11070.4,12,1328.45,12398.85,30,OK,3.9,0,New,Credit Card
+T0922,2025-04-03 01:13:01,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,3,142720.95,142720.95,18,25689.77,168410.72,25,OK,4.0,0,New,Credit Card
+T0923,2025-03-14 02:37:23,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,30,2260.3,2260.3,18,406.85,2667.15,15,OK,4.9,0,New,Debit Card
+T0924,2025-04-08 10:49:23,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,20,3774.4,3774.4,18,679.39,4453.79,3,Low Stock,3.2,0,Regular,Credit Card
+T0925,2025-04-03 20:05:23,Laptops,Gaming Laptop,ASUS Gaming Laptop 44,ASUS,116225,25,87168.75,87168.75,18,15690.38,102859.13,14,OK,4.4,0,Regular,UPI
+T0926,2025-03-15 20:23:40,Laptops,Notebook,Acer Notebook 2,Acer,37689,6,35427.66,35427.66,18,6376.98,41804.64,28,OK,3.4,0,New,UPI
+T0927,2025-03-28 06:07:22,Laptop Accessories,Charger,HP Charger 28,HP,2218,21,1752.22,1752.22,18,315.4,2067.62,16,OK,5.0,0,Regular,UPI
+T0928,2025-03-31 00:21:52,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,4,68447.04,68447.04,12,8213.64,76660.68,21,OK,1.2,0,Regular,Debit Card
+T0929,2025-04-04 23:02:19,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,16,79829.4,79829.4,18,14369.29,94198.69,25,OK,3.6,0,Regular,UPI
+T0930,2025-03-19 05:16:20,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,19,2094.66,2094.66,18,377.04,2471.7,25,OK,3.4,0,Regular,Credit Card
+T0931,2025-03-18 11:02:54,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,18,1615.4,1615.4,18,290.77,1906.17,24,OK,3.8,0,Returning,UPI
+T0932,2025-03-14 19:18:39,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,1,119525.67,119525.67,18,21514.62,141040.29,3,Low Stock,3.3,0,Wholesale,UPI
+T0933,2025-04-04 12:21:01,Laptop Accessories,Mouse,Zebronics Mouse 32,Zebronics,1697,18,1391.54,1391.54,18,250.48,1642.02,22,OK,1.3,1,Returning,Cash
+T0934,2025-04-05 11:53:11,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,23,19481.0,19481.0,12,2337.72,21818.72,11,OK,4.3,0,New,UPI
+T0935,2025-04-11 22:00:27,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,7,112281.69,112281.69,18,20210.7,132492.39,2,Low Stock,2.8,0,Regular,Net Banking
+T0936,2025-03-23 12:16:14,Laptops,Notebook,Acer Notebook 2,Acer,37689,3,36558.33,36558.33,18,6580.5,43138.83,27,OK,3.5,0,Returning,UPI
+T0937,2025-03-24 23:43:07,Laptop Accessories,Keyboard,HP Keyboard 16,HP,3229,1,3196.71,3196.71,18,575.41,3772.12,14,OK,4.6,0,New,UPI
+T0938,2025-03-14 02:48:15,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,22,44994.3,44994.3,12,5399.32,50393.62,7,Low Stock,4.4,0,Regular,UPI
+T0939,2025-04-02 06:50:00,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,8,11982.08,11982.08,12,1437.85,13419.93,29,OK,2.2,0,Returning,UPI
+T0940,2025-03-19 12:44:53,Mobile Accessories,Charger,Logitech Charger 18,Logitech,4803,24,3650.28,3650.28,18,657.05,4307.33,9,Low Stock,5.0,0,New,Cash
+T0941,2025-03-28 00:44:18,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,25,109106.25,109106.25,18,19639.12,128745.37,14,OK,1.8,1,Regular,UPI
+T0942,2025-03-22 08:48:16,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,11,63456.11,63456.11,12,7614.73,71070.84,20,OK,1.1,1,Wholesale,UPI
+T0943,2025-04-01 14:12:15,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,26,1487.4,1487.4,18,267.73,1755.13,27,OK,4.1,0,Wholesale,Credit Card
+T0944,2025-04-05 20:33:23,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,27,24126.5,24126.5,12,2895.18,27021.68,8,Low Stock,1.9,0,Returning,UPI
+T0945,2025-04-05 14:40:47,Laptops,Notebook,Dell Notebook 48,Dell,141050,2,138229.0,138229.0,18,24881.22,163110.22,10,Low Stock,4.7,0,Returning,Cash
+T0946,2025-03-21 17:43:03,Mobile Accessories,Charger,Zebronics Charger 19,Zebronics,2816,22,2196.48,2196.48,18,395.37,2591.85,40,OK,1.3,0,New,Credit Card
+T0947,2025-03-29 21:06:37,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,19,59956.2,59956.2,12,7194.74,67150.94,5,Low Stock,1.3,0,New,Debit Card
+T0948,2025-04-10 11:58:56,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,8,37745.76,37745.76,12,4529.49,42275.25,7,Low Stock,4.5,0,New,UPI
+T0949,2025-04-10 06:04:25,Mobiles,Smartphone,Jio Smartphone 10,Jio,33050,13,28753.5,28753.5,12,3450.42,32203.92,7,Low Stock,4.8,0,New,UPI
+T0950,2025-04-10 10:43:22,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,23,44417.45,44417.45,12,5330.09,49747.54,6,Low Stock,1.1,1,New,Credit Card
+T0951,2025-03-19 02:30:24,Laptop Accessories,Bag,HP Bag 39,HP,3328,9,3028.48,3028.48,18,545.13,3573.61,32,OK,3.4,0,New,Cash
+T0952,2025-04-10 04:37:08,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,19,33232.68,33232.68,12,3987.92,37220.6,6,Low Stock,2.2,0,Regular,Debit Card
+T0953,2025-04-05 01:15:55,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,29,30681.94,30681.94,12,3681.83,34363.77,14,OK,2.3,0,Returning,Cash
+T0954,2025-03-18 21:46:43,Mobiles,Smartphone,Apple Smartphone 14,Apple,18141,25,13605.75,13605.75,12,1632.69,15238.44,0,Out of Stock,1.1,0,Regular,UPI
+T0955,2025-03-28 09:40:33,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,6,41159.78,41159.78,12,4939.17,46098.95,15,OK,3.5,0,Returning,Debit Card
+T0956,2025-04-01 23:46:11,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,13,1433.76,1433.76,18,258.08,1691.84,38,OK,1.9,0,New,Cash
+T0957,2025-03-19 16:08:36,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,1,2560.14,2560.14,18,460.83,3020.97,24,OK,3.9,0,Regular,Debit Card
+T0958,2025-03-14 10:57:10,Laptops,Notebook,Acer Notebook 2,Acer,37689,28,27136.08,27136.08,18,4884.49,32020.57,26,OK,3.0,0,New,Credit Card
+T0959,2025-04-01 18:12:52,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,29,29129.88,29129.88,12,3495.59,32625.47,5,Low Stock,3.0,0,Wholesale,UPI
+T0960,2025-04-09 09:20:45,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,16,2172.24,2172.24,18,391.0,2563.24,23,OK,3.5,0,New,UPI
+T0961,2025-03-26 09:47:10,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,20,76028.0,76028.0,18,13685.04,89713.04,24,OK,3.7,0,Regular,Credit Card
+T0962,2025-04-11 11:43:33,Mobiles,Smartphone,Mi Smartphone 31,Mi,13024,25,9768.0,9768.0,12,1172.16,10940.16,28,OK,4.9,0,New,Credit Card
+T0963,2025-03-25 14:44:53,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,3,39797.16,39797.16,12,4775.66,44572.82,4,Low Stock,2.4,0,Returning,UPI
+T0964,2025-04-09 13:04:29,Laptops,Gaming Laptop,HP Gaming Laptop 33,HP,107233,7,99726.69,99726.69,18,17950.8,117677.49,23,OK,3.3,0,Returning,Credit Card
+T0965,2025-03-25 15:16:38,Mobile Accessories,Charger,Realme Charger 40,Realme,2586,2,2534.28,2534.28,18,456.17,2990.45,22,OK,4.3,0,Regular,Credit Card
+T0966,2025-03-22 15:44:01,Laptops,Notebook,Acer Notebook 29,Acer,26371,8,24261.32,24261.32,18,4367.04,28628.36,8,Low Stock,2.0,1,Returning,Cash
+T0967,2025-03-26 09:41:18,Mobiles,Smartphone,Vivo Smartphone 27,Vivo,23208,7,21583.44,21583.44,12,2590.01,24173.45,10,Low Stock,2.7,0,Regular,UPI
+T0968,2025-04-11 01:31:41,Laptops,Notebook,Acer Notebook 29,Acer,26371,9,23997.61,23997.61,18,4319.57,28317.18,7,Low Stock,3.2,0,Regular,UPI
+T0969,2025-03-21 12:22:33,Laptops,Ultrabook,ASUS Ultrabook 30,ASUS,120733,13,105037.71,105037.71,18,18906.79,123944.5,1,Low Stock,2.3,0,Regular,Debit Card
+T0970,2025-04-03 00:24:25,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,29,31358.57,31358.57,12,3763.03,35121.6,39,OK,5.0,0,New,UPI
+T0971,2025-03-28 07:05:34,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,20,1707.2,1707.2,18,307.3,2014.5,32,OK,4.3,0,Regular,Credit Card
+T0972,2025-04-01 01:38:44,Mobile Accessories,Cable,Zebronics Cable 4,Zebronics,2010,9,1829.1,1829.1,18,329.24,2158.34,26,OK,1.7,1,Wholesale,Debit Card
+T0973,2025-03-21 21:30:03,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,27,42110.05,42110.05,12,5053.21,47163.26,5,Low Stock,2.1,0,Regular,Credit Card
+T0974,2025-03-20 16:06:36,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,14,2463.9,2463.9,18,443.5,2907.4,4,Low Stock,4.9,0,Returning,Cash
+T0975,2025-03-20 00:01:21,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,26,42686.9,42686.9,12,5122.43,47809.33,4,Low Stock,1.9,1,New,UPI
+T0976,2025-03-31 11:40:15,Laptops,Notebook,Dell Notebook 48,Dell,141050,20,112840.0,112840.0,18,20311.2,133151.2,9,Low Stock,1.6,0,Wholesale,Credit Card
+T0977,2025-04-03 08:50:10,Mobiles,Smartphone,Jio Smartphone 8,Jio,57685,17,47878.55,47878.55,12,5745.43,53623.98,3,Low Stock,1.0,1,Regular,Net Banking
+T0978,2025-04-02 16:59:13,Laptops,Notebook,Dell Notebook 48,Dell,141050,8,129766.0,129766.0,18,23357.88,153123.88,8,Low Stock,4.6,0,New,UPI
+T0979,2025-04-08 21:09:50,Mobiles,Feature Phone,Jio Feature Phone 42,Jio,43214,17,35867.62,35867.62,12,4304.11,40171.73,13,OK,3.2,0,Returning,UPI
+T0980,2025-03-17 01:37:55,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,18,3868.76,3868.76,18,696.38,4565.14,2,Low Stock,1.9,1,Regular,Credit Card
+T0981,2025-03-26 21:48:27,Mobiles,Smartphone,Xiaomi Smartphone 38,Xiaomi,74020,9,67358.2,67358.2,12,8082.98,75441.18,4,Low Stock,4.5,0,Regular,UPI
+T0982,2025-03-27 08:43:42,Mobile Accessories,Case,Logitech Case 41,Logitech,2865,19,2320.65,2320.65,18,417.72,2738.37,3,Low Stock,3.8,0,Returning,UPI
+T0983,2025-03-14 06:31:35,Mobiles,Feature Phone,Jio Feature Phone 3,Jio,43787,1,43349.13,43349.13,12,5201.9,48551.03,14,OK,1.9,1,Returning,UPI
+T0984,2025-04-11 17:26:40,Laptops,Notebook,ASUS Notebook 23,ASUS,145475,1,144020.25,144020.25,18,25923.65,169943.9,13,OK,1.6,0,Returning,Credit Card
+T0985,2025-04-02 09:12:56,Laptops,Notebook,Acer Notebook 29,Acer,26371,30,18459.7,18459.7,18,3322.75,21782.45,6,Low Stock,5.0,0,New,UPI
+T0986,2025-03-29 09:52:25,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,7,66308.07,66308.07,12,7956.97,74265.04,19,OK,2.0,0,Regular,Debit Card
+T0987,2025-04-11 07:54:21,Laptop Accessories,Keyboard,Logitech Keyboard 25,Logitech,4718,11,4199.02,4199.02,18,755.82,4954.84,1,Low Stock,1.0,0,Regular,Credit Card
+T0988,2025-03-24 06:44:38,Mobile Accessories,Case,Logitech Case 12,Logitech,2134,10,1920.6,1920.6,18,345.71,2266.31,31,OK,3.0,0,Returning,UPI
+T0989,2025-03-28 04:16:19,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,18,58465.18,58465.18,12,7015.82,65481.0,18,OK,4.6,0,Returning,Credit Card
+T0990,2025-04-05 23:23:58,Mobiles,Smartphone,Nothing Smartphone 6,Nothing,44167,11,39308.63,39308.63,12,4717.04,44025.67,38,OK,4.6,0,Regular,Cash
+T0991,2025-03-28 11:47:01,Mobiles,Smartphone,Realme Smartphone 37,Realme,41028,23,31591.56,31591.56,12,3790.99,35382.55,3,Low Stock,2.1,0,New,Credit Card
+T0992,2025-03-28 12:29:34,Mobiles,Feature Phone,Nothing Feature Phone 35,Nothing,71299,3,69160.03,69160.03,12,8299.2,77459.23,17,OK,1.3,0,Regular,Debit Card
+T0993,2025-03-30 00:30:01,Mobile Accessories,Cable,Boat Cable 1,Boat,1648,7,1532.64,1532.64,18,275.88,1808.52,37,OK,3.1,0,New,Cash
+T0994,2025-03-30 14:03:03,Laptop Accessories,Keyboard,HP Keyboard 22,HP,1970,17,1635.1,1635.1,18,294.32,1929.42,23,OK,4.5,0,Wholesale,UPI
+T0995,2025-04-02 22:04:40,Mobiles,Feature Phone,Apple Feature Phone 9,Apple,56404,27,41174.92,41174.92,12,4940.99,46115.91,36,OK,1.2,1,Wholesale,Credit Card
+T0996,2025-04-03 21:21:08,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,10,22770.0,22770.0,12,2732.4,25502.4,10,Low Stock,4.2,0,New,Debit Card
+T0997,2025-03-16 16:48:38,Mobiles,Smartphone,Xiaomi Smartphone 47,Xiaomi,25300,3,24541.0,24541.0,12,2944.92,27485.92,9,Low Stock,4.1,0,Regular,Cash
+T0998,2025-03-26 15:04:48,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,14,126536.1,126536.1,18,22776.5,149312.6,24,OK,1.1,0,Returning,Debit Card
+T0999,2025-03-28 12:07:39,Laptops,Gaming Laptop,Dell Gaming Laptop 13,Dell,95035,11,84581.15,84581.15,18,15224.61,99805.76,23,OK,2.6,0,New,Cash
+T1000,2025-04-09 18:23:01,Laptops,Ultrabook,Acer Ultrabook 15,Acer,147135,18,120650.7,120650.7,18,21717.13,142367.83,23,OK,4.9,0,New,Cash
