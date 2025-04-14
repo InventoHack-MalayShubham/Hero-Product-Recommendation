@@ -3,6 +3,7 @@ import os
 import json
 import csv
 from io import StringIO
+import platform
 
 app = Flask(__name__)
 
@@ -189,12 +190,14 @@ def import_csv():
     # For this demo, we'll just return success
     return jsonify({'success': True})
 
-if __name__ == '__main__':
-    # Fix for Python 3.12 signal error
-    import platform
+def run_app():
+    """Run the Flask application with appropriate settings based on Python version"""
     if platform.python_version_tuple()[0:2] >= ('3', '12'):
         # For Python 3.12+, disable the reloader to avoid signal errors
         app.run(debug=True, use_reloader=False)
     else:
         # For older Python versions, use the standard approach
-        app.run(debug=True) 
+        app.run(debug=True)
+
+if __name__ == '__main__':
+    run_app() 
