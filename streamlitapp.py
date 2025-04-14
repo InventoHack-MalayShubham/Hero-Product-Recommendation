@@ -10,8 +10,8 @@ from urllib.parse import urlparse
 
 # Set page configuration
 st.set_page_config(
-    page_title="Inventory Dashboard",
-    page_icon="📦",
+    page_title="Rohit Electronics Inventory",
+    page_icon="📱",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -63,21 +63,37 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Initialize session state
+# Initialize session state with specific dataset structure
 if "product_data" not in st.session_state:
-    st.session_state.product_data = pd.DataFrame(columns=[
-        "Product ID", "Name", "Category", "Stock", "Expiry Date", "GST %", "Image URL"
-    ])
+    try:
+        # Load the specific dataset
+        df = pd.read_csv("Datasets\\rohit_electronics_sales_data.csv")
+        
+        # Ensure all required columns are present
+        required_columns = [
+            "Transaction ID", "Date", "Product Category", "Subcategory", "Product Name",
+            "Brand Name", "Units Sold", "Unit Price", "Discount", "Discounted Price",
+            "Total Revenue", "GST_Percentage", "GST_Amount", "Total_Revenue_Incl_GST",
+            "Current Stock", "Stock_Status", "Rating", "Returns", "Customer Type",
+            "Region", "Payment Method"
+        ]
+        
+        # Validate data types
+        df["Date"] = pd.to_datetime(df["Date"])
+        df["Units Sold"] = pd.to_numeric(df["Units Sold"], errors='coerce')
+        df["Unit Price"] = pd.to_numeric(df["Unit Price"], errors='coerce')
+        df["Discount"] = pd.to_numeric(df["Discount"], errors='coerce')
+        df["Current Stock"] = pd.to_numeric(df["Current Stock"], errors='coerce')
+        df["Rating"] = pd.to_numeric(df["Rating"], errors='coerce')
+        
+        st.session_state.product_data = df
+    except Exception as e:
+        st.error(f"Error loading dataset: {str(e)}")
+        st.session_state.product_data = pd.DataFrame(columns=required_columns)
 
-# GST category mapping
-GST_CATEGORIES = {
-    "Food": 5,
-    "Clothing": 12,
-    "Electronics": 18,
-    "Books": 0,
-    "Luxury": 28,
-    "Other": 18
-}
+# Function to save data
+def save_data():
+    st.session_state.product_data.to_csv("inventory_data.csv", index=False)
 
 # Function to validate image URL
 def is_valid_image_url(url):
@@ -89,177 +105,320 @@ def is_valid_image_url(url):
     except:
         return False
 
-# Function to get image from URL
+# Function to get image from URL with caching
+@st.cache_data(ttl=3600)  # Cache for 1 hour
 def get_image_from_url(url):
+    if not url or not is_valid_image_url(url):
+        return None
     try:
-        response = requests.get(url, stream=True)
-        if response.status_code == 200:
-            return Image.open(io.BytesIO(response.content))
+        response = requests.get(url, stream=True, timeout=5)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        return Image.open(io.BytesIO(response.content))
+    except (requests.RequestException, IOError, Image.UnidentifiedImageError) as e:
+        st.warning(f"Failed to load image from URL: {url}")
         return None
-    except:
-        return None
-
-# Function to check if product is expiring soon
-def is_expiring_soon(expiry_date, days=7):
-    if pd.isna(expiry_date):
-        return False
-    today = datetime.now().date()
-    expiry = pd.to_datetime(expiry_date).date()
-    days_until_expiry = (expiry - today).days
-    return 0 <= days_until_expiry <= days
 
 # Function to check if stock is low
 def is_low_stock(stock, threshold=30):
     return stock < threshold
 
-# Main app
-st.title("📦 Inventory Dashboard")
-
-# Sidebar for mode selection and CSV import
-with st.sidebar:
-    st.header("Settings")
-    mode = st.radio("Choose Mode", ["Manual Entry", "Bill Verification"], horizontal=True)
+# Function to validate product data
+def validate_product_data(data):
+    errors = []
     
-    st.header("Data Import")
+    # Required fields based on dataset
+    required_fields = [
+        "Product Name", "Product Category", "Subcategory", "Brand Name",
+        "Units Sold", "Unit Price", "Current Stock"
+    ]
+    
+    for field in required_fields:
+        if not data.get(field):
+            errors.append(f"{field} is required")
+    
+    # Numeric validation
+    try:
+        units = int(data.get("Units Sold", 0))
+        if units < 0:
+            errors.append("Units Sold cannot be negative")
+    except ValueError:
+        errors.append("Units Sold must be a valid number")
+    
+    try:
+        price = float(data.get("Unit Price", 0))
+        if price < 0:
+            errors.append("Unit Price cannot be negative")
+    except ValueError:
+        errors.append("Unit Price must be a valid number")
+    
+    try:
+        stock = int(data.get("Current Stock", 0))
+        if stock < 0:
+            errors.append("Current Stock cannot be negative")
+    except ValueError:
+        errors.append("Current Stock must be a valid number")
+    
+    # Category validation
+    valid_categories = ['Mobiles', 'Laptop Accessories', 'Mobile Accessories', 'Laptops']
+    if data.get("Product Category") not in valid_categories:
+        errors.append(f"Product Category must be one of: {', '.join(valid_categories)}")
+    
+    return errors
+
+# Function to validate CSV data
+def validate_csv_data(df):
+    required_columns = ["Product Name", "Product Category", "Current Stock", "Unit Price"]
+    errors = []
+    
+    # Check required columns
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        errors.append(f"Missing required columns: {', '.join(missing_columns)}")
+    
+    # Check data types
+    try:
+        df["Current Stock"] = pd.to_numeric(df["Current Stock"], errors='raise')
+        if (df["Current Stock"] < 0).any():
+            errors.append("Stock values cannot be negative")
+    except ValueError:
+        errors.append("Stock values must be numeric")
+    
+    try:
+        df["Unit Price"] = pd.to_numeric(df["Unit Price"], errors='raise')
+        if (df["Unit Price"] < 0).any():
+            errors.append("Price values cannot be negative")
+    except ValueError:
+        errors.append("Price values must be numeric")
+    
+    return errors
+
+# Function to perform search with specific categories
+def perform_search(df, search_term, category_filter=None, subcategory_filter=None, low_stock_filter=False):
+    if not search_term and not category_filter and not subcategory_filter and not low_stock_filter:
+        return df
+    
+    mask = pd.Series(True, index=df.index)
+    
+    if search_term:
+        search_mask = (
+            df['Product Name'].str.contains(search_term, case=False, na=False) |
+            df['Brand Name'].str.contains(search_term, case=False, na=False) |
+            df['Product Category'].str.contains(search_term, case=False, na=False) |
+            df['Subcategory'].str.contains(search_term, case=False, na=False)
+        )
+        mask &= search_mask
+    
+    if category_filter and category_filter != "All":
+        mask &= df['Product Category'] == category_filter
+    
+    if subcategory_filter and subcategory_filter != "All":
+        mask &= df['Subcategory'] == subcategory_filter
+    
+    if low_stock_filter:
+        mask &= df['Current Stock'] < 30
+    
+    return df[mask]
+
+# Main app
+df = st.session_state.product_data
+st.title("📱 Rohit Electronics Inventory Dashboard")
+
+# Sidebar - Upload CSV
+with st.sidebar:
+    st.header("Import Inventory CSV")
     uploaded_file = st.file_uploader("📁 Import CSV", type=["csv"])
     if uploaded_file:
-        df = pd.read_csv(uploaded_file)
-        # Check if required columns exist, if not add them
-        for col in ["GST %", "Image URL"]:
-            if col not in df.columns:
-                df[col] = None
-        st.session_state.product_data = pd.concat([st.session_state.product_data, df], ignore_index=True)
-        st.success("CSV data imported!")
+        try:
+            df_uploaded = pd.read_csv(uploaded_file)
+            errors = validate_csv_data(df_uploaded)
+            if errors:
+                for error in errors:
+                    st.error(error)
+            else:
+                st.session_state.product_data = pd.concat([df, df_uploaded], ignore_index=True)
+                save_data()  # Save the updated data
+                st.success("CSV data imported successfully!")
+        except Exception as e:
+            st.error(f"Error reading CSV file: {str(e)}")
 
-# Manual Entry
-if mode == "Manual Entry":
-    with st.expander("➕ Add Product", expanded=True):
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            name = st.text_input("Product Name")
-            category = st.selectbox("Category", options=list(GST_CATEGORIES.keys()))
-            gst_percentage = GST_CATEGORIES[category]
-            st.info(f"GST: {gst_percentage}%")
-        with col2:
-            stock = st.number_input("Stock", min_value=0, step=1)
-            expiry = st.date_input("Expiry Date", value=datetime.now().date() + timedelta(days=30))
-        with col3:
-            image_url = st.text_input("Image URL (optional)")
-            if image_url and not is_valid_image_url(image_url):
-                st.error("Invalid image URL")
-            
-            if st.button("Add Product"):
-                new_row = {
-                    "Product ID": len(st.session_state.product_data) + 1,
-                    "Name": name,
-                    "Category": category,
-                    "Stock": stock,
-                    "Expiry Date": expiry,
-                    "GST %": gst_percentage,
-                    "Image URL": image_url if is_valid_image_url(image_url) else None
-                }
-                st.session_state.product_data = pd.concat([st.session_state.product_data, pd.DataFrame([new_row])], ignore_index=True)
-                st.success(f"Product '{name}' added.")
-
-# Search and filters
-st.subheader("🔍 Search and Filter")
-col1, col2 = st.columns(2)
+# Filters
+st.subheader("🔍 Filter Options")
+col1, col2, col3, col4 = st.columns(4)
 with col1:
-    search_term = st.text_input("Search by name or category")
+    search_term = st.text_input("Search Products")
 with col2:
-    filter_expiry = st.checkbox("Show only expiring soon (within 7 days)")
-    filter_low_stock = st.checkbox("Show only low stock (< 30 units)")
+    category_filter = st.selectbox(
+        "Filter by Category",
+        options=["All"] + sorted(df['Product Category'].unique().tolist())
+    )
+with col3:
+    # Only show subcategories for selected category
+    if category_filter != "All":
+        subcategories = ["All"] + sorted(df[df['Product Category'] == category_filter]['Subcategory'].unique().tolist())
+    else:
+        subcategories = ["All"] + sorted(df['Subcategory'].unique().tolist())
+    subcategory_filter = st.selectbox("Filter by Subcategory", options=subcategories)
+with col4:
+    low_stock_filter = st.checkbox("Show only low stock (<30)")
 
 # Apply filters
-filtered_data = st.session_state.product_data.copy()
+filtered_data = perform_search(
+    df,
+    search_term,
+    None if category_filter == "All" else category_filter,
+    None if subcategory_filter == "All" else subcategory_filter,
+    low_stock_filter
+)
 
-if search_term:
-    filtered_data = filtered_data[
-        filtered_data['Name'].str.contains(search_term, case=False, na=False) |
-        filtered_data['Category'].str.contains(search_term, case=False, na=False)
-    ]
-
-if filter_expiry:
-    filtered_data = filtered_data[filtered_data['Expiry Date'].apply(is_expiring_soon)]
-
-if filter_low_stock:
-    filtered_data = filtered_data[filtered_data['Stock'].apply(is_low_stock)]
-
-# Product Grid Display
-st.subheader("🛒 Products")
+# Product Display
+st.subheader("📦 Product Inventory")
 if len(filtered_data) == 0:
-    st.info("No products found matching your criteria.")
+    st.info("No matching products found.")
 else:
     for idx, row in filtered_data.iterrows():
         with st.container():
             st.markdown('<div class="product-card">', unsafe_allow_html=True)
-            
-            # Check for expiry and low stock
-            expiry_warning = is_expiring_soon(row['Expiry Date'])
-            low_stock_warning = is_low_stock(row['Stock'])
-            
-            col1, col2, col3 = st.columns([2, 4, 2])
-            
-            # Product image if available
+            col1, col2 = st.columns([1, 3])
+
             with col1:
-                if pd.notna(row['Image URL']):
-                    image = get_image_from_url(row['Image URL'])
-                    if image:
-                        st.image(image, caption=row['Name'], use_column_width=True)
+                # Display product image if available
+                if pd.notna(row.get('Image URL')) and is_valid_image_url(row['Image URL']):
+                    img = get_image_from_url(row['Image URL'])
+                    if img:
+                        st.image(img, use_column_width=True)
                     else:
-                        st.image("https://via.placeholder.com/150?text=No+Image", caption=row['Name'], use_column_width=True)
+                        st.image("https://via.placeholder.com/150", use_column_width=True)
                 else:
-                    st.image("https://via.placeholder.com/150?text=No+Image", caption=row['Name'], use_column_width=True)
-            
-            # Product details
+                    st.image("https://via.placeholder.com/150", use_column_width=True)
+
             with col2:
-                st.markdown(f"**🆔 ID**: {row['Product ID']}")
-                st.markdown(f"**Name**: {row['Name']}")
-                st.markdown(f"**Category**: {row['Category']}")
+                # Product details
+                st.markdown(f"**Product Name:** {row['Product Name']}")
+                st.markdown(f"**Brand:** {row['Brand Name']} | **Category:** {row['Product Category']}")
+                st.markdown(f"**Subcategory:** {row['Subcategory']}")
                 
-                # Stock with warning if low
-                stock_text = f"**Stock**: {row['Stock']}"
-                if low_stock_warning:
-                    stock_text += '<span class="badge badge-danger">Low Stock</span>'
-                st.markdown(stock_text, unsafe_allow_html=True)
+                # Stock information with warning badges
+                stock_status = f"**Stock:** {row['Current Stock']}"
+                if row['Current Stock'] < 30:
+                    stock_status += ' <span class="badge badge-danger">Low Stock</span>'
+                elif row['Current Stock'] == 0:
+                    stock_status += ' <span class="badge badge-danger">Out of Stock</span>'
+                st.markdown(stock_status, unsafe_allow_html=True)
                 
-                # Expiry with warning if soon
-                expiry_text = f"**Expiry**: {row['Expiry Date']}"
-                if expiry_warning:
-                    expiry_text += '<span class="badge badge-warning">⚠️ Expiring Soon</span>'
-                st.markdown(expiry_text, unsafe_allow_html=True)
+                # Sales information
+                st.markdown(f"**Units Sold:** {row['Units Sold']}")
+                st.markdown(f"**Price:** ₹{row['Unit Price']:,.2f}")
+                if row['Discount'] > 0:
+                    st.markdown(f"**Discount:** {row['Discount']}% | **Discounted Price:** ₹{row['Discounted Price']:,.2f}")
                 
-                # GST percentage
-                st.markdown(f"**GST**: {row['GST %']}%")
-            
-            # Stock update
-            with col3:
-                with st.expander("🛠 Update Stock"):
-                    change = st.number_input("Change Stock", min_value=-row["Stock"], step=1, key=f"chg_{idx}")
-                    if st.button("Update", key=f"btn_{idx}"):
-                        st.session_state.product_data.at[idx, "Stock"] += change
-                        st.success(f"Stock updated for {row['Name']}")
-            
+                # Financial information
+                st.markdown(f"**GST:** {row['GST_Percentage']}% | **GST Amount:** ₹{row['GST_Amount']:,.2f}")
+                st.markdown(f"**Total Revenue (incl. GST):** ₹{row['Total_Revenue_Incl_GST']:,.2f}")
+                
+                # Additional information
+                st.markdown(f"**Rating:** {row['Rating']} ⭐")
+                st.markdown(f"**Customer Type:** {row['Customer Type']}")
+                st.markdown(f"**Payment Method:** {row['Payment Method']}")
+                st.markdown(f"**Region:** {row['Region']}")
+
             st.markdown('</div>', unsafe_allow_html=True)
 
-# Export options
-st.subheader("📤 Export Data")
+# Export Buttons
+st.subheader("📤 Export Inventory")
 col1, col2 = st.columns(2)
 with col1:
     st.download_button(
-        "Export Full Inventory CSV", 
-        st.session_state.product_data.to_csv(index=False), 
-        file_name="full_inventory.csv",
+        "Download Full CSV",
+        df.to_csv(index=False),
+        file_name="rohit_inventory_full.csv",
         mime="text/csv"
     )
 with col2:
     st.download_button(
-        "Export Filtered View CSV", 
-        filtered_data.to_csv(index=False), 
-        file_name="filtered_inventory.csv",
+        "Download Filtered CSV",
+        filtered_data.to_csv(index=False),
+        file_name="rohit_inventory_filtered.csv",
         mime="text/csv"
     )
 
 # Footer
 st.markdown("---")
-st.markdown("📊 Inventory Dashboard v2.0 | Built with Streamlit")
+st.markdown("🛍️ Rohit Electronics | Vending UI Inventory Dashboard")
+
+# Update the manual entry form section
+with st.form("product_form"):
+    # ... existing form fields ...
+    
+    if st.form_submit_button("Add Product"):
+        new_product = {
+            "Product Name": product_name,
+            "Product Category": category,
+            "Current Stock": stock,
+            "Unit Price": price,
+            "Date": date,
+            "Image URL": image_url
+            # ... other fields ...
+        }
+        
+        errors = validate_product_data(new_product)
+        if errors:
+            for error in errors:
+                st.error(error)
+        else:
+            # Add the product to the DataFrame
+            st.session_state.product_data = pd.concat([
+                st.session_state.product_data,
+                pd.DataFrame([new_product])
+            ], ignore_index=True)
+            save_data()  # Save the updated data
+            st.success("Product added successfully!")
+
+# Add summary statistics section
+st.subheader("📊 Summary Statistics")
+
+# Create columns for different metrics
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("Total Products", len(df))
+    st.metric("Total Revenue", f"₹{df['Total_Revenue_Incl_GST'].sum():,.2f}")
+
+with col2:
+    st.metric("Average Rating", f"{df['Rating'].mean():.1f} ⭐")
+    st.metric("Total Units Sold", f"{df['Units Sold'].sum():,}")
+
+with col3:
+    low_stock = len(df[df['Current Stock'] < 30])
+    st.metric("Low Stock Items", low_stock)
+    st.metric("Out of Stock Items", len(df[df['Current Stock'] == 0]))
+
+with col4:
+    st.metric("Average Discount", f"{df['Discount'].mean():.1f}%")
+    st.metric("Total GST Collected", f"₹{df['GST_Amount'].sum():,.2f}")
+
+# Add visualizations
+st.subheader("📈 Product Analysis")
+
+# Category distribution
+st.write("### Product Categories")
+category_counts = df['Product Category'].value_counts()
+st.bar_chart(category_counts)
+
+# Stock status distribution
+st.write("### Stock Status")
+stock_status = df['Stock_Status'].value_counts()
+st.bar_chart(stock_status)
+
+# Price distribution
+st.write("### Price Distribution")
+st.line_chart(df['Unit Price'].value_counts().sort_index())
+
+# Rating distribution
+st.write("### Rating Distribution")
+rating_counts = df['Rating'].value_counts().sort_index()
+st.bar_chart(rating_counts)
+
+# Payment method distribution
+st.write("### Payment Methods")
+payment_counts = df['Payment Method'].value_counts()
+st.pie_chart(payment_counts)
