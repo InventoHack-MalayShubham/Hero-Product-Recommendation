@@ -64,14 +64,14 @@ def load_data():
     global sales_df, inventory_df, last_update
     try:
         # Load sales data
-        sales_df = pd.read_csv('D:\\ML Folders\\ml_env\\GitHub\\Hero-Product-Recommendation\\Datasets\\rohit_electronics_sales_1000.csv')
+        sales_df = pd.read_csv('Datasets/rohit_electronics_sales_1000.csv')
         sales_df['Date'] = pd.to_datetime(sales_df['Date'])
         
         # Print column names for debugging
         print("Sales DataFrame Columns:", sales_df.columns.tolist())
         
         # Load inventory data
-        inventory_df = pd.read_csv('D:\\ML Folders\\ml_env\\GitHub\\Hero-Product-Recommendation\\Datasets\\inventory_data_new1.csv')
+        inventory_df = pd.read_csv('Datasets/inventory_data_new1.csv')
         
         # Print column names for debugging
         print("Inventory DataFrame Columns:", inventory_df.columns.tolist())
