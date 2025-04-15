@@ -65,50 +65,10 @@
                 </div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-title">Number of Orders</div>
-                <div class="kpi-value" id="totalOrders">0</div>
-                <div class="kpi-trend trend-up" id="ordersTrend">
-                    <span>↑ 0%</span>
-                    <span>vs previous period</span>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-title">Stock Turnover Rate</div>
-                <div class="kpi-value" id="stockTurnover">0</div>
-                <div class="kpi-trend trend-down" id="turnoverTrend">
-                    <span>↓ 0%</span>
-                    <span>vs previous period</span>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-title">Customer Retention Rate</div>
-                <div class="kpi-value" id="retentionRate">0%</div>
-                <div class="kpi-trend trend-up" id="retentionTrend">
-                    <span>↑ 0%</span>
-                    <span>vs previous period</span>
-                </div>
-            </div>
-            <div class="kpi-card">
                 <div class="kpi-title">Most Popular Product</div>
                 <div class="kpi-value" id="popularProduct">-</div>
                 <div class="kpi-trend" id="popularTrend">
                     <span>Units Sold: 0</span>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-title">Revenue Growth Rate</div>
-                <div class="kpi-value" id="growthRate">0%</div>
-                <div class="kpi-trend trend-up" id="growthTrend">
-                    <span>↑ 0%</span>
-                    <span>vs previous period</span>
-                </div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-title">Inventory Value</div>
-                <div class="kpi-value" id="inventoryValue">₹0</div>
-                <div class="kpi-trend trend-up" id="inventoryTrend">
-                    <span>↑ 0%</span>
-                    <span>vs previous period</span>
                 </div>
             </div>
         </div>
@@ -251,12 +211,7 @@
         function updateKPIs(kpis) {
             document.getElementById('totalRevenue').textContent = `₹${kpis.total_revenue.toLocaleString()}`;
             document.getElementById('avgOrderValue').textContent = `₹${kpis.avg_order_value.toLocaleString()}`;
-            document.getElementById('totalOrders').textContent = kpis.total_orders.toLocaleString();
-            document.getElementById('stockTurnover').textContent = kpis.stock_turnover.toFixed(1);
-            document.getElementById('retentionRate').textContent = `${kpis.retention_rate.toFixed(1)}%`;
             document.getElementById('popularProduct').textContent = kpis.popular_product;
-            document.getElementById('growthRate').textContent = `${kpis.growth_rate.toFixed(1)}%`;
-            document.getElementById('inventoryValue').textContent = `₹${kpis.inventory_value.toLocaleString()}`;
         }
         
         function updateCharts(chartData) {
@@ -333,5 +288,10 @@
             updateDashboard();
         });
     </script>
+    <style>
+        .kpi-grid {
+            display: none !important;
+        }
+    </style>
 </body>
 </html>

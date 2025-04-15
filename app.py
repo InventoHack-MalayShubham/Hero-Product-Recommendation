@@ -142,42 +142,23 @@ def calculate_product_score(product):
     
     return score
 
-def get_recommendations():
-    """Generate automated recommendations for all categories"""
+def get_recommendations(category=None, n=5):
+    """Get top n product recommendations for a given category or all categories."""
     if sales_df is None or inventory_df is None:
         load_data()
     
-    recommendations = {}
-    price_ranges = get_category_price_ranges()
-    
-    for category in ['Mobiles', 'Laptops', 'Mobile Accessories', 'Laptop Accessories']:
-        # Filter products by category
+    if category:
+        # Get recommendations for a specific category
         category_products = sales_df[sales_df['Product Category'] == category].copy()
+        category_products['score'] = category_products.apply(calculate_product_score, axis=1)
+        category_products = category_products.sort_values('score', ascending=False)
+        category_products = category_products.drop_duplicates(subset=['Product Name'], keep='first')
+        top_products = category_products.head(n)
         
-        # Filter by price range
-        min_price = price_ranges[category]['min']
-        max_price = price_ranges[category]['max']
-        category_products = category_products[
-            (category_products['Unit Price'] >= min_price) &
-            (category_products['Unit Price'] <= max_price)
-        ]
-        
-        # Filter by minimum rating
-        category_products = category_products[category_products['Rating'] >= 3.7]
-        
-        # Calculate scores
-        category_products['Score'] = category_products.apply(calculate_product_score, axis=1)
-        
-        # Get top 5 products
-        top_products = category_products.nlargest(5, 'Score')
-        
-        # Format recommendations
-        recommendations[category] = []
+        # Format the output for single category
+        recommendations = []
         for _, product in top_products.iterrows():
-            # Calculate units sold from revenue and unit price
-            units_sold = product['Total_Revenue_Incl_GST'] / product['Unit Price']
-            
-            recommendations[category].append({
+            recommendations.append({
                 'product_name': product['Product Name'],
                 'brand': product['Brand Name'],
                 'price': product['Unit Price'],
@@ -185,9 +166,33 @@ def get_recommendations():
                 'stock_status': product['Stock_Status'],
                 'current_stock': product['Current Stock'],
                 'total_revenue': product['Total_Revenue_Incl_GST'],
-                'units_sold': round(units_sold, 2),
-                'score': product['Score']
+                'score': product['score']
             })
+    else:
+        # Get recommendations for all categories
+        recommendations = {}
+        for cat in ['Mobiles', 'Laptops', 'Mobile Accessories', 'Laptop Accessories']:
+            cat_products = sales_df[sales_df['Product Category'] == cat].copy()
+            cat_products['score'] = cat_products.apply(calculate_product_score, axis=1)
+            cat_products = cat_products.sort_values('score', ascending=False)
+            cat_products = cat_products.drop_duplicates(subset=['Product Name'], keep='first')
+            top_products = cat_products.head(n)
+            
+            # Format products for this category
+            cat_recommendations = []
+            for _, product in top_products.iterrows():
+                cat_recommendations.append({
+                    'product_name': product['Product Name'],
+                    'brand': product['Brand Name'],
+                    'price': product['Unit Price'],
+                    'rating': product['Rating'],
+                    'stock_status': product['Stock_Status'],
+                    'current_stock': product['Current Stock'],
+                    'total_revenue': product['Total_Revenue_Incl_GST'],
+                    'score': product['score']
+                })
+            
+            recommendations[cat] = cat_recommendations
     
     return recommendations
 
@@ -201,32 +206,78 @@ def bcg_matrix(df, category=None):
     df['Sales'] = df['Total_Revenue_Incl_GST']
     df['Profit'] = df['Revenue_Per_Unit'] * df['Current Stock']
     
-    # Calculate medians for classification
-    sales_median = df['Sales'].median()
-    profit_median = df['Profit'].median()
+    # Group by product and get max values
+    df_grouped = df.groupby(['Product Name', 'Brand Name']).agg({
+        'Unit Price': 'first',
+        'Sales': 'max',
+        'Profit': 'max'
+    }).reset_index()
+    
+    # Calculate thresholds for classification
+    sales_median = df_grouped['Sales'].median()
+    profit_median = df_grouped['Profit'].median()
+    
+    # Adjust thresholds to be more lenient
+    sales_threshold = sales_median * 0.8  # 80% of median
+    profit_threshold = profit_median * 0.8  # 80% of median
     
     # Classify products
-    stars = df[(df['Sales'] > sales_median) & (df['Profit'] > profit_median)]
-    cows = df[(df['Profit'] > profit_median) & (df['Sales'] <= sales_median)]
-    question_marks = df[(df['Sales'] <= sales_median) & (df['Profit'] > profit_median)]
-    dogs = df[(df['Sales'] <= sales_median) & (df['Profit'] <= profit_median)]
+    stars = df_grouped[
+        (df_grouped['Sales'] > sales_threshold) & 
+        (df_grouped['Profit'] > profit_threshold)
+    ]
+    
+    cows = df_grouped[
+        (df_grouped['Sales'] <= sales_threshold) & 
+        (df_grouped['Profit'] > profit_threshold)
+    ]
+    
+    question_marks = df_grouped[
+        (df_grouped['Sales'] > sales_threshold) & 
+        (df_grouped['Profit'] <= profit_threshold)
+    ]
+    
+    dogs = df_grouped[
+        (df_grouped['Sales'] <= sales_threshold) & 
+        (df_grouped['Profit'] <= profit_threshold)
+    ]
+    
+    # If any category is empty, redistribute products
+    if len(cows) == 0 or len(question_marks) == 0:
+        # Sort all products by profit
+        all_products = df_grouped.sort_values('Profit', ascending=False)
+        
+        # Take top products for each category
+        n_products = len(all_products)
+        if n_products >= 12:  # Ensure we have enough products
+            stars = all_products.iloc[:3]
+            cows = all_products.iloc[3:6]
+            question_marks = all_products.iloc[6:9]
+            dogs = all_products.iloc[9:12]
+        else:
+            # If not enough products, distribute them evenly
+            chunk_size = max(1, n_products // 4)
+            stars = all_products.iloc[:chunk_size]
+            cows = all_products.iloc[chunk_size:2*chunk_size]
+            question_marks = all_products.iloc[2*chunk_size:3*chunk_size]
+            dogs = all_products.iloc[3*chunk_size:]
     
     # Format recommendations
     bcg_recommendations = {
-        'stars': format_bcg_products(stars),
-        'cows': format_bcg_products(cows),
-        'question_marks': format_bcg_products(question_marks),
-        'dogs': format_bcg_products(dogs)
+        'stars': format_bcg_products(stars, n=3),
+        'cows': format_bcg_products(cows, n=3),
+        'question_marks': format_bcg_products(question_marks, n=3),
+        'dogs': format_bcg_products(dogs, n=3)
     }
     
     return bcg_recommendations
 
-def format_bcg_products(df):
+def format_bcg_products(df, n=3):
     """Format products for BCG matrix display"""
     if df.empty:
         return []
     
-    return df.nlargest(5, 'Profit').apply(lambda row: {
+    return df.head(n).apply(lambda row: {
         'product_name': row['Product Name'],
         'brand': row['Brand Name'],
         'price': row['Unit Price'],
@@ -306,7 +357,7 @@ def home():
 # ML model route
 @app.route('/model')
 def model_page():
-    # Generate recommendations
+    # Generate recommendations for all categories
     recommendations = get_recommendations()
     
     # Generate BCG matrix recommendations
