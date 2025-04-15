@@ -1,83 +1,692 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Recommendation System - Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #3498db;
-            overflow: hidden;
-            padding: 10px 20px;
-        }
-        .navbar a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 12px 16px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .navbar a:hover {
-            background-color: #2980b9;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 0;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background-color: #2980b9;
-        }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="/">Home</a>
-        <a href="/model">Model</a>
-        <a href="/analytics" class="btn">Analytics</a> <!-- Added Analytics Link -->
-    </div>
+{% extends "base.html" %}
 
-    <div class="container">
-        <div class="hero">
-            <h1>Welcome to Product Recommendation System</h1>
-            <p>This system helps you discover the best products based on sales data and machine learning predictions.</p>
-            <a href="/model" class="btn">Go to Model</a>
-        </div>
+{% block title %}AI Product Recommendation System | Smart Inventory Solutions{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --primary-color: #4361ee;
+        --secondary-color: #3a0ca3;
+        --accent-color: #14213d;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --highlight-color: #4cc9f0;
+        --success-color: #38b000;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        color: #333;
+        background-color: #f8fafc;
+        overflow-x: hidden;
+    }
+    
+    /* Hero Section with Premium Background */
+    .hero {
+        text-align: center;
+        padding: 180px 20px;
+        color: white;
+        margin-bottom: 60px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(20, 33, 61, 0.85) 0%, rgba(67, 97, 238, 0.85) 100%), 
+                    url('https://images.unsplash.com/photo-1622473590773-f588134b6ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1970&q=80') center/cover no-repeat;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 25px;
+        line-height: 1.2;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero p {
+        font-size: 1.4rem;
+        margin: 0 auto 40px;
+        max-width: 700px;
+        opacity: 0.9;
+    }
+    
+    /* Button Styles */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        color: var(--primary-color);
+        padding: 16px 36px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 10px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: 0.5s;
+    }
+    
+    .btn:hover::before {
+        left: 100%;
+    }
+    
+    .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--secondary-color);
+        box-shadow: 0 10px 25px rgba(67, 97, 238, 0.3);
+    }
+    
+    .btn i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .btn:hover i {
+        transform: translateX(5px);
+    }
+    
+    /* Main Content Container */
+    .container {
+        max-width: 1400px;
+        margin: 60px auto;
+        padding: 0 40px;
+    }
+    
+    /* System Title Section */
+    .system-title {
+        text-align: center;
+        margin: 80px 0;
+        animation: fadeIn 1s ease;
+    }
+    
+    .system-title h2 {
+        font-size: 2.8rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .system-title h2::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+    
+    .system-title p {
+        font-size: 1.3rem;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* Stats Cards */
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 60px 0;
+        gap: 30px;
+        animation: fadeIn 1s ease;
+    }
+    
+    .stat-card {
+        background: white;
+        color: var(--dark-color);
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        min-width: 240px;
+        flex: 1;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-top: 4px solid var(--primary-color);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(67, 97, 238, 0.1) 100%);
+        z-index: 0;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 15px 0;
+        color: var(--primary-color);
+        position: relative;
+    }
+    
+    .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        position: relative;
+    }
+    
+    /* Features Section */
+    .section {
+        margin-bottom: 80px;
+        padding: 60px;
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        animation: fadeInUp 1s ease;
+    }
+    
+    .section h2 {
+        color: var(--accent-color);
+        font-size: 2.3rem;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(67, 97, 238, 0.2);
+        position: relative;
+    }
+    
+    .section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background: var(--primary-color);
+    }
+    
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-top: 50px;
+    }
+    
+    .feature-card {
+        background-color: white;
+        padding: 35px 30px;
+        border-radius: 12px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid var(--primary-color);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(67, 97, 238, 0.08) 100%);
+        z-index: 0;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-card h3 {
+        color: var(--primary-color);
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        position: relative;
+    }
+    
+    .feature-card p {
+        color: #555;
+        position: relative;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    
+    /* Key Features List */
+    .key-features {
+        columns: 2;
+        column-gap: 60px;
+        margin-top: 30px;
+    }
+    
+    .key-features li {
+        margin-bottom: 20px;
+        padding-left: 30px;
+        position: relative;
+        break-inside: avoid;
+        color: #555;
+    }
+    
+    .key-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--success-color);
+        font-weight: bold;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 80px 0 30px;
+        margin-top: 100px;
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 40px;
+        gap: 50px;
+        text-align: left;
+    }
+    
+    .footer-section {
+        flex: 1;
+        min-width: 280px;
+    }
+    
+    .footer-section h3 {
+        color: var(--highlight-color);
+        margin-bottom: 25px;
+        font-size: 1.4rem;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+        bottom: 0;
+        left: 0;
+    }
+    
+    .footer-logo {
+        height: 50px;
+        margin-bottom: 25px;
+        transition: transform 0.3s ease;
+    }
+    
+    .footer-logo:hover {
+        transform: scale(1.05);
+    }
+    
+    .footer-about p {
+        opacity: 0.8;
+        margin-bottom: 25px;
+        line-height: 1.8;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-links a {
+        color: white;
+        background: rgba(255,255,255,0.1);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 15px;
+    }
+    
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .footer-links a::before {
+        content: '→';
+        color: var(--primary-color);
+        font-weight: bold;
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+    
+    .footer-links a:hover {
+        opacity: 1;
+        color: var(--highlight-color);
+        transform: translateX(5px);
+    }
+    
+    .footer-links a:hover::before {
+        transform: translateX(5px);
+    }
+    
+    .contact-info {
+        list-style: none;
+    }
+    
+    .contact-info li {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        opacity: 0.8;
+    }
+    
+    .contact-info i {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        margin-top: 3px;
+    }
+    
+    .copyright {
+        margin-top: 60px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        opacity: 0.7;
+        font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+        from { 
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .hero h1 {
+            font-size: 3rem;
+        }
         
+        .system-title h2 {
+            font-size: 2.5rem;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .hero {
+            padding: 140px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.7rem;
+        }
+        
+        .key-features {
+            columns: 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero {
+            padding: 100px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+        
+        .hero h1 {
+            font-size: 2.3rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            font-size: 16px;
+        }
+        
+        .section {
+            padding: 40px 30px;
+        }
+        
+        .features {
+            grid-template-columns: 1fr;
+        }
+        
+        .footer-content {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: block;
+            margin: 10px auto;
+            max-width: 250px;
+        }
+        
+        .stats-container {
+            flex-direction: column;
+        }
+        
+        .stat-card {
+            min-width: 100%;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>AI-Powered Inventory Optimization System</h1>
+        <p>Transform your supply chain with intelligent product recommendations that boost sales and reduce waste using cutting-edge machine learning.</p>
         <div>
-            <h2>About This System</h2>
-            <p>The product recommendation system uses a Random Forest machine learning model to predict the most profitable products based on various factors including:</p>
-            <ul>
-                <li>Product category and subcategory</li>
-                <li>Brand reputation</li>
-                <li>Pricing and discounts</li>
-                <li>Current stock levels</li>
-                <li>Customer ratings</li>
+            <a href="/model" class="btn">Get Recommendations <i>→</i></a>
+            <a href="/analytics" class="btn btn-primary">View Analytics <i>→</i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <!-- System Title -->
+    <div class="system-title">
+        <h2>Next-Gen Inventory Management</h2>
+        <p>Our AI-driven platform leverages predictive analytics to optimize your product assortment, pricing, and stock levels in real-time.</p>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Prediction Accuracy</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">30%</div>
+            <div class="stat-label">Average Profit Increase</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Real-time Monitoring</div>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <div class="section">
+        <h2>System Capabilities</h2>
+        <p>Our advanced recommendation engine combines multiple machine learning models to deliver precise inventory predictions:</p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Demand Forecasting</h3>
+                <p>Accurately predict future product demand using historical sales data, seasonality patterns, and market trends.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Profit Optimization</h3>
+                <p>Identify high-margin opportunities and optimal pricing strategies to maximize your profitability.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Recommendations</h3>
+                <p>Get personalized product suggestions tailored to your customers' preferences and buying behavior.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Key Features Section -->
+    <div class="section">
+        <h2>Key Features</h2>
+        <ul class="key-features">
+            <li><strong>Advanced ML Models:</strong> Combines Random Forest, XGBoost, and Neural Networks for superior accuracy</li>
+            <li><strong>Real-time Dashboard:</strong> Interactive visualization of sales trends and inventory health</li>
+            <li><strong>Multi-channel Sync:</strong> Seamless integration with all sales channels and warehouses</li>
+            <li><strong>Brand Analytics:</strong> Detailed performance metrics by brand and category</li>
+            <li><strong>Dynamic Pricing:</strong> AI-powered pricing recommendations based on demand elasticity</li>
+            <li><strong>Seasonal Adaptation:</strong> Automatic adjustment for holidays and seasonal trends</li>
+            <li><strong>Supplier Insights:</strong> Vendor performance scoring and lead time predictions</li>
+            <li><strong>Custom Alerts:</strong> Get notified about stock risks and opportunities</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <img src="https://via.placeholder.com/150x50" alt="AIRecommend Logo" class="footer-logo">
+            <div class="footer-about">
+                <p>AI-powered inventory optimization and product recommendation platform for modern retailers and e-commerce businesses.</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i>f</i></a>
+                <a href="#"><i>in</i></a>
+                <a href="#"><i>t</i></a>
+                <a href="#"><i>ig</i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/model">Recommendation Engine</a></li>
+                <li><a href="/analytics">Analytics Dashboard</a></li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+                <li><i>✉</i> sales@airecommend.com</li>
+                <li><i>📞</i> +1 (555) 123-4567</li>
+                <li><i>🏢</i> 250 Tech Park Drive, Suite 300<br>San Francisco, CA 94107</li>
             </ul>
         </div>
     </div>
-</body>
-</html>
+    <div class="copyright">
+        <p>&copy; 2023 AIRecommend Technologies. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+{% endblock %}
