@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recommendation Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #2980b9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .error {
+            color: #e74c3c;
+            padding: 10px;
+            background-color: #fadbd8;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .product {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .bcg-section {
+            margin-top: 30px;
+        }
+        .bcg-category {
+            margin-bottom: 20px;
+        }
+        .trending-product {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e8f4fc;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/model">Model</a>
+    </div>
+
+    <div class="container">
+        <h1>Product Recommendation Model</h1>
+        
+        {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="time_frame">Time frame (days, 1-365):</label>
+                <input type="number" id="time_frame" name="time_frame" min="1" max="365" value="{{ form_data.time_frame if form_data }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Product Category:</label>
+                <select id="category" name="category">
+                    <option value="">All Categories</option>
+                    <option value="Mobile" {% if form_data and form_data.category == 'Mobile' %}selected{% endif %}>Mobile</option>
+                    <option value="Laptop" {% if form_data and form_data.category == 'Laptop' %}selected{% endif %}>Laptop</option>
+                    <option value="Mobile Accessories" {% if form_data and form_data.category == 'Mobile Accessories' %}selected{% endif %}>Mobile Accessories</option>
+                    <option value="Laptop Accessories" {% if form_data and form_data.category == 'Laptop Accessories' %}selected{% endif %}>Laptop Accessories</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="min_price">Minimum Price (₹):</label>
+                <input type="number" id="min_price" name="min_price" min="0" step="0.01" value="{{ form_data.min_price if form_data and form_data.min_price != '' else '0' }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="max_price">Maximum Price (₹):</label>
+                <input type="number" id="max_price" name="max_price" min="0" step="0.01" value="{{ form_data.max_price if form_data and form_data.max_price != '' else '' }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="min_rating">Minimum Rating (0-5):</label>
+                <input type="number" id="min_rating" name="min_rating" min="0" max="5" step="0.1" value="{{ form_data.min_rating if form_data and form_data.min_rating != '' else '0' }}">
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="include_low_stock" value="y" {% if form_data and form_data.include_low_stock == 'y' %}checked{% endif %}>
+                    Include low stock items
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="see_trending" value="y" {% if form_data and form_data.see_trending == 'y' %}checked{% endif %}>
+                    Show trending products
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="see_bcg" value="y" {% if form_data and form_data.see_bcg == 'y' %}checked{% endif %}>
+                    Show BCG Matrix analysis
+                </label>
+            </div>
+            
+            <button type="submit">Get Recommendations</button>
+        </form>
+        
+        {% if recommendations %}
+        <div class="results">
+            <h2>Top Product Recommendations</h2>
+            
+            {% for product in recommendations %}
+            <div class="product">
+                <h3>{{ product.product_name }}</h3>
+                <p><strong>Brand:</strong> {{ product.brand }}</p>
+                <p><strong>Price:</strong> ₹{{ product.price }}</p>
+                <p><strong>Rating:</strong> {{ product.rating }}</p>
+                <p><strong>Predicted Score:</strong> {{ product.score }}</p>
+                <p><strong>Confidence:</strong> {{ product.confidence }}</p>
+            </div>
+            {% endfor %}
+            
+            {% if trending %}
+            <div class="trending">
+                <h2>🔥 Trending Products (last 30 days)</h2>
+                
+                {% for product in trending %}
+                <div class="trending-product">
+                    <h3>{{ product.product_name }}</h3>
+                    <p><strong>Brand:</strong> {{ product.brand }}</p>
+                    <p><strong>Price:</strong> ₹{{ product.price }}</p>
+                    <p><strong>Rating:</strong> {{ product.rating }}</p>
+                    <p><strong>Total Revenue:</strong> ₹{{ product.revenue }}</p>
+                    <p><strong>Reorder Suggestion:</strong> {{ product.reorder_qty }} units</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            {% if bcg %}
+            <div class="bcg-section">
+                <h2>🌟 BCG Matrix Recommendations 🌟</h2>
+                
+                <div class="bcg-category">
+                    <h3>⭐ Stars (High Sales, High Profit)</h3>
+                    {% for product in bcg.stars %}
+                    <div class="product">
+                        <h4>{{ product.product_name }}</h4>
+                        <p><strong>Brand:</strong> {{ product.brand }}</p>
+                        <p><strong>Price:</strong> ₹{{ "%.2f"|format(product.price) }}</p>
+                        <p><strong>Sales:</strong> ₹{{ "%.2f"|format(product.sales) }}</p>
+                        <p><strong>Profit:</strong> ₹{{ "%.2f"|format(product.profit) }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="bcg-category">
+                    <h3>🐄 Cash Cows (High Profit, Stable Sales)</h3>
+                    {% for product in bcg.cows %}
+                    <div class="product">
+                        <h4>{{ product.product_name }}</h4>
+                        <p><strong>Brand:</strong> {{ product.brand }}</p>
+                        <p><strong>Price:</strong> ₹{{ "%.2f"|format(product.price) }}</p>
+                        <p><strong>Sales:</strong> ₹{{ "%.2f"|format(product.sales) }}</p>
+                        <p><strong>Profit:</strong> ₹{{ "%.2f"|format(product.profit) }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="bcg-category">
+                    <h3>❓ Question Marks (Potential to Grow)</h3>
+                    {% for product in bcg.question_marks %}
+                    <div class="product">
+                        <h4>{{ product.product_name }}</h4>
+                        <p><strong>Brand:</strong> {{ product.brand }}</p>
+                        <p><strong>Price:</strong> ₹{{ "%.2f"|format(product.price) }}</p>
+                        <p><strong>Sales:</strong> ₹{{ "%.2f"|format(product.sales) }}</p>
+                        <p><strong>Profit:</strong> ₹{{ "%.2f"|format(product.profit) }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="bcg-category">
+                    <h3>🐕 Dogs (Low Sales, Low Profit)</h3>
+                    {% for product in bcg.dogs %}
+                    <div class="product">
+                        <h4>{{ product.product_name }}</h4>
+                        <p><strong>Brand:</strong> {{ product.brand }}</p>
+                        <p><strong>Price:</strong> ₹{{ "%.2f"|format(product.price) }}</p>
+                        <p><strong>Sales:</strong> ₹{{ "%.2f"|format(product.sales) }}</p>
+                        <p><strong>Profit:</strong> ₹{{ "%.2f"|format(product.profit) }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
