@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Sales Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .filters {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .filters label {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .filters input, .filters select, .filters button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #bdc3c7;
+        }
+
+        .filters button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filters button:hover {
+            background-color: #2980b9;
+        }
+
+        #charts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            grid-template-rows: auto auto auto;
+        }
+
+        .chart-container {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-container canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="home-button">← Back to Home</a>
+        <h2>🛒 Electronics Sales Dashboard</h2>
+
+        <div class="filters">
+            <label>Start Date:</label>
+            <input type="date" id="start-date" value="{{ min_date }}">
+            <label>End Date:</label>
+            <input type="date" id="end-date" value="{{ max_date }}">
+
+            <label>Product Category:</label>
+            <select id="category">
+                {% for cat in categories %}
+                    <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select>
+
+            <button onclick="generateCharts()">Generate Charts</button>
+        </div>
+
+        <div id="charts">
+            <!-- Row 1 -->
+            <div class="chart-container">
+                <div class="chart-title">📈 Daily Revenue</div>
+                <canvas id="dailyRevenueChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">💰 Revenue by Product Category</div>
+                <canvas id="revenueByCategoryChart"></canvas>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="chart-container">
+                <div class="chart-title">🏆 Top 5 Brands</div>
+                <canvas id="topBrandsChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">👥 Customer Type Distribution</div>
+                <canvas id="customerTypeChart"></canvas>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="chart-container">
+                <div class="chart-title">💳 Payment Method Distribution</div>
+                <canvas id="paymentMethodChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">📦 Low/Out of Stock Items</div>
+                <canvas id="stockStatusChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function generateCharts() {
+            const start = document.getElementById('start-date').value;
+            const end = document.getElementById('end-date').value;
+            const category = document.getElementById('category').value;
+
+            const response = await fetch("/get_data", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ start, end, category })
+            });
+
+            const data = await response.json();
+            if (data.message) {
+                alert(data.message);
+                return;
+            }
+
+            const chartConfigs = [
+                {
+                    id: 'dailyRevenueChart',
+                    type: 'line',
+                    title: '📈 Daily Revenue',
+                    labels: Object.keys(data.dailyRevenue),
+                    values: Object.values(data.dailyRevenue),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                },
+                {
+                    id: 'revenueByCategoryChart',
+                    type: 'doughnut',
+                    title: '💰 Revenue by Product Category',
+                    labels: Object.keys(data.revenueByCategory),
+                    values: Object.values(data.revenueByCategory),
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#F1C40F'],
+                    borderColor: 'rgba(255, 255, 255, 0.7)',
+                },
+                {
+                    id: 'topBrandsChart',
+                    type: 'bar',
+                    title: '🏆 Top 5 Brands',
+                    labels: Object.keys(data.topBrands),
+                    values: Object.values(data.topBrands),
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                },
+                {
+                    id: 'customerTypeChart',
+                    type: 'pie',
+                    title: '👥 Customer Type Distribution',
+                    labels: Object.keys(data.customerType),
+                    values: Object.values(data.customerType),
+                    backgroundColor: ['#FF9F40', '#FFCD56', '#4BC0C0'],
+                    borderColor: 'rgba(255, 255, 255, 0.7)',
+                },
+                {
+                    id: 'paymentMethodChart',
+                    type: 'bar',
+                    title: '💳 Payment Method Distribution',
+                    labels: Object.keys(data.paymentMethods),
+                    values: Object.values(data.paymentMethods),
+                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                },
+                {
+                    id: 'stockStatusChart',
+                    type: 'bar',
+                    title: '📦 Low/Out of Stock Items',
+                    labels: Object.keys(data.stockStatus),
+                    values: Object.values(data.stockStatus),
+                    backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                }
+            ];
+
+            chartConfigs.forEach(config => {
+                const ctx = document.getElementById(config.id).getContext('2d');
+                new Chart(ctx, {
+                    type: config.type,
+                    data: {
+                        labels: config.labels,
+                        datasets: [{
+                            label: config.title,
+                            data: config.values,
+                            backgroundColor: config.backgroundColor,
+                            borderColor: config.borderColor,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: config.title,
+                                font: { size: 18 }
+                            }
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

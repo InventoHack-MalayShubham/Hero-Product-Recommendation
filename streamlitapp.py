@@ -226,8 +226,8 @@ st.title("📱 Rohit Electronics Inventory Dashboard")
 # Sidebar - Upload CSV
 with st.sidebar:
     st.header("Import Inventory CSV")
-    uploaded_file = st.file_uploader("📁 Import CSV", type=["csv"])
-    if uploaded_file:
+uploaded_file = st.file_uploader("📁 Import CSV", type=["csv"])
+if uploaded_file:
         try:
             df_uploaded = pd.read_csv(uploaded_file)
             errors = validate_csv_data(df_uploaded)
@@ -244,14 +244,14 @@ with st.sidebar:
 # Filters
 st.subheader("🔍 Filter Options")
 col1, col2, col3, col4 = st.columns(4)
-with col1:
+        with col1:
     search_term = st.text_input("Search Products")
-with col2:
+        with col2:
     category_filter = st.selectbox(
         "Filter by Category",
         options=["All"] + sorted(df['Product Category'].unique().tolist())
     )
-with col3:
+        with col3:
     # Only show subcategories for selected category
     if category_filter != "All":
         subcategories = ["All"] + sorted(df[df['Product Category'] == category_filter]['Subcategory'].unique().tolist())
@@ -275,8 +275,8 @@ st.subheader("📦 Product Inventory")
 if len(filtered_data) == 0:
     st.info("No matching products found.")
 else:
-    for idx, row in filtered_data.iterrows():
-        with st.container():
+for idx, row in filtered_data.iterrows():
+    with st.container():
             st.markdown('<div class="product-card">', unsafe_allow_html=True)
             col1, col2 = st.columns([1, 3])
 

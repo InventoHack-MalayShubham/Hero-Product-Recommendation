@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recommendation System - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #2980b9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/model">Model</a>
+        <a href="/analytics" class="btn">Analytics</a> <!-- Added Analytics Link -->
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to Product Recommendation System</h1>
+            <p>This system helps you discover the best products based on sales data and machine learning predictions.</p>
+            <a href="/model" class="btn">Go to Model</a>
+        </div>
+        
+        <div>
+            <h2>About This System</h2>
+            <p>The product recommendation system uses a Random Forest machine learning model to predict the most profitable products based on various factors including:</p>
+            <ul>
+                <li>Product category and subcategory</li>
+                <li>Brand reputation</li>
+                <li>Pricing and discounts</li>
+                <li>Current stock levels</li>
+                <li>Customer ratings</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
