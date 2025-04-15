@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, session, Response
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
@@ -14,10 +14,43 @@ import seaborn as sns
 import io
 import base64
 import os
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
 
 warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your-secret-key-here'  # Change this to a secure secret key
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password_hash = db.Column(db.String(128))
+    is_admin = db.Column(db.Boolean, default=False)
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Create database tables
+with app.app_context():
+    db.create_all()
 
 # Global variables
 model = None
@@ -343,6 +376,15 @@ def calculate_kpis(filtered_sales, comparison_sales=None):
             'inventory_value': 0
         }
 
+def get_top_rated_products(df, n=3):
+    """Get top n highest rated products from the dataset."""
+    # Filter out products with no ratings
+    rated_products = df[df['rating'].notna()]
+    # Sort by rating in descending order and get top n
+    top_products = rated_products.sort_values('rating', ascending=False).head(n)
+    # Format the data for display
+    return top_products[['product_name', 'brand', 'price', 'rating', 'reviews']].to_dict('records')
+
 # Initialize
 with app.app_context():
     df = load_data()
@@ -356,25 +398,32 @@ def home():
 
 # ML model route
 @app.route('/model')
+@login_required
 def model_page():
-    # Generate recommendations for all categories
-    recommendations = get_recommendations()
-    
-    # Generate BCG matrix recommendations
-    bcg_recommendations = bcg_matrix(sales_df)
-    
-    # Check if data needs to be reloaded (every 24 hours)
-    if last_update is None or (datetime.now() - last_update) > timedelta(hours=24):
-        load_data()
+    try:
+        # Load the Amazon dataset
+        amazon_df = pd.read_csv('D:/ML Folders/ml_env/GitHub/Hero-Product-Recommendation/Datasets/amazon_data_processed.csv')
+        
+        # Get top rated products
+        top_rated = get_top_rated_products(amazon_df)
+        
+        # Get recommendations for all categories
         recommendations = get_recommendations()
+        
+        # Get BCG matrix recommendations
         bcg_recommendations = bcg_matrix(sales_df)
-    
-    return render_template('model.html', 
-                         recommendations=recommendations,
-                         bcg_recommendations=bcg_recommendations)
+        
+        return render_template('model.html',
+                             top_rated=top_rated,
+                             recommendations=recommendations,
+                             bcg_recommendations=bcg_recommendations)
+    except Exception as e:
+        flash('Error loading model data. Please try again later.', 'danger')
+        return redirect(url_for('home'))
 
 # Analytics page
 @app.route('/analytics')
+@login_required
 def analytics():
     if sales_df is None or inventory_df is None:
         load_data()
@@ -446,6 +495,62 @@ def get_data():
     except Exception as e:
         print(f"Error in get_data: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        user = User.query.filter_by(username=username).first()
+        
+        if user and user.check_password(password):
+            session['user_id'] = user.id
+            session['username'] = user.username
+            session['is_admin'] = user.is_admin
+            flash('Logged in successfully!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid username or password', 'danger')
+    
+    return render_template('login.html')
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
+        
+        if password != confirm_password:
+            flash('Passwords do not match', 'danger')
+            return redirect(url_for('signup'))
+        
+        if User.query.filter_by(username=username).first():
+            flash('Username already exists', 'danger')
+            return redirect(url_for('signup'))
+        
+        if User.query.filter_by(email=email).first():
+            flash('Email already exists', 'danger')
+            return redirect(url_for('signup'))
+        
+        user = User(username=username, email=email)
+        user.set_password(password)
+        
+        db.session.add(user)
+        db.session.commit()
+        
+        flash('Account created successfully! Please log in.', 'success')
+        return redirect(url_for('login'))
+    
+    return render_template('signup.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('Logged out successfully!', 'success')
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     load_data()

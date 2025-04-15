@@ -30,22 +30,28 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
-        .nav-link {
+        .nav-link, .auth-link {
             color: #ecf0f1;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .nav-link:hover {
+        .nav-link:hover, .auth-link:hover {
             color: #3498db;
         }
 
         .nav-link.active {
             color: #3498db;
             border-bottom: 2px solid #3498db;
+        }
+
+        .user-info {
+            color: #ecf0f1;
+            margin-right: 1rem;
         }
 
         .content {
@@ -72,16 +78,31 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-brand">Product Recommendation System</a>
+            <a href="{{ url_for('home') }}" class="nav-brand">Product Recommendation System</a>
             <div class="nav-links">
-                <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
-                <a href="/model" class="nav-link {% if request.path == '/model' %}active{% endif %}">Model</a>
-                <a href="/analytics" class="nav-link {% if request.path == '/analytics' %}active{% endif %}">Analytics</a>
+                <a href="{{ url_for('home') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+                <a href="{{ url_for('model_page') }}" class="nav-link {% if request.path == '/model' %}active{% endif %}">Model</a>
+                <a href="{{ url_for('analytics') }}" class="nav-link {% if request.path == '/analytics' %}active{% endif %}">Analytics</a>
+                {% if session.get('user_id') %}
+                    <span class="user-info">Welcome, {{ session.get('username') }}</span>
+                    <a href="{{ url_for('logout') }}" class="auth-link">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="auth-link">Login</a>
+                    <a href="{{ url_for('signup') }}" class="auth-link">Sign Up</a>
+                {% endif %}
             </div>
         </div>
     </nav>
 
     <div class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
         {% block content %}{% endblock %}
     </div>
 

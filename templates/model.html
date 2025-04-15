@@ -18,7 +18,7 @@
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 30px;
+        margin-bottom: 80px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
@@ -147,10 +147,82 @@
         padding: 5px 10px;
         border-radius: 4px;
     }
+
+    .top-rated-section {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .top-rated-title {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+    }
+    
+    .top-rated-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .top-rated-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .top-rated-card h3 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .top-rated-card .brand {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+    
+    .top-rated-card .rating {
+        color: #f39c12;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .top-rated-card .reviews {
+        color: #7f8c8d;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+    
+    .top-rated-card .price {
+        color: #27ae60;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
+<div class="top-rated-section">
+    <h2 class="top-rated-title">🌟 Top Rated Products</h2>
+    <div class="top-rated-grid">
+        {% for product in top_rated %}
+        <div class="top-rated-card">
+            <h3>{{ product.product_name }}</h3>
+            <div class="brand">Brand: {{ product.brand }}</div>
+            <div class="rating">Rating: {{ "%.1f"|format(product.rating) }} ⭐</div>
+            <div class="reviews">Reviews: {{ product.reviews }}</div>
+            <div class="price">Price: ₹{{ "%.2f"|format(product.price) }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 <h1>Automated Product Recommendations</h1>
 
 {% for category, products in recommendations.items() %}
