@@ -6,93 +6,6 @@
     <title>Electronics Sales Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            padding: 20px;
-            background-color: #f0f2f5;
-        }
-
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-
-        .filters {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .filters label {
-            margin-right: 10px;
-            font-weight: bold;
-            color: #34495e;
-        }
-
-        .filters input, .filters select, .filters button {
-            padding: 10px;
-            margin: 5px;
-            font-size: 14px;
-            border-radius: 5px;
-            border: 1px solid #bdc3c7;
-        }
-
-        .filters button {
-            background-color: #3498db;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .filters button:hover {
-            background-color: #2980b9;
-        }
-
-        #charts {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            justify-items: center;
-            grid-template-rows: auto auto auto;
-        }
-
-        .chart-container {
-            width: 100%;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .chart-container canvas {
-            width: 100% !important;
-            height: 300px !important;
-        }
-
-        .chart-title {
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .home-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .home-button:hover {
-            background-color: #2980b9;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -100,156 +13,325 @@
         <h2>🛒 Electronics Sales Dashboard</h2>
 
         <div class="filters">
-            <label>Start Date:</label>
-            <input type="date" id="start-date" value="{{ min_date }}">
-            <label>End Date:</label>
-            <input type="date" id="end-date" value="{{ max_date }}">
-
-            <label>Product Category:</label>
-            <select id="category">
-                {% for cat in categories %}
-                    <option value="{{ cat }}">{{ cat }}</option>
-                {% endfor %}
-            </select>
-
-            <button onclick="generateCharts()">Generate Charts</button>
+            <div class="filter-group">
+                <label for="dateRange">Date Range:</label>
+                <select id="dateRange">
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 90 Days</option>
+                    <option value="365">Last Year</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="comparePeriod">Compare With:</label>
+                <select id="comparePeriod">
+                    <option value="none">No Comparison</option>
+                    <option value="previous">Previous Period</option>
+                    <option value="year">Same Period Last Year</option>
+                </select>
+            </div>
         </div>
 
-        <div id="charts">
-            <!-- Row 1 -->
-            <div class="chart-container">
-                <div class="chart-title">📈 Daily Revenue</div>
-                <canvas id="dailyRevenueChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <div class="chart-title">💰 Revenue by Product Category</div>
-                <canvas id="revenueByCategoryChart"></canvas>
-            </div>
+        <div class="export-buttons">
+            <button class="export-button" onclick="exportData('csv')">Export as CSV</button>
+            <button class="export-button" onclick="exportData('excel')">Export as Excel</button>
+            <button class="export-button" onclick="exportData('pdf')">Export as PDF</button>
+        </div>
 
-            <!-- Row 2 -->
-            <div class="chart-container">
-                <div class="chart-title">🏆 Top 5 Brands</div>
-                <canvas id="topBrandsChart"></canvas>
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-title">Total Revenue</div>
+                <div class="kpi-value" id="totalRevenue">₹0</div>
+                <div class="kpi-trend trend-up" id="revenueTrend">
+                    <span>↑ 0%</span>
+                    <span>vs previous period</span>
+                </div>
             </div>
-            <div class="chart-container">
-                <div class="chart-title">👥 Customer Type Distribution</div>
-                <canvas id="customerTypeChart"></canvas>
+            <div class="kpi-card">
+                <div class="kpi-title">Average Order Value</div>
+                <div class="kpi-value" id="avgOrderValue">₹0</div>
+                <div class="kpi-trend trend-up" id="aovTrend">
+                    <span>↑ 0%</span>
+                    <span>vs previous period</span>
+                </div>
             </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Number of Orders</div>
+                <div class="kpi-value" id="totalOrders">0</div>
+                <div class="kpi-trend trend-up" id="ordersTrend">
+                    <span>↑ 0%</span>
+                    <span>vs previous period</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Stock Turnover Rate</div>
+                <div class="kpi-value" id="stockTurnover">0</div>
+                <div class="kpi-trend trend-down" id="turnoverTrend">
+                    <span>↓ 0%</span>
+                    <span>vs previous period</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Customer Retention Rate</div>
+                <div class="kpi-value" id="retentionRate">0%</div>
+                <div class="kpi-trend trend-up" id="retentionTrend">
+                    <span>↑ 0%</span>
+                    <span>vs previous period</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Most Popular Product</div>
+                <div class="kpi-value" id="popularProduct">-</div>
+                <div class="kpi-trend" id="popularTrend">
+                    <span>Units Sold: 0</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Revenue Growth Rate</div>
+                <div class="kpi-value" id="growthRate">0%</div>
+                <div class="kpi-trend trend-up" id="growthTrend">
+                    <span>↑ 0%</span>
+                    <span>vs previous period</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Inventory Value</div>
+                <div class="kpi-value" id="inventoryValue">₹0</div>
+                <div class="kpi-trend trend-up" id="inventoryTrend">
+                    <span>↑ 0%</span>
+                    <span>vs previous period</span>
+                </div>
+            </div>
+        </div>
 
-            <!-- Row 3 -->
+        <div class="chart-grid">
             <div class="chart-container">
-                <div class="chart-title">💳 Payment Method Distribution</div>
-                <canvas id="paymentMethodChart"></canvas>
+                <div class="chart-title">📊 Sales by Category</div>
+                <canvas id="categoryChart"></canvas>
             </div>
             <div class="chart-container">
-                <div class="chart-title">📦 Low/Out of Stock Items</div>
+                <div class="chart-title">📈 Monthly Revenue Trend</div>
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">📊 Top Selling Products</div>
+                <canvas id="productChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">📊 Customer Distribution</div>
+                <canvas id="customerChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">📊 Stock Status Distribution</div>
                 <canvas id="stockStatusChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">📊 Price Range Distribution</div>
+                <canvas id="priceRangeChart"></canvas>
             </div>
         </div>
     </div>
 
     <script>
-        async function generateCharts() {
-            const start = document.getElementById('start-date').value;
-            const end = document.getElementById('end-date').value;
-            const category = document.getElementById('category').value;
-
-            const response = await fetch("/get_data", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ start, end, category })
-            });
-
-            const data = await response.json();
-            if (data.message) {
-                alert(data.message);
-                return;
-            }
-
+        // Initialize charts
+        const charts = {};
+        
+        function initializeCharts() {
             const chartConfigs = [
-                {
-                    id: 'dailyRevenueChart',
-                    type: 'line',
-                    title: '📈 Daily Revenue',
-                    labels: Object.keys(data.dailyRevenue),
-                    values: Object.values(data.dailyRevenue),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                },
-                {
-                    id: 'revenueByCategoryChart',
-                    type: 'doughnut',
-                    title: '💰 Revenue by Product Category',
-                    labels: Object.keys(data.revenueByCategory),
-                    values: Object.values(data.revenueByCategory),
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#F1C40F'],
-                    borderColor: 'rgba(255, 255, 255, 0.7)',
-                },
-                {
-                    id: 'topBrandsChart',
-                    type: 'bar',
-                    title: '🏆 Top 5 Brands',
-                    labels: Object.keys(data.topBrands),
-                    values: Object.values(data.topBrands),
-                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                },
-                {
-                    id: 'customerTypeChart',
-                    type: 'pie',
-                    title: '👥 Customer Type Distribution',
-                    labels: Object.keys(data.customerType),
-                    values: Object.values(data.customerType),
-                    backgroundColor: ['#FF9F40', '#FFCD56', '#4BC0C0'],
-                    borderColor: 'rgba(255, 255, 255, 0.7)',
-                },
-                {
-                    id: 'paymentMethodChart',
-                    type: 'bar',
-                    title: '💳 Payment Method Distribution',
-                    labels: Object.keys(data.paymentMethods),
-                    values: Object.values(data.paymentMethods),
-                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                },
-                {
-                    id: 'stockStatusChart',
-                    type: 'bar',
-                    title: '📦 Low/Out of Stock Items',
-                    labels: Object.keys(data.stockStatus),
-                    values: Object.values(data.stockStatus),
-                    backgroundColor: 'rgba(255, 159, 64, 0.6)',
-                    borderColor: 'rgba(255, 159, 64, 1)',
-                }
+                { id: 'categoryChart', type: 'doughnut', title: 'Sales by Category' },
+                { id: 'revenueChart', type: 'line', title: 'Monthly Revenue Trend' },
+                { id: 'productChart', type: 'bar', title: 'Top Selling Products' },
+                { id: 'customerChart', type: 'pie', title: 'Customer Distribution' },
+                { id: 'stockStatusChart', type: 'bar', title: 'Stock Status Distribution' },
+                { id: 'priceRangeChart', type: 'bar', title: 'Price Range Distribution' }
             ];
-
+            
             chartConfigs.forEach(config => {
                 const ctx = document.getElementById(config.id).getContext('2d');
-                new Chart(ctx, {
+                charts[config.id] = new Chart(ctx, {
                     type: config.type,
                     data: {
-                        labels: config.labels,
+                        labels: [],
                         datasets: [{
                             label: config.title,
-                            data: config.values,
-                            backgroundColor: config.backgroundColor,
-                            borderColor: config.borderColor,
+                            data: [],
+                            backgroundColor: getBackgroundColors(config.type),
+                            borderColor: getBorderColors(config.type),
                             borderWidth: 1
                         }]
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
                                 text: config.title,
-                                font: { size: 18 }
+                                font: { size: 16 }
                             }
                         }
                     }
                 });
             });
         }
+        
+        function getBackgroundColors(type) {
+            switch(type) {
+                case 'doughnut':
+                case 'pie':
+                    return ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'];
+                case 'bar':
+                    return 'rgba(54, 162, 235, 0.6)';
+                case 'line':
+                    return 'rgba(75, 192, 192, 0.2)';
+                default:
+                    return 'rgba(54, 162, 235, 0.6)';
+            }
+        }
+        
+        function getBorderColors(type) {
+            switch(type) {
+                case 'doughnut':
+                case 'pie':
+                    return ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'];
+                case 'bar':
+                    return 'rgba(54, 162, 235, 1)';
+                case 'line':
+                    return 'rgba(75, 192, 192, 1)';
+                default:
+                    return 'rgba(54, 162, 235, 1)';
+            }
+        }
+        
+        // Add event listeners for filters
+        document.getElementById('dateRange').addEventListener('change', updateDashboard);
+        document.getElementById('categoryFilter').addEventListener('change', updateDashboard);
+        document.getElementById('comparePeriod').addEventListener('change', updateDashboard);
+        
+        async function updateDashboard() {
+            const dateRange = document.getElementById('dateRange').value;
+            const category = document.getElementById('categoryFilter').value;
+            const comparePeriod = document.getElementById('comparePeriod').value;
+            
+            try {
+                const response = await fetch('/get_data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        dateRange,
+                        category,
+                        comparePeriod
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Update KPIs
+                updateKPIs(data.kpis);
+                
+                // Update charts
+                updateCharts(data.charts);
+                
+            } catch (error) {
+                console.error('Error updating dashboard:', error);
+            }
+        }
+        
+        function updateKPIs(kpis) {
+            document.getElementById('totalRevenue').textContent = `₹${kpis.total_revenue.toLocaleString()}`;
+            document.getElementById('avgOrderValue').textContent = `₹${kpis.avg_order_value.toLocaleString()}`;
+            document.getElementById('totalOrders').textContent = kpis.total_orders.toLocaleString();
+            document.getElementById('stockTurnover').textContent = kpis.stock_turnover.toFixed(1);
+            document.getElementById('retentionRate').textContent = `${kpis.retention_rate.toFixed(1)}%`;
+            document.getElementById('popularProduct').textContent = kpis.popular_product;
+            document.getElementById('growthRate').textContent = `${kpis.growth_rate.toFixed(1)}%`;
+            document.getElementById('inventoryValue').textContent = `₹${kpis.inventory_value.toLocaleString()}`;
+        }
+        
+        function updateCharts(chartData) {
+            // Update category chart
+            charts.categoryChart.data.labels = Object.keys(chartData.revenueByCategory);
+            charts.categoryChart.data.datasets[0].data = Object.values(chartData.revenueByCategory);
+            charts.categoryChart.update();
+            
+            // Update revenue chart
+            charts.revenueChart.data.labels = Object.keys(chartData.dailyRevenue);
+            charts.revenueChart.data.datasets[0].data = Object.values(chartData.dailyRevenue);
+            charts.revenueChart.update();
+            
+            // Update product chart
+            charts.productChart.data.labels = Object.keys(chartData.topBrands);
+            charts.productChart.data.datasets[0].data = Object.values(chartData.topBrands);
+            charts.productChart.update();
+            
+            // Update customer chart
+            charts.customerChart.data.labels = Object.keys(chartData.customerType);
+            charts.customerChart.data.datasets[0].data = Object.values(chartData.customerType);
+            charts.customerChart.update();
+            
+            // Update stock status chart
+            charts.stockStatusChart.data.labels = Object.keys(chartData.stockStatus);
+            charts.stockStatusChart.data.datasets[0].data = Object.values(chartData.stockStatus);
+            charts.stockStatusChart.update();
+            
+            // Update price range chart
+            charts.priceRangeChart.data.labels = Object.keys(chartData.priceRange);
+            charts.priceRangeChart.data.datasets[0].data = Object.values(chartData.priceRange);
+            charts.priceRangeChart.update();
+        }
+        
+        async function exportData(format) {
+            const dateRange = document.getElementById('dateRange').value;
+            const category = document.getElementById('categoryFilter').value;
+            
+            try {
+                const response = await fetch('/export_data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        format,
+                        dateRange,
+                        category
+                    })
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `sales_data.${format}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    a.remove();
+                } else {
+                    alert('Error exporting data');
+                }
+            } catch (error) {
+                console.error('Error exporting data:', error);
+                alert('Error exporting data');
+            }
+        }
+        
+        // Initialize dashboard and load data automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            updateDashboard();
+        });
     </script>
 </body>
 </html>
