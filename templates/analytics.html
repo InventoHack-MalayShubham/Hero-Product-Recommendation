@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronics Sales Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             padding: 20px;
-            background-color: #f4f6f9;
+            background-color: #f0f2f5;
         }
 
         h2 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 30px;
         }
 
@@ -25,6 +27,7 @@
         .filters label {
             margin-right: 10px;
             font-weight: bold;
+            color: #34495e;
         }
 
         .filters input, .filters select, .filters button {
@@ -32,17 +35,18 @@
             margin: 5px;
             font-size: 14px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #bdc3c7;
         }
 
         .filters button {
-            background-color: #4CAF50;
+            background-color: #3498db;
             color: white;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .filters button:hover {
-            background-color: #45a049;
+            background-color: #2980b9;
         }
 
         #charts {
@@ -71,57 +75,76 @@
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
-    <h2>🛒 Electronics Sales Dashboard</h2>
+    <div class="container">
+        <a href="/" class="home-button">← Back to Home</a>
+        <h2>🛒 Electronics Sales Dashboard</h2>
 
-    <div class="filters">
-        <label>Start Date:</label>
-        <input type="date" id="start-date" value="{{ min_date }}">
-        <label>End Date:</label>
-        <input type="date" id="end-date" value="{{ max_date }}">
+        <div class="filters">
+            <label>Start Date:</label>
+            <input type="date" id="start-date" value="{{ min_date }}">
+            <label>End Date:</label>
+            <input type="date" id="end-date" value="{{ max_date }}">
 
-        <label>Product Category:</label>
-        <select id="category">
-            {% for cat in categories %}
-                <option value="{{ cat }}">{{ cat }}</option>
-            {% endfor %}
-        </select>
+            <label>Product Category:</label>
+            <select id="category">
+                {% for cat in categories %}
+                    <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select>
 
-        <button onclick="generateCharts()">Generate Charts</button>
-    </div>
-
-    <div id="charts">
-        <!-- Row 1 -->
-        <div class="chart-container">
-            <div class="chart-title">📈 Daily Revenue</div>
-            <canvas id="dailyRevenueChart"></canvas>
-        </div>
-        <div class="chart-container">
-            <div class="chart-title">💰 Revenue by Product Category</div>
-            <canvas id="revenueByCategoryChart"></canvas>
+            <button onclick="generateCharts()">Generate Charts</button>
         </div>
 
-        <!-- Row 2 -->
-        <div class="chart-container">
-            <div class="chart-title">🏆 Top 5 Brands</div>
-            <canvas id="topBrandsChart"></canvas>
-        </div>
-        <div class="chart-container">
-            <div class="chart-title">👥 Customer Type Distribution</div>
-            <canvas id="customerTypeChart"></canvas>
-        </div>
+        <div id="charts">
+            <!-- Row 1 -->
+            <div class="chart-container">
+                <div class="chart-title">📈 Daily Revenue</div>
+                <canvas id="dailyRevenueChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">💰 Revenue by Product Category</div>
+                <canvas id="revenueByCategoryChart"></canvas>
+            </div>
 
-        <!-- Row 3 -->
-        <div class="chart-container">
-            <div class="chart-title">💳 Payment Method Distribution</div>
-            <canvas id="paymentMethodChart"></canvas>
-        </div>
-        <div class="chart-container">
-            <div class="chart-title">📦 Low/Out of Stock Items</div>
-            <canvas id="stockStatusChart"></canvas>
+            <!-- Row 2 -->
+            <div class="chart-container">
+                <div class="chart-title">🏆 Top 5 Brands</div>
+                <canvas id="topBrandsChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">👥 Customer Type Distribution</div>
+                <canvas id="customerTypeChart"></canvas>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="chart-container">
+                <div class="chart-title">💳 Payment Method Distribution</div>
+                <canvas id="paymentMethodChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">📦 Low/Out of Stock Items</div>
+                <canvas id="stockStatusChart"></canvas>
+            </div>
         </div>
     </div>
 

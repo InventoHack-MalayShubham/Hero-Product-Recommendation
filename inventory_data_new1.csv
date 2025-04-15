@@ -1,0 +1,22 @@
+Product ID,Product Name,Brand Name,Product Category,Subcategory,Current Stock,Reorder Level,Reorder Quantity,Stock Status,Unit Price,Cost Price,Selling Price,Discount (%),GST (%),Supplier Name,Lead Time
+7347,Apple Smartphones 52,Apple,Mobiles,Smartphones,33,15,31,In Stock,88559.56,76107.62,100295.2,0,18,Seshadri-Datta,4
+9242,Samsung Smartphones 67,Samsung,Mobiles,Smartphones,5,9,37,Low,91539.4,81934.82,116904.96,0,18,Zacharia Ltd,1
+6298,Xiaomi Smartphones 44,Xiaomi,Mobiles,Smartphones,98,6,15,In Stock,72513.34,54385.87,86216.58,0,18,Mani-Kurian,3
+5034,Realme Smartphones 32,Realme,Mobiles,Smartphones,2,18,37,Low,120376.04,107680.05,145653.64,0,18,Chhabra-Manda,7
+6260,Vivo Smartphones 82,Vivo,Mobiles,Smartphones,5,12,50,Low,113642.08,79663.68,137886.34,15,18,"Som, Shan and Khatri",5
+5583,Nothing Smartphones 24,Nothing,Mobiles,Smartphones,58,15,32,In Stock,88872.62,67698.42,102519.26,5,18,Mani-Kurian,7
+9440,Jio Feature Phones 91,Jio,Mobiles,Feature Phones,80,8,27,In Stock,1901.68,1556.61,2307.82,0,12,"Som, Shan and Khatri",7
+7190,ASUS Gaming 66,ASUS,Laptops,Gaming,3,12,23,Low,71566.39,56871.46,86502.11,15,18,Varghese-Palla,5
+4797,MSI Gaming 1,MSI,Laptops,Gaming,30,9,13,In Stock,90111.54,80161.13,110563.41,0,18,"Som, Shan and Khatri",2
+7781,HP Business 67,HP,Laptops,Business,95,19,23,In Stock,45007.05,34358.25,51794.22,5,18,Krishnan-Sahni,1
+2594,Dell Business 32,Dell,Laptops,Business,99,9,22,In Stock,37940.85,28788.17,43646.09,0,18,Zacharia Ltd,6
+6711,Lenovo Business 11,Lenovo,Laptops,Business,4,18,33,Low,32438.4,29156.38,37815.56,0,18,Krishnan-Sahni,3
+4244,Acer Student 53,Acer,Laptops,Student,58,10,41,In Stock,25428.48,22548.02,32708.09,5,18,Chowdhury-Bhattacharyya,5
+6005,Boat Chargers 7,Boat,Mobile Accessories,Chargers,74,20,44,In Stock,2652.33,1886.61,3418.49,0,18,"Mannan, Sethi and Kala",7
+9054,Realme Earphones 56,Realme,Mobile Accessories,Earphones,90,8,22,In Stock,4054.54,3263.81,5137.21,5,18,Krishnan-Sahni,1
+5829,Samsung Screen Protectors 56,Samsung,Mobile Accessories,Screen Protectors,3,12,29,Low,577.79,514.03,657.25,0,18,"Som, Shan and Khatri",6
+6488,Mi Cases 15,Mi,Mobile Accessories,Cases,85,10,48,In Stock,2004.72,1728.44,2502.11,10,18,Chhabra-Manda,5
+3813,Logitech Mouse 73,Logitech,Laptop Accessories,Mouse,48,5,10,In Stock,982.96,819.4,1180.86,20,18,Varghese-Palla,4
+8315,HP Keyboard 39,HP,Laptop Accessories,Keyboard,68,12,24,In Stock,2413.3,2165.81,3125.84,0,18,Varghese-Palla,4
+8259,Dell Bags 5,Dell,Laptop Accessories,Bags,57,11,40,In Stock,3264.01,2643.02,3657.66,0,18,"Nazareth, Nagi and Taneja",1
+9250,Zebronics Cooling Pads 38,Zebronics,Laptop Accessories,Cooling Pads,15,17,25,Low,4868.02,3804.09,6293.26,5,18,Mani-Kurian,7
