@@ -29,38 +29,44 @@ last_update = None
 # Load dataset and enrich it
 def load_data():
     global sales_df, inventory_df, last_update
-    # Load sales data
-    sales_df = pd.read_csv('D:\\ML Folders\\ml_env\\GitHub\\Hero-Product-Recommendation\\Datasets\\rohit_electronics_sales_1000.csv')
-    sales_df['Date'] = pd.to_datetime(sales_df['Date'])
-    
-    # Load inventory data
-    inventory_df = pd.read_csv('D:\\ML Folders\\ml_env\\GitHub\\Hero-Product-Recommendation\\Datasets\\inventory_data_new1.csv')
-    
-    # Rename columns to avoid conflicts
-    inventory_df = inventory_df.rename(columns={
-        'Current Stock': 'Inventory_Current_Stock',
-        'Stock Status': 'Inventory_Stock_Status'
-    })
-    
-    # Merge data
-    merged_df = pd.merge(sales_df, inventory_df, 
-                        left_on=['Product Name', 'Brand Name', 'Product Category'],
-                        right_on=['Product Name', 'Brand Name', 'Product Category'],
-                        how='left')
-    
-    last_update = datetime.now()
-
-    df = merged_df.copy()
-    df['Revenue_Per_Unit'] = df['Total_Revenue_Incl_GST'] / df['Current Stock'].replace(0, 1)
-    df['Popularity'] = df['Rating'] * df['Total_Revenue_Incl_GST']
-    df['Stock_Status'] = df['Current Stock'].apply(lambda x: 'Low' if x <= 5 else 'OK')
-    return df
+    try:
+        # Load sales data
+        sales_df = pd.read_csv('D:\\ML Folders\\ml_env\\GitHub\\Hero-Product-Recommendation\\Datasets\\rohit_electronics_sales_1000.csv')
+        sales_df['Date'] = pd.to_datetime(sales_df['Date'])
+        
+        # Print column names for debugging
+        print("Sales DataFrame Columns:", sales_df.columns.tolist())
+        
+        # Load inventory data
+        inventory_df = pd.read_csv('D:\\ML Folders\\ml_env\\GitHub\\Hero-Product-Recommendation\\Datasets\\inventory_data_new1.csv')
+        
+        # Print column names for debugging
+        print("Inventory DataFrame Columns:", inventory_df.columns.tolist())
+        
+        # Rename columns to avoid conflicts
+        inventory_df = inventory_df.rename(columns={
+            'Current Stock': 'Inventory_Current_Stock',
+            'Stock Status': 'Inventory_Stock_Status'
+        })
+        
+        # Merge data
+        merged_df = pd.merge(sales_df, inventory_df, 
+                           left_on=['Product Name', 'Brand Name', 'Product Category'],
+                           right_on=['Product Name', 'Brand Name', 'Product Category'],
+                           how='left')
+        
+        last_update = datetime.now()
+        return merged_df
+        
+    except Exception as e:
+        print(f"Error loading data: {str(e)}")
+        return None
 
 # Build the ML model
 def build_model(df):
     # Use only available columns
     features = ['Product Category', 'Brand Name', 'Rating', 'Current Stock']
-    target = 'Revenue_Per_Unit'
+    target = 'Total_Revenue_Incl_GST'
 
     # Prepare features
     X = df[features].copy()
@@ -228,6 +234,64 @@ def format_bcg_products(df):
         'profit': row['Profit']
     }, axis=1).tolist()
 
+def calculate_kpis(filtered_sales, comparison_sales=None):
+    """Calculate key performance indicators from sales data"""
+    try:
+        # Print column names for debugging
+        print("Filtered Sales Columns:", filtered_sales.columns.tolist())
+        
+        # Calculate basic KPIs
+        total_revenue = filtered_sales['Total_Revenue_Incl_GST'].sum()
+        total_orders = filtered_sales['Transaction ID'].nunique()  # Using Transaction ID instead of Order_ID
+        avg_order_value = total_revenue / total_orders if total_orders > 0 else 0
+        
+        # Calculate stock turnover rate
+        total_quantity = filtered_sales['Current Stock'].sum()  # Using Current Stock directly
+        avg_stock = filtered_sales['Current Stock'].mean()
+        stock_turnover = total_quantity / avg_stock if avg_stock > 0 else 0
+        
+        # Calculate customer retention rate
+        total_customers = filtered_sales['Customer Type'].nunique()  # Using Customer Type instead of Customer_ID
+        repeat_customers = filtered_sales.groupby('Customer Type').size()
+        repeat_customers = (repeat_customers > 1).sum()
+        retention_rate = (repeat_customers / total_customers * 100) if total_customers > 0 else 0
+        
+        # Find most popular product
+        popular_product = filtered_sales.groupby('Product Name')['Total_Revenue_Incl_GST'].sum().idxmax()
+        
+        # Calculate growth rate if comparison data is available
+        growth_rate = 0
+        if comparison_sales is not None:
+            prev_revenue = comparison_sales['Total_Revenue_Incl_GST'].sum()
+            growth_rate = ((total_revenue - prev_revenue) / prev_revenue * 100) if prev_revenue > 0 else 0
+        
+        # Calculate inventory value
+        inventory_value = filtered_sales['Current Stock'].sum() * filtered_sales['Unit Price'].mean()
+        
+        return {
+            'total_revenue': total_revenue,
+            'avg_order_value': avg_order_value,
+            'total_orders': total_orders,
+            'stock_turnover': stock_turnover,
+            'retention_rate': retention_rate,
+            'popular_product': popular_product,
+            'growth_rate': growth_rate,
+            'inventory_value': inventory_value
+        }
+        
+    except Exception as e:
+        print(f"Error calculating KPIs: {str(e)}")
+        return {
+            'total_revenue': 0,
+            'avg_order_value': 0,
+            'total_orders': 0,
+            'stock_turnover': 0,
+            'retention_rate': 0,
+            'popular_product': '-',
+            'growth_rate': 0,
+            'inventory_value': 0
+        }
+
 # Initialize
 with app.app_context():
     df = load_data()
@@ -271,52 +335,66 @@ def analytics():
     return render_template("analytics.html", min_date=min_date, max_date=max_date, categories=categories)
 
 # Fetch filtered data
-@app.route("/get_data", methods=["POST"])
+@app.route('/get_data', methods=['POST'])
 def get_data():
-    if sales_df is None or inventory_df is None:
-        load_data()
-    
-    start_date = pd.to_datetime(request.json["start"])
-    end_date = pd.to_datetime(request.json["end"])
-    category = request.json["category"]
+    try:
+        data = request.json
+        date_range = int(data.get('dateRange', 30))  # Default to 30 days if not specified
+        category = data.get('category', 'all')
+        compare_period = data.get('comparePeriod', 'none')
 
-    filtered_df = sales_df[(sales_df["Date"] >= start_date) & (sales_df["Date"] <= end_date)]
+        # Calculate date range
+        end_date = pd.Timestamp.now()
+        start_date = end_date - pd.Timedelta(days=date_range)
 
-    if category != "All":
-        filtered_df = filtered_df[filtered_df["Product Category"] == category]
+        # Filter data based on date range and category
+        filtered_sales = sales_df[
+            (sales_df['Date'] >= start_date) & 
+            (sales_df['Date'] <= end_date)
+        ]
+        
+        if category != 'all':
+            filtered_sales = filtered_sales[filtered_sales['Product Category'] == category]
 
-    if filtered_df.empty:
-        return jsonify({"message": "No data found for selected filters."})
+        # Calculate comparison data if requested
+        comparison_sales = None
+        if compare_period != 'none':
+            if compare_period == 'previous':
+                comp_start = start_date - pd.Timedelta(days=date_range)
+                comp_end = start_date
+            else:  # year
+                comp_start = start_date - pd.Timedelta(days=365)
+                comp_end = end_date - pd.Timedelta(days=365)
+            
+            comparison_sales = sales_df[
+                (sales_df['Date'] >= comp_start) & 
+                (sales_df['Date'] <= comp_end)
+            ]
+            
+            if category != 'all':
+                comparison_sales = comparison_sales[comparison_sales['Product Category'] == category]
 
-    daily_revenue = (
-        filtered_df.groupby(filtered_df["Date"].dt.strftime('%Y-%m-%d'))["Total_Revenue_Incl_GST"]
-        .sum().to_dict()
-    )
+        # Calculate KPIs
+        kpis = calculate_kpis(filtered_sales, comparison_sales if compare_period != 'none' else None)
 
-    revenue_by_category = (
-        filtered_df.groupby("Product Category")["Total_Revenue_Incl_GST"]
-        .sum().to_dict()
-    )
+        # Prepare chart data
+        chart_data = {
+            'revenueByCategory': filtered_sales.groupby('Product Category')['Total_Revenue_Incl_GST'].sum().to_dict(),
+            'dailyRevenue': filtered_sales.groupby(filtered_sales['Date'].dt.strftime('%Y-%m-%d'))['Total_Revenue_Incl_GST'].sum().to_dict(),
+            'topBrands': filtered_sales.groupby('Brand Name')['Total_Revenue_Incl_GST'].sum().nlargest(5).to_dict(),
+            'customerType': filtered_sales.groupby('Customer Type')['Transaction ID'].count().to_dict(),
+            'stockStatus': filtered_sales.groupby('Stock_Status')['Transaction ID'].count().to_dict(),
+            'priceRange': filtered_sales.groupby('Unit Price')['Transaction ID'].count().to_dict()
+        }
 
-    top_brands = (
-        filtered_df.groupby("Brand Name")["Total_Revenue_Incl_GST"]
-        .sum().sort_values(ascending=False).head(5).to_dict()
-    )
+        return jsonify({
+            'kpis': kpis,
+            'charts': chart_data
+        })
 
-    customer_type = filtered_df["Customer Type"].value_counts().to_dict()
-    payment_methods = filtered_df["Payment Method"].value_counts().to_dict()
-    
-    # Get stock status from sales data
-    stock_status = filtered_df["Stock_Status"].value_counts().to_dict()
-
-    return jsonify({
-        "dailyRevenue": daily_revenue,
-        "revenueByCategory": revenue_by_category,
-        "topBrands": top_brands,
-        "customerType": customer_type,
-        "paymentMethods": payment_methods,
-        "stockStatus": stock_status
-    })
+    except Exception as e:
+        print(f"Error in get_data: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     load_data()
