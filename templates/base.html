@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Product Recommendation System{% endblock %}</title>
+    <title>{% block title %}Your DukaanBuddy{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
         .navbar {
@@ -78,7 +78,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{{ url_for('home') }}" class="nav-brand">Product Recommendation System</a>
+            <a href="{{ url_for('home') }}" class="nav-brand">Your DukaanBuddy</a>
             <div class="nav-links">
                 <a href="{{ url_for('home') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
                 <a href="{{ url_for('model_page') }}" class="nav-link {% if request.path == '/model' %}active{% endif %}">Model</a>
