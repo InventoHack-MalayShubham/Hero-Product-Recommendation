@@ -12,28 +12,69 @@
 
     .inventory-header {
         margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .inventory-header h1 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .inventory-header p {
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+
+    .search-container {
+        margin: 2rem 0;
+        padding: 0 1rem;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 50px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 4px 8px rgba(52, 152, 219, 0.1);
     }
 
     .inventory-table {
         width: 100%;
-        border-collapse: collapse;
-        margin-top: 1rem;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 1rem 0;
         background: white;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 10px;
         overflow: hidden;
     }
 
-    .inventory-table th,
-    .inventory-table td {
+    .inventory-table th {
+        background-color: var(--dark-bg);
+        color: white;
+        font-weight: 600;
         padding: 1rem;
         text-align: left;
-        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
     }
 
-    .inventory-table th {
-        background-color: #f8f9fa;
-        font-weight: 600;
+    .inventory-table td {
+        padding: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+        color: var(--text-color);
+    }
+
+    .inventory-table tr:last-child td {
+        border-bottom: none;
     }
 
     .inventory-table tr:hover {
@@ -41,10 +82,12 @@
     }
 
     .stock-status {
+        display: inline-block;
         padding: 0.5rem 1rem;
-        border-radius: 20px;
+        border-radius: 50px;
         font-weight: 500;
         text-align: center;
+        min-width: 100px;
     }
 
     .stock-ok {
@@ -62,16 +105,23 @@
         color: #721c24;
     }
 
-    .search-container {
-        margin-bottom: 2rem;
+    .empty-value {
+        color: #999;
+        font-style: italic;
     }
 
-    .search-input {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 1rem;
+    .table-responsive {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+
+    .price-value {
+        font-family: 'Courier New', monospace;
+        font-weight: 500;
+    }
+
+    .numeric-value {
+        text-align: right;
     }
 
     @media (max-width: 768px) {
@@ -79,9 +129,40 @@
             padding: 1rem;
         }
 
+        .inventory-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .search-container {
+            margin: 1rem 0;
+        }
+
+        .inventory-table {
+            font-size: 0.9rem;
+        }
+
+        .inventory-table th,
+        .inventory-table td {
+            padding: 0.75rem;
+        }
+
+        .stock-status {
+            min-width: 80px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 576px) {
         .inventory-table {
             display: block;
             overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .inventory-table th,
+        .inventory-table td {
+            min-width: 150px;
         }
     }
 </style>
@@ -95,37 +176,53 @@
     </div>
 
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search products..." id="searchInput">
+        <input type="text" class="search-input" placeholder="Search products by name, brand, or category..." id="searchInput">
     </div>
 
-    <table class="inventory-table">
-        <thead>
-            <tr>
-                <th>Product Name</th>
-                <th>Brand</th>
-                <th>Category</th>
-                <th>Current Stock</th>
-                <th>Stock Status</th>
-                <th>Last Updated</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in inventory_data %}
-            <tr>
-                <td>{{ item['Product Name'] }}</td>
-                <td>{{ item['Brand Name'] }}</td>
-                <td>{{ item['Product Category'] }}</td>
-                <td>{{ item['Current Stock'] }}</td>
-                <td>
-                    <span class="stock-status {% if item['Stock Status'] == 'OK' %}stock-ok{% elif item['Stock Status'] == 'Low' %}stock-low{% else %}stock-out{% endif %}">
-                        {{ item['Stock Status'] }}
-                    </span>
-                </td>
-                <td>{{ item.get('Last Updated', 'N/A') }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Subcategory</th>
+                    <th>Current Stock</th>
+                    <th>Reorder Level</th>
+                    <th>Stock Status</th>
+                    <th>Unit Price (₹)</th>
+                    <th>Cost Price (₹)</th>
+                    <th>Selling Price (₹)</th>
+                    <th>Discount (%)</th>
+                    <th>GST (%)</th>
+                    <th>Supplier</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in inventory_data %}
+                <tr>
+                    <td>{{ item['Product Name'] }}</td>
+                    <td>{{ item['Brand Name'] }}</td>
+                    <td>{{ item['Product Category'] }}</td>
+                    <td>{{ item['Subcategory'] }}</td>
+                    <td class="numeric-value">{{ item['Current Stock'] }}</td>
+                    <td class="numeric-value">{{ item['Reorder Level'] }}</td>
+                    <td>
+                        <span class="stock-status {% if item['Stock Status'] == 'In Stock' %}stock-ok{% elif item['Stock Status'] == 'Low' %}stock-low{% else %}stock-out{% endif %}">
+                            {{ item['Stock Status'] }}
+                        </span>
+                    </td>
+                    <td class="price-value numeric-value">{{ "%.2f"|format(item['Unit Price']) }}</td>
+                    <td class="price-value numeric-value">{{ "%.2f"|format(item['Cost Price']) }}</td>
+                    <td class="price-value numeric-value">{{ "%.2f"|format(item['Selling Price']) }}</td>
+                    <td class="numeric-value">{{ item['Discount (%)'] }}</td>
+                    <td class="numeric-value">{{ item['GST (%)'] }}</td>
+                    <td>{{ item['Supplier Name'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
 
