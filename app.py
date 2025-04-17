@@ -490,7 +490,7 @@ def home():
     return render_template('home.html')
 
 # ML model route
-@app.route('/model')
+@app.route('/recommendation')
 @login_required
 def model_page():
     try:
@@ -713,6 +713,25 @@ def reload_model():
         
     except Exception as e:
         flash(f'Error reloading model: {str(e)}', 'danger')
+        return redirect(url_for('home'))
+
+# Add inventory route
+@app.route('/inventory')
+@login_required
+def inventory():
+    try:
+        if sales_df is None or inventory_df is None:
+            load_data()
+            
+        # Get inventory data
+        inventory_data = inventory_df.to_dict('records')
+        
+        return render_template('inventory.html',
+                             inventory_data=inventory_data)
+                             
+    except Exception as e:
+        print(f"Error in inventory: {str(e)}")
+        flash('Error loading inventory data. Please try again later.', 'danger')
         return redirect(url_for('home'))
 
 if __name__ == '__main__':
