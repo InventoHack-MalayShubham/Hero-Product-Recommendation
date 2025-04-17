@@ -234,6 +234,10 @@
             }
         }
 
+        .footer-section, .footer-section ul li, .footer-section ul li a, .footer-section p, .footer-section ul li i {
+            color: black !important;
+        }
+
         {% block extra_css %}{% endblock %}
     </style>
 </head>
@@ -241,10 +245,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 8V6C20 3.79086 18.2091 2 16 2C13.7909 2 12 3.79086 12 6V8H8V26C8 27.1046 8.89543 28 10 28H22C23.1046 28 24 27.1046 24 26V8H20ZM14 6C14 4.89543 14.8954 4 16 4C17.1046 4 18 4.89543 18 6V8H14V6Z" fill="#3498db"/>
-                    <path d="M13 12H15V20H13V12ZM17 12H19V20H17V12Z" fill="#2c3e50"/>
-                </svg>
+                <img src="{{ url_for('static', filename='images/logo1.svg') }}" alt="AIRecommend Logo" width="32" height="32">
                 DukanBuddy
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
