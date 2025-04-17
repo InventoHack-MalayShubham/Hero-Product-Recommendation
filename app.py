@@ -64,118 +64,69 @@ def load_data():
     global sales_df, inventory_df, last_update
     try:
         # Load sales data
-        print("Loading sales data...")
         sales_df = pd.read_csv('Datasets/rohit_electronics_sales_1000.csv')
-        print(f"Sales data loaded with shape: {sales_df.shape}")
-        
-        # Convert date column
-        print("Converting date column...")
         sales_df['Date'] = pd.to_datetime(sales_df['Date'])
         
         # Print column names for debugging
         print("Sales DataFrame Columns:", sales_df.columns.tolist())
         
         # Load inventory data
-        print("Loading inventory data...")
         inventory_df = pd.read_csv('Datasets/inventory_data_new1.csv')
-        print(f"Inventory data loaded with shape: {inventory_df.shape}")
         
         # Print column names for debugging
         print("Inventory DataFrame Columns:", inventory_df.columns.tolist())
         
         # Rename columns to avoid conflicts
-        print("Renaming columns...")
         inventory_df = inventory_df.rename(columns={
             'Current Stock': 'Inventory_Current_Stock',
             'Stock Status': 'Inventory_Stock_Status'
         })
         
         # Merge data
-        print("Merging datasets...")
         merged_df = pd.merge(sales_df, inventory_df, 
                            left_on=['Product Name', 'Brand Name', 'Product Category'],
                            right_on=['Product Name', 'Brand Name', 'Product Category'],
                            how='left')
-        print(f"Merged dataset shape: {merged_df.shape}")
-        
-        # Check for missing values
-        print("\nMissing values in merged dataset:")
-        print(merged_df.isnull().sum())
         
         last_update = datetime.now()
         return merged_df
         
     except Exception as e:
         print(f"Error loading data: {str(e)}")
-        import traceback
-        print("Full traceback:")
-        print(traceback.format_exc())
         return None
 
 # Build the ML model
 def build_model(df):
-    try:
-        print("\nBuilding model...")
-        # Use only available columns
-        features = ['Product Category', 'Brand Name', 'Rating', 'Current Stock']
-        target = 'Total_Revenue_Incl_GST'
+    # Use only available columns
+    features = ['Product Category', 'Brand Name', 'Rating', 'Current Stock']
+    target = 'Total_Revenue_Incl_GST'
 
-        print("Checking required columns...")
-        missing_cols = [col for col in features + [target] if col not in df.columns]
-        if missing_cols:
-            raise ValueError(f"Missing required columns: {missing_cols}")
+    # Prepare features
+    X = df[features].copy()
+    y = df[target]
 
-        # Prepare features
-        print("Preparing features...")
-        X = df[features].copy()
-        y = df[target]
+    # Convert categorical variables to numerical
+    X = pd.get_dummies(X, columns=['Product Category', 'Brand Name'])
 
-        # Check for missing values
-        print("\nMissing values in features:")
-        print(X.isnull().sum())
-        print("\nMissing values in target:")
-        print(y.isnull().sum())
+    # Split the data
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42)
 
-        # Convert categorical variables to numerical
-        print("Converting categorical variables...")
-        X = pd.get_dummies(X, columns=['Product Category', 'Brand Name'])
+    # Scale the features
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
 
-        # Split the data
-        print("Splitting data...")
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, random_state=42)
-        print(f"Training set shape: {X_train.shape}")
-        print(f"Test set shape: {X_test.shape}")
+    # Train the model
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train_scaled, y_train)
 
-        # Scale the features
-        print("Scaling features...")
-        scaler = StandardScaler()
-        X_train_scaled = scaler.fit_transform(X_train)
-        X_test_scaled = scaler.transform(X_test)
+    # Make predictions
+    y_pred = model.predict(X_test_scaled)
+    mae = mean_absolute_error(y_test, y_pred)
+    r2 = r2_score(y_test, y_pred)
 
-        # Train the model
-        print("Training model...")
-        model = RandomForestRegressor(n_estimators=100, random_state=42)
-        model.fit(X_train_scaled, y_train)
-
-        # Make predictions
-        print("Making predictions...")
-        y_pred = model.predict(X_test_scaled)
-        mae = mean_absolute_error(y_test, y_pred)
-        r2 = r2_score(y_test, y_pred)
-
-        print(f"\nModel evaluation:")
-        print(f"Mean Absolute Error: {mae:.2f}")
-        print(f"R² Score: {r2:.2f}")
-
-        return model, mae, r2
-        
-    except Exception as e:
-        print(f"Error building model: {str(e)}")
-        import traceback
-        print("Full traceback:")
-        print(traceback.format_exc())
-        return None, None, None
+    return model, mae, r2
 
 # Generate analytics plot
 def generate_plot():
@@ -226,23 +177,44 @@ def calculate_product_score(product):
 
 def get_recommendations(category=None, n=5):
     """Get top n product recommendations for a given category or all categories."""
-    try:
-        print("\nGetting recommendations...")
-        if sales_df is None or inventory_df is None:
-            print("Reloading data...")
-            load_data()
+    if sales_df is None or inventory_df is None:
+        load_data()
+    
+    if category:
+        # Get recommendations for a specific category
+        category_products = sales_df[sales_df['Product Category'] == category].copy()
+        category_products['score'] = category_products.apply(calculate_product_score, axis=1)
+        category_products = category_products.sort_values('score', ascending=False)
+        category_products = category_products.drop_duplicates(subset=['Product Name'], keep='first')
+        top_products = category_products.head(n)
         
-        if category:
-            print(f"Getting recommendations for category: {category}")
-            category_products = sales_df[sales_df['Product Category'] == category].copy()
-            category_products['score'] = category_products.apply(calculate_product_score, axis=1)
-            category_products = category_products.sort_values('score', ascending=False)
-            category_products = category_products.drop_duplicates(subset=['Product Name'], keep='first')
-            top_products = category_products.head(n)
+        # Format the output for single category
+        recommendations = []
+        for _, product in top_products.iterrows():
+            recommendations.append({
+                'product_name': product['Product Name'],
+                'brand': product['Brand Name'],
+                'price': product['Unit Price'],
+                'rating': product['Rating'],
+                'stock_status': product['Stock_Status'],
+                'current_stock': product['Current Stock'],
+                'total_revenue': product['Total_Revenue_Incl_GST'],
+                'score': product['score']
+            })
+    else:
+        # Get recommendations for all categories
+        recommendations = {}
+        for cat in ['Mobiles', 'Laptops', 'Mobile Accessories', 'Laptop Accessories']:
+            cat_products = sales_df[sales_df['Product Category'] == cat].copy()
+            cat_products['score'] = cat_products.apply(calculate_product_score, axis=1)
+            cat_products = cat_products.sort_values('score', ascending=False)
+            cat_products = cat_products.drop_duplicates(subset=['Product Name'], keep='first')
+            top_products = cat_products.head(n)
             
-            recommendations = []
+            # Format products for this category
+            cat_recommendations = []
             for _, product in top_products.iterrows():
-                recommendations.append({
+                cat_recommendations.append({
                     'product_name': product['Product Name'],
                     'brand': product['Brand Name'],
                     'price': product['Unit Price'],
@@ -252,40 +224,10 @@ def get_recommendations(category=None, n=5):
                     'total_revenue': product['Total_Revenue_Incl_GST'],
                     'score': product['score']
                 })
-        else:
-            print("Getting recommendations for all categories")
-            recommendations = {}
-            for cat in ['Mobiles', 'Laptops', 'Mobile Accessories', 'Laptop Accessories']:
-                cat_products = sales_df[sales_df['Product Category'] == cat].copy()
-                cat_products['score'] = cat_products.apply(calculate_product_score, axis=1)
-                cat_products = cat_products.sort_values('score', ascending=False)
-                cat_products = cat_products.drop_duplicates(subset=['Product Name'], keep='first')
-                top_products = cat_products.head(n)
-                
-                cat_recommendations = []
-                for _, product in top_products.iterrows():
-                    cat_recommendations.append({
-                        'product_name': product['Product Name'],
-                        'brand': product['Brand Name'],
-                        'price': product['Unit Price'],
-                        'rating': product['Rating'],
-                        'stock_status': product['Stock_Status'],
-                        'current_stock': product['Current Stock'],
-                        'total_revenue': product['Total_Revenue_Incl_GST'],
-                        'score': product['score']
-                    })
-                
-                recommendations[cat] = cat_recommendations
-        
-        print("Recommendations generated successfully")
-        return recommendations
-        
-    except Exception as e:
-        print(f"Error in get_recommendations: {str(e)}")
-        import traceback
-        print("Full traceback:")
-        print(traceback.format_exc())
-        return {} if category is None else []
+            
+            recommendations[cat] = cat_recommendations
+    
+    return recommendations
 
 def bcg_matrix(df, category=None):
     """Generate BCG Matrix recommendations"""
@@ -436,53 +378,18 @@ def calculate_kpis(filtered_sales, comparison_sales=None):
 
 def get_top_rated_products(df, n=3):
     """Get top n highest rated products from the dataset."""
-    try:
-        print("\nGetting top rated products...")
-        # Filter out products with no ratings
-        rated_products = df[df['rating'].notna()]
-        print(f"Found {len(rated_products)} products with ratings")
-        
-        # Sort by rating in descending order and get top n
-        top_products = rated_products.sort_values('rating', ascending=False).head(n)
-        print(f"Selected top {len(top_products)} products")
-        
-        # Format the data for display
-        return top_products[['product_name', 'brand', 'price', 'rating', 'reviews']].to_dict('records')
-    except Exception as e:
-        print(f"Error in get_top_rated_products: {str(e)}")
-        return []
+    # Filter out products with no ratings
+    rated_products = df[df['rating'].notna()]
+    # Sort by rating in descending order and get top n
+    top_products = rated_products.sort_values('rating', ascending=False).head(n)
+    # Format the data for display
+    return top_products[['product_name', 'brand', 'price', 'rating', 'reviews']].to_dict('records')
 
 # Initialize
 with app.app_context():
-    try:
-        print("Starting model initialization...")
-        df = load_data()
-        if df is None:
-            raise ValueError("Failed to load data")
-            
-        print("\nData loaded successfully. Building model...")
-        model, mae, r2 = build_model(df)
-        
-        if model is None:
-            raise ValueError("Failed to build model")
-            
-        print(f"\nModel Initialized Successfully:")
-        print(f"Mean Absolute Error: {mae:.2f}")
-        print(f"R² Score: {r2:.2f}")
-        
-        # Store model and metrics in app context
-        app.config['model'] = model
-        app.config['model_mae'] = mae
-        app.config['model_r2'] = r2
-        
-    except Exception as e:
-        print(f"Error during initialization: {str(e)}")
-        import traceback
-        print("Full traceback:")
-        print(traceback.format_exc())
-        app.config['model'] = None
-        app.config['model_mae'] = None
-        app.config['model_r2'] = None
+    df = load_data()
+    model, mae, r2 = build_model(df)
+    print(f"Model Initialized → MAE: {mae:.2f}, R2: {r2:.2f}")
 
 # Homepage route
 @app.route('/')
@@ -494,37 +401,23 @@ def home():
 @login_required
 def model_page():
     try:
-        # Check if model is available
-        if app.config.get('model') is None:
-            flash('Model is not initialized. Please try again later.', 'danger')
-            return redirect(url_for('home'))
-            
-        print("\nLoading Amazon dataset...")
-        amazon_df = pd.read_csv('Datasets/amazon_data_processed.csv')
-        print(f"Amazon data loaded with shape: {amazon_df.shape}")
+        # Load the Amazon dataset
+        amazon_df = pd.read_csv('D:/ML Folders/ml_env/GitHub/Hero-Product-Recommendation/Datasets/amazon_data_processed.csv')
         
-        print("\nGetting top rated products...")
+        # Get top rated products
         top_rated = get_top_rated_products(amazon_df)
-        print(f"Found {len(top_rated)} top rated products")
         
-        print("\nGetting recommendations...")
+        # Get recommendations for all categories
         recommendations = get_recommendations()
-        print("Recommendations generated")
         
-        print("\nGenerating BCG matrix...")
+        # Get BCG matrix recommendations
         bcg_recommendations = bcg_matrix(sales_df)
-        print("BCG matrix generated")
         
         return render_template('model.html',
                              top_rated=top_rated,
                              recommendations=recommendations,
                              bcg_recommendations=bcg_recommendations)
-                             
     except Exception as e:
-        print(f"Error in model_page: {str(e)}")
-        import traceback
-        print("Full traceback:")
-        print(traceback.format_exc())
         flash('Error loading model data. Please try again later.', 'danger')
         return redirect(url_for('home'))
 
@@ -658,62 +551,6 @@ def logout():
     session.clear()
     flash('Logged out successfully!', 'success')
     return redirect(url_for('home'))
-
-@app.route('/model_status')
-@login_required
-def model_status():
-    """Check the status of the model and data loading"""
-    try:
-        status = {
-            'model_initialized': app.config.get('model') is not None,
-            'data_loaded': sales_df is not None and inventory_df is not None,
-            'last_update': last_update.strftime('%Y-%m-%d %H:%M:%S') if last_update else None,
-            'model_metrics': {
-                'mae': app.config.get('model_mae'),
-                'r2': app.config.get('model_r2')
-            }
-        }
-        
-        if sales_df is not None:
-            status['sales_data_shape'] = sales_df.shape
-            status['sales_data_columns'] = sales_df.columns.tolist()
-            
-        if inventory_df is not None:
-            status['inventory_data_shape'] = inventory_df.shape
-            status['inventory_data_columns'] = inventory_df.columns.tolist()
-            
-        return jsonify(status)
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-@app.route('/reload_model')
-@login_required
-def reload_model():
-    """Reload the model and data"""
-    try:
-        global sales_df, inventory_df, last_update
-        
-        # Reload data
-        df = load_data()
-        if df is None:
-            raise ValueError("Failed to load data")
-            
-        # Rebuild model
-        model, mae, r2 = build_model(df)
-        if model is None:
-            raise ValueError("Failed to build model")
-            
-        # Update app config
-        app.config['model'] = model
-        app.config['model_mae'] = mae
-        app.config['model_r2'] = r2
-        
-        flash('Model reloaded successfully!', 'success')
-        return redirect(url_for('model_page'))
-        
-    except Exception as e:
-        flash(f'Error reloading model: {str(e)}', 'danger')
-        return redirect(url_for('home'))
 
 if __name__ == '__main__':
     load_data()
