@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory Management{% endblock %}
+
+{% block extra_css %}
+<style>
+    .inventory-container {
+        padding: 20px;
+    }
+
+    .legend-section {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .legend-color {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+
+    .normal-stock {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+    }
+
+    .low-stock {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+    }
+
+    .recommended {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+    }
+
+    .inventory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .item-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+
+    .item-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .item-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .item-details {
+        padding: 15px;
+    }
+
+    .item-name {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+    .item-price {
+        color: #27ae60;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .item-stock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+
+    .stock-label {
+        color: #7f8c8d;
+    }
+
+    .stock-value {
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .inventory-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .item-image {
+            height: 150px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .inventory-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="inventory-container">
+    <h1>Inventory Management</h1>
+    
+    <div class="legend-section">
+        <h3>Color Legend</h3>
+        <div class="legend-item">
+            <div class="legend-color normal-stock"></div>
+            <span>Normal Stock Level</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color low-stock"></div>
+            <span>Low Stock (Less than 10 items)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color recommended"></div>
+            <span>Recommended by Model</span>
+        </div>
+    </div>
+
+    <div class="inventory-grid">
+        {% for item in inventory_items %}
+        <div class="item-card {% if item.stock < 10 %}low-stock{% elif item.is_recommended %}recommended{% endif %}">
+            <img src="{{ item.image_url }}" alt="{{ item.name }}" class="item-image">
+            <div class="item-details">
+                <div class="item-name">{{ item.name }}</div>
+                <div class="item-price">₹{{ "%.2f"|format(item.price) }}</div>
+                <div class="item-stock">
+                    <span class="stock-label">Stock:</span>
+                    <span class="stock-value">{{ item.stock }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} 

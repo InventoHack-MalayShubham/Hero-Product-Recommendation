@@ -69,7 +69,7 @@ payment_weights = [0.15, 0.4, 0.2, 0.2, 0.05]
 records = []
 transaction_id = 1
 
-while len(records) < 2000:
+while len(records) < 1000:
     product = random.choice(unique_products)
     if product['Stock'] <= 0:
         continue  # Skip out-of-stock
