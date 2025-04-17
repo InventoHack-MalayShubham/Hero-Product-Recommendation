@@ -39,16 +39,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/recommendation">Recommendations</a>
+                        <a class="nav-link {% if request.path == '/recommendation' %}active{% endif %}" href="/recommendation">Recommendations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/inventory">Inventory</a>
+                        <a class="nav-link {% if request.path == '/inventory' %}active{% endif %}" href="/inventory">Inventory</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/analytics">Analytics</a>
+                        <a class="nav-link {% if request.path == '/analytics' %}active{% endif %}" href="/analytics">Analytics</a>
                     </li>
                 </ul>
             </div>
