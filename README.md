@@ -1,122 +1,48 @@
-# DukanBuddy - AI Product Recommendation System
+# Product Recommendation System
 
-## Project Overview
-DukanBuddy is an intelligent product recommendation system designed to help businesses optimize their inventory management and boost sales through data-driven insights. The system combines machine learning algorithms with real-time analytics to provide personalized product recommendations and inventory management solutions.
+A comprehensive product recommendation and analytics system that helps shopkeepers make data-driven decisions about their inventory and sales strategies.
 
-## Key Features
+## Features
 
 ### 1. Product Recommendations
-- **Smart Recommendations**: Uses machine learning to suggest products based on multiple factors:
-  - Product ratings and reviews
-  - Historical sales data
-  - Current inventory levels
-  - Brand reputation
-  - Category performance
-- **BCG Matrix Analysis**: Categorizes products into:
-  - Stars (High growth, High market share)
-  - Cash Cows (Low growth, High market share)
-  - Question Marks (High growth, Low market share)
-  - Dogs (Low growth, Low market share)
+- **Top Rated Products**: Displays the highest-rated products from Amazon dataset
+- **Category-wise Recommendations**: Smart recommendations based on product categories
+- **BCG Matrix Analysis**: Classifies products into Stars, Cash Cows, Question Marks, and Dogs
+- **Score-based Ranking**: Products are scored based on multiple factors including:
+  - Rating
+  - Revenue
+  - Stock status
+  - Customer reviews
 
 ### 2. Analytics Dashboard
-- **Real-time Metrics**:
+- **Interactive Charts**: Visual representation of sales data
+- **Key Performance Indicators (KPIs)**:
   - Total Revenue
   - Average Order Value
-  - Most Popular Products
-- **Interactive Charts**:
-  - Revenue by Category
-  - Daily Revenue Trends
-  - Top Performing Brands
-  - Stock Status Distribution
-- **Filtering Capabilities**:
+  - Most Popular Product
+- **Data Filtering**:
   - Date range selection
-  - Category filters
-  - Comparison periods
+  - Category filtering
+  - Period comparison
+- **Data Export**: Export data in multiple formats (CSV, Excel)
 
-### 3. Inventory Management
-- **Real-time Stock Monitoring**:
-  - Current stock levels
-  - Reorder levels
-  - Stock status (In Stock/Low/Out of Stock)
-- **Product Details**:
-  - Unit prices
-  - Cost prices
-  - Selling prices
-  - Discount percentages
-  - GST rates
-- **Supplier Information**:
-  - Supplier details
-  - Lead times
-  - Reorder quantities
+### 3. User Authentication
+- Secure login and signup system
+- Protected routes for sensitive data
+- User session management
 
-## Technical Architecture
+## Installation
 
-### Frontend
-- **Template Engine**: Jinja2
-- **Styling**: 
-  - Custom CSS with CSS Variables
-  - Bootstrap 5
-  - Font Awesome Icons
-- **JavaScript**:
-  - Interactive charts
-  - Real-time search functionality
-  - Responsive design
-
-### Backend
-- **Framework**: Flask
-- **Database**: SQLite
-- **Machine Learning**:
-  - scikit-learn
-  - Random Forest Regressor
-  - Feature Engineering Pipeline
-
-### Security Features
-- User authentication
-- Password hashing
-- Session management
-- Login required decorators
-
-## Data Structure
-The system uses multiple datasets:
-
-### 1. Sales Data (`rohit_electronics_sales_1000.csv`)
-- Transaction details
-- Product information
-- Customer data
-- Revenue metrics
-
-### 2. Inventory Data (`inventory_data_new1.csv`)
-- Product details
-- Stock levels
-- Pricing information
-- Supplier details
-
-### 3. Amazon Dataset (`amazon_data_processed.csv`)
-- Product ratings
-- Reviews
-- Additional product metadata
-
-## Installation and Setup
-
-### Prerequisites
-```bash
-Python 3.8+
-pip
-virtualenv
-```
-
-### Installation Steps
 1. Clone the repository:
 ```bash
-git clone [repository-url]
-cd DukanBuddy
+git clone https://github.com/yourusername/Hero-Product-Recommendation.git
+cd Hero-Product-Recommendation
 ```
 
-2. Create and activate virtual environment:
+2. Create a virtual environment:
 ```bash
 python -m venv venv
-source venv/bin/activate  # For Unix
-venv\Scripts\activate     # For Windows
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install dependencies:
@@ -124,82 +50,94 @@ venv\Scripts\activate     # For Windows
 pip install -r requirements.txt
 ```
 
-4. Initialize the database:
-```bash
-flask db init
-flask db migrate
-flask db upgrade
-```
-
-5. Run the application:
+4. Run the application:
 ```bash
 python app.py
 ```
 
+The application will be available at `http://localhost:5000`
+
 ## Project Structure
+
 ```
-DukanBuddy/
-├── app.py                 # Main application file
-├── templates/            # HTML templates
-│   ├── base.html        # Base template
-│   ├── home.html        # Homepage
-│   ├── model.html       # Recommendation page
-│   ├── analytics.html   # Analytics dashboard
-│   └── inventory.html   # Inventory management
-├── static/              # Static files
-│   ├── images/         # Images and icons
-│   └── css/            # CSS files
-├── Datasets/           # Data files
+Hero-Product-Recommendation/
+├── app.py                  # Main application file
+├── requirements.txt        # Project dependencies
+├── README.md              # Project documentation
+├── Datasets/              # Data files
+│   ├── amazon_data_processed.csv
 │   ├── rohit_electronics_sales_1000.csv
-│   ├── inventory_data_new1.csv
-│   └── amazon_data_processed.csv
-└── requirements.txt    # Project dependencies
+│   └── inventory_data_new1.csv
+├── static/                # Static files
+│   └── css/
+│       └── styles.css
+└── templates/             # HTML templates
+    ├── base.html
+    ├── home.html
+    ├── model.html
+    ├── analytics.html
+    ├── login.html
+    └── signup.html
 ```
 
-## Machine Learning Model
-- **Algorithm**: Random Forest Regressor
-- **Features**:
-  - Product Category
-  - Brand Name
-  - Rating
-  - Current Stock
-- **Target Variable**: Total Revenue
-- **Performance Metrics**:
-  - Mean Absolute Error (MAE)
-  - R² Score
+## Usage
 
-## API Routes
-- `/` - Homepage
-- `/recommendation` - Product recommendations
-- `/analytics` - Analytics dashboard
-- `/inventory` - Inventory management
-- `/get_data` - API endpoint for analytics data
-- `/model_status` - Model status and metrics
-- `/reload_model` - Reload ML model
+1. **Home Page**
+   - Overview of the system
+   - Quick access to all features
+   - System statistics
 
-## Security and Authentication
-- User registration and login system
-- Password encryption using Werkzeug
-- Session-based authentication
-- Admin privileges for specific functions
+2. **Model Page**
+   - View top-rated products
+   - Get category-wise recommendations
+   - Analyze products using BCG Matrix
+   - Access detailed product information
 
-## Future Enhancements
-1. Advanced recommendation algorithms
-2. Real-time price optimization
-3. Automated inventory forecasting
-4. Mobile application
-5. Integration with e-commerce platforms
-6. Enhanced data visualization
-7. Export functionality for reports
+3. **Analytics Dashboard**
+   - Monitor sales performance
+   - Track key metrics
+   - Generate reports
+   - Export data
 
-## Contributors
-- [List of contributors]
+## Data Sources
+
+1. **Amazon Dataset**
+   - Product information
+   - Ratings and reviews
+   - Price data
+
+2. **Sales Data**
+   - Transaction history
+   - Customer information
+   - Revenue data
+
+3. **Inventory Data**
+   - Stock levels
+   - Product categories
+   - Brand information
+
+## Security Features
+
+- Password hashing
+- Session management
+- Protected routes
+- Secure data handling
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
+
 - Flask framework
-- scikit-learn library
-- Bootstrap framework
-- Font Awesome icons 
+- Pandas for data analysis
+- Chart.js for visualizations
+- SQLAlchemy for database management 

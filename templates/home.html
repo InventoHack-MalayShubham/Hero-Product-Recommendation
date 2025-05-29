@@ -1,91 +1,132 @@
 {% extends "base.html" %}
 
-{% block title %}AI Your DukaanBuddy | Smart Inventory Solutions{% endblock %}
+{% block title %}AI Inventory Pro | Smart Stock Solutions{% endblock %}
 
 {% block extra_css %}
 <style>
     :root {
-        --primary-color: #4361ee;
-        --secondary-color: #3a0ca3;
-        --accent-color: #14213d;
-        --light-color: #f8f9fa;
-        --dark-color: #212529;
-        --highlight-color: #4cc9f0;
-        --success-color: #38b000;
+        --primary: #6C5CE7;
+        --primary-dark: #5649BE;
+        --accent: #FD79A8;
+        --accent-dark: #E84393;
+        --success: #00B894;
+        --warning: #FDCB6E;
+        --dark: #2D3436;
+        --light: #F5F6FA;
+        --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     }
-    
+
     * {
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    
+
     body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
+        background-color: transparent;
+        color: var(--dark);
         line-height: 1.7;
-        color: #333;
-        background-color: #f8fafc;
         overflow-x: hidden;
+        background-image: url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2101&q=80');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-blend-mode: normal;
     }
-    
-    /* Hero Section with Premium Background */
+
+    /* Hero Section */
     .hero {
+        position: relative;
+        height: 90vh;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 180px 20px;
         color: white;
-        margin-bottom: 60px;
-        position: relative;
         overflow: hidden;
-        background: linear-gradient(135deg, rgba(20, 33, 61, 0.85) 0%, rgba(67, 97, 238, 0.85) 100%), 
-                    url('https://images.unsplash.com/photo-1622473590773-f588134b6ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1970&q=80') center/cover no-repeat;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 73, 94, 0.95) 100%), 
+                    url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        margin-bottom: 5rem;
     }
-    
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.2) 0%, transparent 50%);
+    }
+
     .hero-content {
-        position: relative;
-        z-index: 1;
         max-width: 900px;
-        margin: 0 auto;
+        padding: 3rem 2.5rem 2.5rem 2.5rem;
+        position: relative;
+        z-index: 2;
         animation: fadeInUp 1s ease;
+        background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(108,92,231,0.10) 100%);
+        box-shadow: 0 8px 40px 0 rgba(44,62,80,0.18), 0 1.5px 8px 0 rgba(44,62,80,0.10);
+        border-radius: 32px;
+        border: 1.5px solid rgba(255,255,255,0.18);
+        backdrop-filter: blur(18px);
     }
-    
-    .hero h1 {
+
+    .hero-content h1 {
         font-size: 3.5rem;
-        margin-bottom: 25px;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
         line-height: 1.2;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 4px 24px rgba(44,62,80,0.18), 0 1.5px 8px rgba(44,62,80,0.10);
     }
-    
+
     .hero p {
         font-size: 1.4rem;
-        margin: 0 auto 40px;
         max-width: 700px;
+        margin: 0 auto 3rem;
         opacity: 0.9;
+        font-weight: 300;
     }
-    
-    /* Button Styles */
+
+    /* Floating Tech Elements */
+    .tech-floaters {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .tech-icon {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 15s infinite linear;
+    }
+
+    /* Button Styles (Keeping Navigation Buttons As Is) */
     .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: white;
-        color: var(--primary-color);
-        padding: 16px 36px;
-        text-decoration: none;
-        border-radius: 50px;
-        font-size: 17px;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
         font-weight: 600;
-        margin: 10px;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        border: none;
-        cursor: pointer;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin: 0.5rem;
         position: relative;
         overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn::before {
         content: '';
         position: absolute;
@@ -93,307 +134,394 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
         transition: 0.5s;
+        z-index: -1;
     }
-    
+
     .btn:hover::before {
         left: 100%;
     }
-    
-    .btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    
+
     .btn-primary {
-        background-color: var(--primary-color);
+        background: var(--gradient-primary);
         color: white;
     }
-    
+
     .btn-primary:hover {
-        background-color: var(--secondary-color);
-        box-shadow: 0 10px 25px rgba(67, 97, 238, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
     }
-    
+
+    .btn-accent {
+        background: var(--gradient-accent);
+        color: white;
+    }
+
+    .btn-accent:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(253, 121, 168, 0.4);
+    }
+
     .btn i {
-        margin-left: 8px;
+        margin-left: 0.5rem;
         transition: transform 0.3s ease;
     }
-    
+
     .btn:hover i {
         transform: translateX(5px);
     }
-    
-    /* Main Content Container */
+
+    /* Main Container */
     .container {
         max-width: 1400px;
-        margin: 60px auto;
-        padding: 0 40px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 1;
     }
-    
-    /* System Title Section */
-    .system-title {
+
+    /* Section Styling */
+    .section {
+        margin-bottom: 6rem;
+        position: relative;
+        padding: 2rem;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-header {
         text-align: center;
-        margin: 80px 0;
-        animation: fadeIn 1s ease;
+        margin-bottom: 4rem;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .system-title h2 {
-        font-size: 2.8rem;
-        color: var(--accent-color);
-        margin-bottom: 20px;
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
         position: relative;
         display: inline-block;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-weight: 700;
     }
-    
-    .system-title h2::after {
+
+    .section-header h2::after {
         content: '';
         position: absolute;
         width: 60px;
         height: 4px;
-        background: var(--primary-color);
+        background: var(--primary);
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 2px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
-    .system-title p {
-        font-size: 1.3rem;
-        color: #555;
-        max-width: 800px;
+
+    .section-header p {
+        font-size: 1.2rem;
+        color: #333;
+        max-width: 700px;
         margin: 0 auto;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        font-weight: 500;
     }
-    
+
     /* Stats Cards */
-    .stats-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 60px 0;
-        gap: 30px;
-        animation: fadeIn 1s ease;
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
     }
-    
+
     .stat-card {
-        background: white;
-        color: var(--dark-color);
-        padding: 40px 30px;
-        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
         text-align: center;
-        min-width: 240px;
-        flex: 1;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border-top: 4px solid var(--primary-color);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
-    
-    .stat-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(67, 97, 238, 0.1) 100%);
-        z-index: 0;
+
+    .stat-card:nth-child(2) {
+        border-top-color: var(--accent);
     }
-    
+
+    .stat-card:nth-child(3) {
+        border-top-color: var(--success);
+    }
+
     .stat-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.2);
     }
-    
+
     .stat-number {
         font-size: 3rem;
         font-weight: 700;
-        margin: 15px 0;
-        color: var(--primary-color);
-        position: relative;
+        margin: 1rem 0;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
+
+    .stat-card:nth-child(2) .stat-number {
+        background: var(--gradient-accent);
+        -webkit-background-clip: text;
+    }
+
+    .stat-card:nth-child(3) .stat-number {
+        background: linear-gradient(135deg, var(--success) 0%, #00a884 100%);
+        -webkit-background-clip: text;
+    }
+
     .stat-label {
         font-size: 1.1rem;
-        opacity: 0.9;
-        position: relative;
+        color: #333;
+        font-weight: 500;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
-    
-    /* Features Section */
-    .section {
-        margin-bottom: 80px;
-        padding: 60px;
-        background-color: white;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        animation: fadeInUp 1s ease;
-    }
-    
-    .section h2 {
-        color: var(--accent-color);
-        font-size: 2.3rem;
-        margin-bottom: 30px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid rgba(67, 97, 238, 0.2);
-        position: relative;
-    }
-    
-    .section h2::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 80px;
-        height: 2px;
-        background: var(--primary-color);
-    }
-    
-    .features {
+
+    /* Features Grid */
+    .features-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px;
-        margin-top: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
     }
-    
+
     .feature-card {
-        background-color: white;
-        padding: 35px 30px;
-        border-radius: 12px;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        border-left: 5px solid var(--primary-color);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
-    
-    .feature-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(67, 97, 238, 0.08) 100%);
-        z-index: 0;
-    }
-    
+
     .feature-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.2);
     }
-    
-    .feature-card h3 {
-        color: var(--primary-color);
-        margin-top: 0;
-        margin-bottom: 20px;
-        font-size: 1.5rem;
-        position: relative;
-    }
-    
-    .feature-card p {
-        color: #555;
-        position: relative;
-    }
-    
+
     .feature-icon {
         font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
         display: inline-block;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
-    
-    /* Key Features List */
-    .key-features {
-        columns: 2;
-        column-gap: 60px;
-        margin-top: 30px;
+
+    .feature-card:nth-child(2) .feature-icon {
+        background: var(--gradient-accent);
+        -webkit-background-clip: text;
     }
-    
-    .key-features li {
-        margin-bottom: 20px;
-        padding-left: 30px;
+
+    .feature-card:nth-child(3) .feature-icon {
+        background: linear-gradient(135deg, var(--warning) 0%, #f39c12 100%);
+        -webkit-background-clip: text;
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card p {
+        color: #333;
+        font-weight: 500;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Products Showcase */
+    .products-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .product-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .product-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .product-info {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .product-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #1a1a1a;
+        font-weight: 700;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info p {
+        color: #333;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-price {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.3rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Testimonials */
+    .testimonials {
+        background: linear-gradient(135deg, rgba(108, 92, 231, 0.95) 0%, rgba(86, 73, 190, 0.95) 100%);
+        padding: 5rem 2rem;
+        border-radius: 24px;
+        margin: 5rem 0;
+        color: white;
         position: relative;
-        break-inside: avoid;
-        color: #555;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    
-    .key-features li::before {
-        content: '✓';
-        position: absolute;
-        left: 0;
-        color: var(--success-color);
-        font-weight: bold;
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        position: relative;
+        z-index: 1;
     }
-    
+
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        padding: 2rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 1rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .author-info h5 {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .author-info p {
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
+
     /* Footer */
     footer {
-        background-color: var(--dark-color);
+        background: linear-gradient(135deg, rgba(45, 52, 54, 0.95) 0%, rgba(52, 58, 64, 0.95) 100%);
         color: white;
-        padding: 80px 0 30px;
-        margin-top: 100px;
-        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        padding: 5rem 0 2rem;
+        margin-top: 5rem;
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+        position: relative;
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .footer-content {
         max-width: 1400px;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 0 40px;
-        gap: 50px;
-        text-align: left;
-    }
-    
-    .footer-section {
-        flex: 1;
-        min-width: 280px;
-    }
-    
-    .footer-section h3 {
-        color: var(--highlight-color);
-        margin-bottom: 25px;
-        font-size: 1.4rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        padding: 0 2rem;
         position: relative;
-        padding-bottom: 10px;
+        z-index: 1;
     }
-    
-    .footer-section h3::after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        background: var(--primary-color);
-        bottom: 0;
-        left: 0;
-    }
-    
+
     .footer-logo {
         height: 50px;
-        margin-bottom: 25px;
-        transition: transform 0.3s ease;
+        margin-bottom: 1.5rem;
     }
-    
-    .footer-logo:hover {
-        transform: scale(1.05);
-    }
-    
+
     .footer-about p {
         opacity: 0.8;
-        margin-bottom: 25px;
-        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
     }
-    
+
     .social-links {
         display: flex;
-        gap: 15px;
+        gap: 1rem;
     }
-    
+
     .social-links a {
         color: white;
-        background: rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.1);
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -402,81 +530,71 @@
         justify-content: center;
         transition: all 0.3s ease;
     }
-    
+
     .social-links a:hover {
-        background: var(--primary-color);
+        background: var(--accent);
         transform: translateY(-3px);
     }
-    
-    .footer-links {
+
+    .footer-links h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-links h3::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background: var(--accent);
+        bottom: 0;
+        left: 0;
+    }
+
+    .footer-links ul {
         list-style: none;
     }
-    
+
     .footer-links li {
-        margin-bottom: 15px;
+        margin-bottom: 0.8rem;
     }
-    
+
     .footer-links a {
-        color: white;
+        color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
         transition: all 0.3s ease;
-        opacity: 0.8;
         display: flex;
         align-items: center;
-        gap: 10px;
     }
-    
-    .footer-links a::before {
-        content: '→';
-        color: var(--primary-color);
-        font-weight: bold;
-        transition: transform 0.3s ease;
-        display: inline-block;
-    }
-    
+
     .footer-links a:hover {
-        opacity: 1;
-        color: var(--highlight-color);
+        color: white;
         transform: translateX(5px);
     }
-    
-    .footer-links a:hover::before {
-        transform: translateX(5px);
+
+    .footer-links a i {
+        margin-right: 0.5rem;
+        color: var(--accent);
     }
-    
-    .contact-info {
-        list-style: none;
-    }
-    
-    .contact-info li {
-        margin-bottom: 20px;
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        opacity: 0.8;
-    }
-    
-    .contact-info i {
-        color: var(--primary-color);
-        font-size: 1.2rem;
-        margin-top: 3px;
-    }
-    
+
     .copyright {
-        margin-top: 60px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
         text-align: center;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         opacity: 0.7;
         font-size: 0.9rem;
     }
-    
+
     /* Animations */
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
     }
-    
+
     @keyframes fadeInUp {
         from { 
             opacity: 0;
@@ -487,65 +605,49 @@
             transform: translateY(0);
         }
     }
-    
+
+    @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+
     /* Responsive Design */
     @media (max-width: 1200px) {
         .hero h1 {
             font-size: 3rem;
         }
-        
-        .system-title h2 {
-            font-size: 2.5rem;
-        }
     }
-    
+
     @media (max-width: 992px) {
         .hero {
-            padding: 140px 20px;
+            height: auto;
+            padding: 8rem 0;
         }
         
         .hero h1 {
-            font-size: 2.7rem;
-        }
-        
-        .key-features {
-            columns: 1;
+            font-size: 2.5rem;
         }
     }
-    
+
     @media (max-width: 768px) {
         .hero {
-            padding: 100px 20px;
             clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
         }
         
         .hero h1 {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
         }
         
         .hero p {
             font-size: 1.2rem;
         }
         
-        .btn {
-            padding: 14px 28px;
-            font-size: 16px;
-        }
-        
-        .section {
-            padding: 40px 30px;
-        }
-        
-        .features {
-            grid-template-columns: 1fr;
-        }
-        
-        .footer-content {
-            flex-direction: column;
-            gap: 40px;
+        .section-header h2 {
+            font-size: 2rem;
         }
     }
-    
+
     @media (max-width: 576px) {
         .hero h1 {
             font-size: 2rem;
@@ -557,16 +659,12 @@
         
         .btn {
             display: block;
-            margin: 10px auto;
+            margin: 0.5rem auto;
             max-width: 250px;
         }
         
-        .stats-container {
-            flex-direction: column;
-        }
-        
-        .stat-card {
-            min-width: 100%;
+        .stats-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>
@@ -575,118 +673,238 @@
 {% block content %}
 <!-- Hero Section -->
 <div class="hero">
+    <!-- Floating Tech Icons -->
+    <div class="tech-floaters">
+        <div class="tech-icon" style="top: 20%; left: 10%; font-size: 3rem; animation-delay: 0s;">📱</div>
+        <div class="tech-icon" style="top: 30%; left: 80%; font-size: 4rem; animation-delay: 2s;">💻</div>
+        <div class="tech-icon" style="top: 70%; left: 15%; font-size: 3.5rem; animation-delay: 4s;">⌚</div>
+        <div class="tech-icon" style="top: 60%; left: 75%; font-size: 3rem; animation-delay: 6s;">🔌</div>
+    </div>
+    
     <div class="hero-content">
-        <h1>Elevate inventory decisions with AI-driven insights that maximize profits and minimize waste.</h1>
-        <p>Transform your supply chain with intelligent product recommendations that boost sales and reduce waste using cutting-edge machine learning.</p>
+        <h1>Revolutionize Your Mobile & Laptop Inventory</h1>
+        <p>AI-powered stock optimization that boosts sales by 35% and reduces excess inventory by 50% for electronics retailers</p>
         <div>
-            <a href="/model" class="btn">Get Recommendations <i>→</i></a>
-            <a href="/analytics" class="btn btn-primary">View Analytics <i>→</i></a>
+            <a href="/model" class="btn btn-primary">Get Smart Recommendations <i class="fas fa-arrow-right"></i></a>
+            <a href="/analytics" class="btn btn-accent">View Real-time Analytics <i class="fas fa-chart-line"></i></a>
         </div>
     </div>
 </div>
 
 <!-- Main Content -->
 <div class="container">
-    <!-- System Title -->
-    <div class="system-title">
-        <h2>Next-Gen Inventory Management</h2>
-        <p>Our AI-driven platform leverages predictive analytics to optimize your product assortment, pricing, and stock levels in real-time.</p>
-    </div>
-    
-    <!-- Stats Cards -->
-    <div class="stats-container">
-        <div class="stat-card">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Prediction Accuracy</div>
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Why Choose Our AI Solution?</h2>
+            <p>Trusted by 500+ electronics retailers worldwide to optimize their inventory management</p>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">30%</div>
-            <div class="stat-label">Average Profit Increase</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Real-time Monitoring</div>
-        </div>
-    </div>
-    
-    <!-- About Section -->
-    <div class="section">
-        <h2>System Capabilities</h2>
-        <p>Our advanced recommendation engine combines multiple machine learning models to deliver precise inventory predictions:</p>
         
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Demand Forecasting</h3>
-                <p>Accurately predict future product demand using historical sales data, seasonality patterns, and market trends.</p>
+        <div class="stats-grid">
+            <div class="stat-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Accuracy in Demand Forecasting</div>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Profit Optimization</h3>
-                <p>Identify high-margin opportunities and optimal pricing strategies to maximize your profitability.</p>
+            <div class="stat-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="stat-number">35%</div>
+                <div class="stat-label">Average Profit Increase</div>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI Recommendations</h3>
-                <p>Get personalized product suggestions tailored to your customers' preferences and buying behavior.</p>
+            <div class="stat-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Reduction in Excess Stock</div>
             </div>
         </div>
-    </div>
-    
-    <!-- Key Features Section -->
-    <div class="section">
-        <h2>Key Features</h2>
-        <ul class="key-features">
-            <li><strong>Advanced ML Models:</strong> Combines Random Forest, XGBoost, and Neural Networks for superior accuracy</li>
-            <li><strong>Real-time Dashboard:</strong> Interactive visualization of sales trends and inventory health</li>
-            <li><strong>Multi-channel Sync:</strong> Seamless integration with all sales channels and warehouses</li>
-            <li><strong>Brand Analytics:</strong> Detailed performance metrics by brand and category</li>
-            <li><strong>Dynamic Pricing:</strong> AI-powered pricing recommendations based on demand elasticity</li>
-            <li><strong>Seasonal Adaptation:</strong> Automatic adjustment for holidays and seasonal trends</li>
-            <li><strong>Supplier Insights:</strong> Vendor performance scoring and lead time predictions</li>
-            <li><strong>Custom Alerts:</strong> Get notified about stock risks and opportunities</li>
-        </ul>
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Powerful Features for Electronics Retailers</h2>
+            <p>Our AI specializes in mobile phones, laptops, and accessories inventory optimization</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Model-Specific Insights</h3>
+                <p>Get detailed analytics on each phone and laptop model's performance, popularity, and ideal stock levels.</p>
+            </div>
+            
+            <div class="feature-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI Recommendations</h3>
+                <p>Receive automated purchase suggestions based on real-time market trends and your sales history.</p>
+            </div>
+            
+            <div class="feature-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>Brand Analytics</h3>
+                <p>Compare performance across brands like Apple, Samsung, Dell to optimize your product mix.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>We Optimize All Your Electronics Inventory</h2>
+            <p>From flagship smartphones to budget laptops and accessories</p>
+        </div>
+        
+        <div class="products-showcase">
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1598327105666-5b89351aff97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80');"></div>
+                <div class="product-info">
+                    <h4>Premium Smartphones</h4>
+                    <p>Latest models from Apple, Samsung, Google</p>
+                    <div class="product-price">$699-$1499</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');"></div>
+                <div class="product-info">
+                    <h4>High-Performance Laptops</h4>
+                    <p>Business and gaming laptops from top brands</p>
+                    <div class="product-price">$899-$2499</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1600003263720-95b45a4035d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="product-info">
+                    <h4>Accessories Bundle</h4>
+                    <p>Cases, chargers, headphones and more</p>
+                    <div class="product-price">$19-$199</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header" style="color: white;">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by electronics retailers across the globe</p>
+        </div>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "This AI system reduced our excess inventory by 60% while increasing sales of high-margin items. A game-changer for our mobile business!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                    <div class="author-info">
+                        <h5>Rajesh Kumar</h5>
+                        <p>MobileLand, Delhi</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The laptop demand forecasting is incredibly accurate. We've optimized our stock levels across 12 stores with this system."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                    <div class="author-info">
+                        <h5>Priya Patel</h5>
+                        <p>TechWorld, Mumbai</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Since implementing this AI, we've seen a 40% increase in accessory sales through smart bundling recommendations."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/67.jpg');"></div>
+                    <div class="author-info">
+                        <h5>Arjun Singh</h5>
+                        <p>GadgetZone, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <!-- Footer -->
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <img src="https://via.placeholder.com/150x50" alt="AIRecommend Logo" class="footer-logo">
+            <img src="https://via.placeholder.com/150x50?text=AI+Inventory+Pro" alt="AI Inventory Pro Logo" class="footer-logo">
             <div class="footer-about">
-                <p>AI-powered inventory optimization and product recommendation platform for modern retailers and e-commerce businesses.</p>
+                <p>The leading AI inventory optimization platform for mobile and laptop retailers worldwide.</p>
             </div>
             <div class="social-links">
-                <a href="#"><i>f</i></a>
-                <a href="#"><i>in</i></a>
-                <a href="#"><i>t</i></a>
-                <a href="#"><i>ig</i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
+        
         <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/model">Recommendation Engine</a></li>
-                <li><a href="/analytics">Analytics Dashboard</a></li>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Pricing</a></li>
-            </ul>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="/model"><i class="fas fa-chevron-right"></i> Recommendations</a></li>
+                    <li><a href="/analytics"><i class="fas fa-chevron-right"></i> Analytics</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                </ul>
+            </div>
         </div>
+        
         <div class="footer-section">
-            <h3>Contact Us</h3>
-            <ul class="contact-info">
-                <li><i>✉</i> sales@airecommend.com</li>
-                <li><i>📞</i> +1 (555) 123-4567</li>
-                <li><i>🏢</i> 250 Tech Park Drive, Suite 300<br>San Francisco, CA 94107</li>
-            </ul>
+            <div class="footer-links">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> For Mobile Shops</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> For Laptop Retailers</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> For Electronics Chains</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Accessory Optimization</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <div class="footer-links">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> support@aiinventorypro.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Tech Park, Bangalore, India</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div style="text-align: center; color: black;">
-        © 2023 ASMB Technologies. All rights reserved. | Privacy Policy | Terms of Service
+    
+    <div class="copyright">
+        <p>&copy; 2023 AI Inventory Pro. All rights reserved. | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a></p>
     </div>
 </footer>
+
+<script>
+    // Create floating tech icons dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+        const floaters = document.querySelector('.tech-floaters');
+        const icons = ['📱', '💻', '⌚', '🔌', '🎧', '🖥️', '🔋', '📲'];
+        
+        for (let i = 0; i < 8; i++) {
+            const icon = document.createElement('div');
+            icon.className = 'tech-icon';
+            icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            icon.style.top = `${Math.random() * 80 + 10}%`;
+            icon.style.left = `${Math.random() * 80 + 10}%`;
+            icon.style.fontSize = `${Math.random() * 2 + 2}rem`;
+            icon.style.animationDelay = `${Math.random() * 8}s`;
+            floaters.appendChild(icon);
+        }
+    });
+</script>
 {% endblock %}

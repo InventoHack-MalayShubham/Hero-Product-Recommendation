@@ -1,0 +1,51 @@
+Product ID,Product Name,Brand Name,Product Category,Current Stock,Reorder Level,Reorder Quantity,Stock Status,Unit Price,Cost Price,Selling Price,Discount (%),GST (%),Supplier Name,Lead Time
+7563,Logitech Case 28,Logitech,Mobile Accessories,39,15,26,OK,18120.7,13770.85,20012.37,15,18,Radhakrishnan Ltd,5
+8744,Realme Case 45,Realme,Mobile Accessories,23,7,39,OK,39321.05,31271.76,44425.72,15,18,Lad-Sarin,2
+6017,Boat Cable 36,Boat,Mobile Accessories,99,7,24,OK,20061.39,15528.66,24061.06,0,18,Lad-Sarin,3
+9520,Mi Smartphone 49,Mi,Mobiles,66,19,30,OK,32317.79,27239.51,36694.79,0,18,Lad-Sarin,3
+2417,ASUS Ultrabook 2,ASUS,Laptops,80,19,30,OK,30135.63,25047.37,33250.48,5,18,Radhakrishnan Ltd,3
+1022,Realme Cable 40,Realme,Mobile Accessories,7,17,24,Low,33863.06,25031.01,43852.6,0,18,Goda and Sons,3
+7619,Apple Smartphone 44,Apple,Mobiles,99,9,14,OK,3440.16,2426.53,3800.75,10,18,Ramachandran Group,6
+2760,Lenovo Ultrabook 16,Lenovo,Laptops,7,17,44,Low,1480.35,1069.27,1728.83,0,18,Raghavan PLC,4
+8455,Jio Smartphone 24,Jio,Mobiles,54,10,30,OK,43976.98,32813.23,54157.7,5,18,Raj-Tailor,4
+7816,HP Ultrabook 48,HP,Laptops,86,16,17,OK,8183.21,7327.94,9680.97,5,18,Raj-Tailor,5
+6670,ASUS Gaming Laptop 3,ASUS,Mobiles,3,20,44,Low,9686.11,7118.08,11724.44,15,18,Ramachandran Group,1
+8511,Dell Keyboard 46,Dell,Mobiles,11,9,16,OK,13124.93,9280.67,15791.57,10,18,Bhasin Inc,1
+1798,Realme Feature Phone 50,Realme,Mobiles,66,11,11,OK,11094.34,9600.15,13195.44,0,12,Raghavan PLC,6
+1500,Dell Ultrabook 39,Dell,Laptops,9,18,17,Low,1696.81,1263.03,1953.06,10,18,Radhakrishnan Ltd,3
+5258,Dell Mouse 34,Dell,Mobiles,73,6,44,OK,855.06,705.26,975.17,15,18,Lad-Sarin,7
+5248,Boat Earbuds 21,Boat,Mobiles,49,17,14,OK,13579.09,11197.5,17117.03,0,18,Bhasin Inc,6
+8967,Realme Earbuds 13,Realme,Mobiles,88,13,25,OK,11718.45,8441.12,14701.76,0,18,Raj-Tailor,1
+1294,Zebronics Charger 30,Zebronics,Mobile Accessories,66,20,29,OK,28199.74,21542.62,32286.26,15,18,Radhakrishnan Ltd,1
+9777,Lenovo Ultrabook 32,Lenovo,Laptops,50,13,48,OK,6312.07,5046.17,7769.34,0,18,"Ranganathan, Divan and Kade",2
+9477,MSI Notebook 43,MSI,Laptops,34,7,26,OK,42676.06,31647.76,53659.2,15,18,Bhasin Inc,3
+9611,Acer Notebook 5,Acer,Laptops,0,8,31,Low,29272.85,24339.26,37630.06,0,18,Goda and Sons,3
+2908,Vivo Feature Phone 11,Vivo,Mobiles,32,17,15,OK,40198.49,33909.83,50817.16,5,12,Raj-Tailor,2
+1520,Dell Mouse 18,Dell,Mobiles,79,17,24,OK,7905.58,7015.74,10180.54,15,18,Raghavan PLC,4
+6511,Nothing Feature Phone 47,Nothing,Mobiles,84,10,44,OK,22005.09,18008.76,26666.21,5,12,Raghavan PLC,7
+7406,Boat Case 17,Boat,Mobile Accessories,52,16,23,OK,15868.14,13337.32,17674.89,5,18,Goda and Sons,5
+4203,Realme Cable 37,Realme,Mobile Accessories,53,15,45,OK,22196.03,19874.3,25510.35,10,18,Lad-Sarin,5
+3589,HP Bag 35,HP,Mobiles,26,15,11,OK,44988.86,35814.37,56156.42,0,18,"Ranganathan, Divan and Kade",4
+4632,Logitech Mouse 4,Logitech,Mobiles,88,11,25,OK,34352.72,26508.63,40716.4,5,18,Lad-Sarin,1
+7748,Boat Earbuds 8,Boat,Mobiles,87,20,22,OK,29925.23,22335.94,38297.57,10,18,Lad-Sarin,1
+2229,Samsung Feature Phone 23,Samsung,Mobiles,3,6,20,Low,23562.37,19430.43,30525.8,0,12,Ramachandran Group,1
+6388,Zebronics Mouse 1,Zebronics,Mobiles,58,17,28,OK,42074.36,30813.68,50160.0,5,18,"Ranganathan, Divan and Kade",1
+1140,Dell Bag 42,Dell,Mobiles,97,11,45,OK,32481.47,23501.03,39148.37,10,18,"Ranganathan, Divan and Kade",2
+4775,Jio Feature Phone 19,Jio,Mobiles,43,20,18,OK,17340.58,12829.91,21670.29,15,12,Goda and Sons,7
+2274,HP Bag 14,HP,Mobiles,68,10,19,OK,46660.4,38148.13,53976.6,15,18,Ramachandran Group,2
+6857,Xiaomi Feature Phone 27,Xiaomi,Mobiles,80,9,34,OK,36578.22,32279.77,43596.92,10,12,Keer LLC,7
+4078,Dell Notebook 25,Dell,Laptops,91,11,23,OK,4610.49,3592.62,5865.22,0,18,Lad-Sarin,7
+7426,HP Ultrabook 38,HP,Laptops,63,17,33,OK,6862.21,5014.58,7861.58,15,18,Sura PLC,7
+8288,ASUS Ultrabook 31,ASUS,Laptops,87,14,46,OK,11760.1,10239.21,13302.09,10,18,Goda and Sons,6
+9254,Boat Charger 12,Boat,Mobile Accessories,66,7,48,OK,13603.79,10859.82,15948.81,0,18,Bhasin Inc,6
+1770,Lenovo Gaming Laptop 15,Lenovo,Mobiles,49,14,24,OK,39162.23,31340.91,50873.53,10,18,Goda and Sons,2
+6478,Logitech Charger 33,Logitech,Mobile Accessories,82,7,15,OK,37829.48,32197.31,42306.56,10,18,"Ranganathan, Divan and Kade",3
+4097,Apple Smartphone 10,Apple,Mobiles,60,16,38,OK,11119.94,7922.24,13683.33,5,18,Lad-Sarin,5
+3521,Logitech Keyboard 7,Logitech,Mobiles,11,15,16,Low,4397.03,3768.35,4867.05,0,18,Ramachandran Group,4
+4922,MSI Notebook 22,MSI,Laptops,53,7,36,OK,20125.04,16434.84,25868.3,5,18,Radhakrishnan Ltd,4
+6403,Zebronics Case 26,Zebronics,Mobile Accessories,34,10,45,OK,7524.83,5593.05,9414.33,15,18,Sura PLC,3
+5487,Logitech Charger 29,Logitech,Mobile Accessories,48,12,29,OK,34875.8,27073.46,39026.14,0,18,Sura PLC,4
+9229,ASUS Gaming Laptop 6,ASUS,Mobiles,81,19,20,OK,24995.98,18331.31,28340.76,0,18,Lad-Sarin,6
+4056,Zebronics Charger 41,Zebronics,Mobile Accessories,75,11,47,OK,17449.35,13245.87,21061.63,5,18,Goda and Sons,4
+1324,Logitech Charger 20,Logitech,Mobile Accessories,31,6,44,OK,49978.47,40903.94,55094.99,0,18,Raj-Tailor,1
+1169,Zebronics Case 9,Zebronics,Mobile Accessories,58,20,49,OK,4635.87,3507.6,5581.75,5,18,Ramachandran Group,5

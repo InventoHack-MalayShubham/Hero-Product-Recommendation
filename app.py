@@ -9,8 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
 from datetime import datetime, timedelta
 import warnings
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 import io
 import base64
 import os
@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key-here'  # Change this to a secure secret key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hero_inventory.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -33,12 +33,62 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_login = db.Column(db.DateTime)
+    is_active = db.Column(db.Boolean, default=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    product_name = db.Column(db.String(200), nullable=False)
+    brand_name = db.Column(db.String(100), nullable=False)
+    category = db.Column(db.String(100), nullable=False)
+    subcategory = db.Column(db.String(100), nullable=False)
+    unit_price = db.Column(db.Float, nullable=False)
+    cost_price = db.Column(db.Float, nullable=False)
+    gst_percentage = db.Column(db.Float, nullable=False)
+    description = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    inventory = db.relationship('Inventory', backref='product', lazy=True)
+    transactions = db.relationship('Transaction', backref='product', lazy=True)
+
+class Inventory(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+    current_stock = db.Column(db.Integer, nullable=False)
+    reorder_level = db.Column(db.Integer, nullable=False)
+    reorder_quantity = db.Column(db.Integer, nullable=False)
+    stock_status = db.Column(db.String(50), nullable=False)
+    supplier_name = db.Column(db.String(200))
+    lead_time = db.Column(db.Integer)  # in days
+    last_restocked = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Transaction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    transaction_id = db.Column(db.String(50), unique=True, nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    units_sold = db.Column(db.Integer, nullable=False)
+    discount_percentage = db.Column(db.Float, default=0)
+    discounted_price = db.Column(db.Float, nullable=False)
+    total_revenue = db.Column(db.Float, nullable=False)
+    gst_amount = db.Column(db.Float, nullable=False)
+    total_revenue_incl_gst = db.Column(db.Float, nullable=False)
+    customer_type = db.Column(db.String(50))
+    payment_method = db.Column(db.String(50))
+    rating = db.Column(db.Float)
+    returns = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 def login_required(f):
     @wraps(f)
@@ -51,6 +101,17 @@ def login_required(f):
 # Create database tables
 with app.app_context():
     db.create_all()
+    
+    # Create default admin user if not exists
+    if not User.query.filter_by(username='admin').first():
+        admin = User(
+            username='admin',
+            email='admin@heroinventory.com',
+            is_admin=True
+        )
+        admin.set_password('admin123')  # Change this password in production
+        db.session.add(admin)
+        db.session.commit()
 
 # Global variables
 model = None
@@ -111,6 +172,81 @@ def load_data():
         print("Full traceback:")
         print(traceback.format_exc())
         return None
+
+def load_inventory_dataset():
+    try:
+        print("Loading inventory dataset...")
+        df = pd.read_csv('generated_1000_inventory_dataset.csv')
+        print(f"Inventory dataset loaded with shape: {df.shape}")
+        
+        # Convert date column
+        df['Date'] = pd.to_datetime(df['Date'])
+        
+        with app.app_context():
+            # Clear existing data
+            Transaction.query.delete()
+            Inventory.query.delete()
+            Product.query.delete()
+            db.session.commit()
+            
+            # Process each row
+            for _, row in df.iterrows():
+                # Create or get product
+                product = Product(
+                    product_name=row['Product Name'],
+                    brand_name=row['Brand Name'],
+                    category=row['Product Category'],
+                    subcategory=row['Subcategory'],
+                    unit_price=float(row['Unit Price']),
+                    cost_price=float(row['Cost Price']),
+                    gst_percentage=float(row['GST (%)']),
+                    description=f"{row['Brand Name']} {row['Product Name']} - {row['Product Category']} {row['Subcategory']}"
+                )
+                db.session.add(product)
+                db.session.flush()  # Get the product ID
+                
+                # Create inventory record
+                inventory = Inventory(
+                    product_id=product.id,
+                    current_stock=int(row['Current Stock']),
+                    reorder_level=int(row['Reorder Level']),
+                    reorder_quantity=int(row['Reorder Quantity']),
+                    stock_status=row['Stock Status'],
+                    supplier_name=row['Supplier Name'],
+                    lead_time=int(row['Lead Time']),
+                    last_restocked=row['Date']
+                )
+                db.session.add(inventory)
+                
+                # Create transaction record
+                transaction = Transaction(
+                    transaction_id=row['Transaction ID'],
+                    product_id=product.id,
+                    date=row['Date'],
+                    units_sold=1,  # Assuming 1 unit per transaction
+                    discount_percentage=float(row['Discount (%)']),
+                    discounted_price=float(row['Discounted Price']),
+                    total_revenue=float(row['Total Revenue']),
+                    gst_amount=float(row['GST_Amount']),
+                    total_revenue_incl_gst=float(row['Total_Revenue_Incl_GST']),
+                    customer_type=row['Customer Type'],
+                    payment_method=row['Payment Method'],
+                    rating=float(row['Rating']),
+                    returns=bool(row['Returns'])
+                )
+                db.session.add(transaction)
+            
+            # Commit all changes
+            db.session.commit()
+            print("Successfully loaded inventory dataset into database")
+            return True
+            
+    except Exception as e:
+        print(f"Error loading inventory dataset: {str(e)}")
+        import traceback
+        print("Full traceback:")
+        print(traceback.format_exc())
+        return False
 
 # Build the ML model
 def build_model(df):
@@ -490,7 +626,7 @@ def home():
     return render_template('home.html')
 
 # ML model route
-@app.route('/recommendation')
+@app.route('/model')
 @login_required
 def model_page():
     try:
@@ -532,14 +668,39 @@ def model_page():
 @app.route('/analytics')
 @login_required
 def analytics():
-    if sales_df is None or inventory_df is None:
-        load_data()
-    
-    min_date = sales_df["Date"].min().date()
-    max_date = sales_df["Date"].max().date()
-    categories = ["All"] + sorted(sales_df["Product Category"].dropna().unique().tolist())
-    
-    return render_template("analytics.html", min_date=min_date, max_date=max_date, categories=categories)
+    try:
+        sales_data = []
+        transactions = Transaction.query.all()
+        for t in transactions:
+            sales_data.append({
+                'Date': t.date,
+                'Product Category': t.product.category,
+                'Brand Name': t.product.brand_name,
+                'Total_Revenue_Incl_GST': t.total_revenue_incl_gst,
+                'Transaction ID': t.transaction_id,
+                'Customer Type': t.customer_type,
+                'Unit Price': t.product.unit_price,
+                'Stock_Status': t.product.inventory[0].stock_status if t.product.inventory else 'Unknown'
+            })
+        sales_df = pd.DataFrame(sales_data)
+        print(f"Created DataFrame with shape: {sales_df.shape}")
+        if len(sales_df) == 0:
+            print("No sales data available")
+            flash('No sales data available. Please add some transactions first.', 'warning')
+            return redirect(url_for('inventory'))
+        min_date = sales_df["Date"].min().date()
+        max_date = sales_df["Date"].max().date()
+        categories = ["All"] + sorted(sales_df["Product Category"].dropna().unique().tolist())
+        print(f"Date range: {min_date} to {max_date}")
+        print(f"Categories: {categories}")
+        return render_template("analytics.html", min_date=min_date, max_date=max_date, categories=categories)
+    except Exception as e:
+        print(f"Error in analytics route: {str(e)}")
+        import traceback
+        print("Full traceback:")
+        print(traceback.format_exc())
+        flash('Error loading analytics data. Please try again.', 'error')
+        return redirect(url_for('inventory'))
 
 # Fetch filtered data
 @app.route('/get_data', methods=['POST'])
@@ -554,14 +715,32 @@ def get_data():
         end_date = pd.Timestamp.now()
         start_date = end_date - pd.Timedelta(days=date_range)
 
-        # Filter data based on date range and category
-        filtered_sales = sales_df[
-            (sales_df['Date'] >= start_date) & 
-            (sales_df['Date'] <= end_date)
-        ]
+        # Get transactions from database
+        query = Transaction.query.filter(
+            Transaction.date >= start_date,
+            Transaction.date <= end_date
+        )
         
         if category != 'all':
-            filtered_sales = filtered_sales[filtered_sales['Product Category'] == category]
+            query = query.join(Product).filter(Product.category == category)
+            
+        transactions = query.all()
+        
+        # Convert to DataFrame
+        sales_data = []
+        for t in transactions:
+            sales_data.append({
+                'Date': t.date,
+                'Product Category': t.product.category,
+                'Brand Name': t.product.brand_name,
+                'Total_Revenue_Incl_GST': t.total_revenue_incl_gst,
+                'Transaction ID': t.transaction_id,
+                'Customer Type': t.customer_type,
+                'Unit Price': t.product.unit_price,
+                'Stock_Status': t.product.inventory[0].stock_status if t.product.inventory else 'Unknown'
+            })
+        
+        filtered_sales = pd.DataFrame(sales_data)
 
         # Calculate comparison data if requested
         comparison_sales = None
@@ -573,13 +752,30 @@ def get_data():
                 comp_start = start_date - pd.Timedelta(days=365)
                 comp_end = end_date - pd.Timedelta(days=365)
             
-            comparison_sales = sales_df[
-                (sales_df['Date'] >= comp_start) & 
-                (sales_df['Date'] <= comp_end)
-            ]
+            comp_query = Transaction.query.filter(
+                Transaction.date >= comp_start,
+                Transaction.date <= comp_end
+            )
             
             if category != 'all':
-                comparison_sales = comparison_sales[comparison_sales['Product Category'] == category]
+                comp_query = comp_query.join(Product).filter(Product.category == category)
+                
+            comp_transactions = comp_query.all()
+            
+            comp_data = []
+            for t in comp_transactions:
+                comp_data.append({
+                    'Date': t.date,
+                    'Product Category': t.product.category,
+                    'Brand Name': t.product.brand_name,
+                    'Total_Revenue_Incl_GST': t.total_revenue_incl_gst,
+                    'Transaction ID': t.transaction_id,
+                    'Customer Type': t.customer_type,
+                    'Unit Price': t.product.unit_price,
+                    'Stock_Status': t.product.inventory[0].stock_status if t.product.inventory else 'Unknown'
+                })
+            
+            comparison_sales = pd.DataFrame(comp_data)
 
         # Calculate KPIs
         kpis = calculate_kpis(filtered_sales, comparison_sales if compare_period != 'none' else None)
@@ -615,10 +811,12 @@ def login():
             session['user_id'] = user.id
             session['username'] = user.username
             session['is_admin'] = user.is_admin
+            user.last_login = datetime.utcnow()
+            db.session.commit()
             flash('Logged in successfully!', 'success')
             return redirect(url_for('home'))
         else:
-            flash('Invalid username or password', 'danger')
+            flash('Invalid username or password', 'error')
     
     return render_template('login.html')
 
@@ -715,24 +913,230 @@ def reload_model():
         flash(f'Error reloading model: {str(e)}', 'danger')
         return redirect(url_for('home'))
 
-# Add inventory route
+@app.route('/load_inventory_dataset')
+@login_required
+def load_dataset():
+    if not session.get('user_id'):
+        return jsonify({'error': 'Not authenticated'}), 401
+    
+    user = User.query.get(session['user_id'])
+    if not user or not user.is_admin:
+        return jsonify({'error': 'Not authorized'}), 403
+    
+    success = load_inventory_dataset()
+    if success:
+        flash('Inventory dataset loaded successfully', 'success')
+    else:
+        flash('Error loading inventory dataset', 'error')
+    
+    return redirect(url_for('inventory'))
+
 @app.route('/inventory')
 @login_required
 def inventory():
-    try:
-        if sales_df is None or inventory_df is None:
-            load_data()
-            
-        # Get inventory data
-        inventory_data = inventory_df.to_dict('records')
+    return render_template('inventory.html')
+
+@app.route('/api/products', methods=['GET'])
+@login_required
+def get_products():
+    products = Product.query.all()
+    return jsonify([{
+        'id': p.id,
+        'name': p.product_name,
+        'brand': p.brand_name,
+        'category': p.category,
+        'subcategory': p.subcategory,
+        'unit_price': p.unit_price,
+        'gst_percentage': p.gst_percentage,
+        'current_stock': p.inventory[0].current_stock if p.inventory else 0,
+        'stock_status': p.inventory[0].stock_status if p.inventory else 'out'
+    } for p in products])
+
+@app.route('/api/products', methods=['POST'])
+@login_required
+def add_product():
+    data = request.json
+    
+    # Check if product already exists
+    existing_product = Product.query.filter_by(
+        product_name=data['product_name'],
+        brand_name=data['brand_name']
+    ).first()
+    
+    if existing_product:
+        # Update existing product
+        existing_product.unit_price = float(data['unit_price'])
+        existing_product.cost_price = float(data['cost_price'])
+        existing_product.gst_percentage = float(data['gst_percentage'])
         
-        return render_template('inventory.html',
-                             inventory_data=inventory_data)
-                             
+        # Update inventory
+        inventory = existing_product.inventory[0]
+        inventory.current_stock += int(data['current_stock'])
+        inventory.reorder_level = int(data['reorder_level'])
+        inventory.reorder_quantity = int(data['reorder_quantity'])
+        inventory.supplier_name = data['supplier_name']
+        inventory.lead_time = int(data['lead_time'])
+        inventory.last_restocked = datetime.utcnow()
+        
+        # Update stock status
+        if inventory.current_stock <= 0:
+            inventory.stock_status = 'out'
+        elif inventory.current_stock <= inventory.reorder_level:
+            inventory.stock_status = 'low'
+        else:
+            inventory.stock_status = 'ok'
+    else:
+        # Create new product
+        product = Product(
+            product_name=data['product_name'],
+            brand_name=data['brand_name'],
+            category=data['category'],
+            subcategory=data['subcategory'],
+            unit_price=float(data['unit_price']),
+            cost_price=float(data['cost_price']),
+            gst_percentage=float(data['gst_percentage'])
+        )
+        db.session.add(product)
+        db.session.flush()  # Get the product ID
+        
+        # Create inventory record
+        inventory = Inventory(
+            product_id=product.id,
+            current_stock=int(data['current_stock']),
+            reorder_level=int(data['reorder_level']),
+            reorder_quantity=int(data['reorder_quantity']),
+            supplier_name=data['supplier_name'],
+            lead_time=int(data['lead_time']),
+            last_restocked=datetime.utcnow()
+        )
+        
+        # Set initial stock status
+        if inventory.current_stock <= 0:
+            inventory.stock_status = 'out'
+        elif inventory.current_stock <= inventory.reorder_level:
+            inventory.stock_status = 'low'
+        else:
+            inventory.stock_status = 'ok'
+        
+        db.session.add(inventory)
+    
+    db.session.commit()
+    return jsonify({'message': 'Product saved successfully'})
+
+@app.route('/api/sales', methods=['POST'])
+@login_required
+def create_sale():
+    data = request.json
+    transaction_id = f"TRX{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
+    
+    try:
+        # Create transaction records for each product
+        for item in data['items']:
+            product = Product.query.get(item['product_id'])
+            if not product:
+                return jsonify({'error': f'Product {item["product_id"]} not found'}), 404
+            
+            inventory = product.inventory[0]
+            if inventory.current_stock < item['quantity']:
+                return jsonify({'error': f'Insufficient stock for {product.product_name}'}), 400
+            
+            # Calculate prices
+            unit_price = product.unit_price
+            quantity = item['quantity']
+            subtotal = unit_price * quantity
+            gst_amount = subtotal * (product.gst_percentage / 100)
+            discount = subtotal * (item.get('discount', 0) / 100)
+            total = subtotal + gst_amount - discount
+            
+            # Create transaction record
+            transaction = Transaction(
+                transaction_id=transaction_id,
+                product_id=product.id,
+                date=datetime.utcnow(),
+                units_sold=quantity,
+                discount_percentage=item.get('discount', 0),
+                discounted_price=unit_price * (1 - item.get('discount', 0) / 100),
+                total_revenue=subtotal,
+                gst_amount=gst_amount,
+                total_revenue_incl_gst=total,
+                customer_type=data.get('customer_type', 'regular'),
+                payment_method=data['payment_method']
+            )
+            db.session.add(transaction)
+            
+            # Update inventory
+            inventory.current_stock -= quantity
+            if inventory.current_stock <= 0:
+                inventory.stock_status = 'out'
+            elif inventory.current_stock <= inventory.reorder_level:
+                inventory.stock_status = 'low'
+            else:
+                inventory.stock_status = 'ok'
+        
+        db.session.commit()
+        return jsonify({
+            'message': 'Sale completed successfully',
+            'transaction_id': transaction_id
+        })
+        
     except Exception as e:
-        print(f"Error in inventory: {str(e)}")
-        flash('Error loading inventory data. Please try again later.', 'danger')
-        return redirect(url_for('home'))
+        db.session.rollback()
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/products/search', methods=['GET'])
+@login_required
+def search_products():
+    query = request.args.get('q', '')
+    category = request.args.get('category', '')
+    stock_status = request.args.get('stock_status', '')
+    
+    products_query = Product.query
+    
+    if query:
+        products_query = products_query.filter(
+            (Product.product_name.ilike(f'%{query}%')) |
+            (Product.brand_name.ilike(f'%{query}%'))
+        )
+    
+    if category:
+        products_query = products_query.filter(Product.category == category)
+    
+    products = products_query.all()
+    
+    # Filter by stock status if needed
+    if stock_status:
+        products = [p for p in products if p.inventory and p.inventory[0].stock_status == stock_status]
+    
+    return jsonify([{
+        'id': p.id,
+        'name': p.product_name,
+        'brand': p.brand_name,
+        'category': p.category,
+        'subcategory': p.subcategory,
+        'unit_price': p.unit_price,
+        'gst_percentage': p.gst_percentage,
+        'current_stock': p.inventory[0].current_stock if p.inventory else 0,
+        'stock_status': p.inventory[0].stock_status if p.inventory else 'out',
+        'reorder_level': p.inventory[0].reorder_level if p.inventory else 0
+    } for p in products])
+
+@app.route('/api/sold_products', methods=['GET'])
+@login_required
+def api_sold_products():
+    transactions = Transaction.query.order_by(Transaction.date.desc()).all()
+    sold_products = []
+    for t in transactions:
+        sold_products.append({
+            'date': t.date.isoformat() if t.date else '',
+            'product_name': t.product.product_name if t.product else '',
+            'brand': t.product.brand_name if t.product else '',
+            'category': t.product.category if t.product else '',
+            'units_sold': t.units_sold,
+            'customer_type': t.customer_type,
+            'payment_method': t.payment_method,
+            'total_revenue_incl_gst': t.total_revenue_incl_gst
+        })
+    return jsonify(sold_products)
 
 if __name__ == '__main__':
     load_data()

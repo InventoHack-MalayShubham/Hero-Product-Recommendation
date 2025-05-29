@@ -12,6 +12,18 @@
         <a href="/" class="home-button">← Back to Home</a>
         <h2>🛒 Electronics Sales Dashboard</h2>
 
+        <div id="loadingIndicator" style="display: none; text-align: center; padding: 20px;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading dashboard data...</p>
+        </div>
+
+        <div id="errorMessage" style="display: none; text-align: center; padding: 20px; color: red;">
+            <p>Error loading dashboard data. Please try again.</p>
+        </div>
+
+        <div id="dashboardContent">
         <div class="filters">
             <div class="filter-group">
                 <label for="dateRange">Date Range:</label>
@@ -93,6 +105,7 @@
             <div class="chart-container">
                 <div class="chart-title">📊 Price Range Distribution</div>
                 <canvas id="priceRangeChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -100,6 +113,12 @@
     <script>
         // Initialize charts
         const charts = {};
+        
+        // Initialize charts and load data when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            updateDashboard();  // Load initial data
+        });
         
         function initializeCharts() {
             const chartConfigs = [
@@ -197,11 +216,20 @@
         document.getElementById('comparePeriod').addEventListener('change', updateDashboard);
         
         async function updateDashboard() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const errorMessage = document.getElementById('errorMessage');
+            const dashboardContent = document.getElementById('dashboardContent');
+            
+            try {
+                // Show loading indicator
+                loadingIndicator.style.display = 'block';
+                errorMessage.style.display = 'none';
+                dashboardContent.style.opacity = '0.5';
+                
             const dateRange = document.getElementById('dateRange').value;
             const category = document.getElementById('categoryFilter').value;
             const comparePeriod = document.getElementById('comparePeriod').value;
             
-            try {
                 const response = await fetch('/get_data', {
                     method: 'POST',
                     headers: {
@@ -214,7 +242,15 @@
                     })
                 });
                 
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                
                 const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 
                 // Update KPIs
                 updateKPIs(data.kpis);
@@ -222,8 +258,15 @@
                 // Update charts
                 updateCharts(data.charts);
                 
+                // Hide loading indicator and show content
+                loadingIndicator.style.display = 'none';
+                dashboardContent.style.opacity = '1';
+                
             } catch (error) {
                 console.error('Error updating dashboard:', error);
+                loadingIndicator.style.display = 'none';
+                errorMessage.style.display = 'block';
+                errorMessage.querySelector('p').textContent = `Error: ${error.message}`;
             }
         }
         
@@ -295,12 +338,6 @@
                 alert('Error exporting data');
             }
         }
-        
-        // Initialize dashboard and load data automatically
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeCharts();
-            updateDashboard();
-        });
     </script>
     <style>
         .chart-grid {
